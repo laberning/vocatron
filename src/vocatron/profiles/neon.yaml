@@ -1,0 +1,37 @@
+# Bright words with a soft glow on a slowly moving dark gradient; lines fade in and out. Two
+# lines in the lower third. For the video only
+# (ADR-0032): it has no cdg section, since CD+G cannot draw glow, motion or fades.
+name: neon
+description: Glowing words on a slowly moving dark gradient; lines fade in and out. Video only.
+mode: line
+slots: 2
+line_rows: 1
+align: center
+position: lower-third
+safe_area: 0.9
+font:
+  family: bundled-sans-bold
+  size: 0.12
+  min_size: 0.08
+  case: as-written
+background: "#080818"
+background_motion: {colours: ["#04050c", "#150a30", "#061a2e"], speed: 0.01}
+colours:
+  singer1: {unsung: "#ffffff", sung: "#22e0ff", edge: "#04050c"}
+  singer2: {unsung: "#ffffff", sung: "#ff3df0", edge: "#04050c"}
+  singer3: {unsung: "#ffffff", sung: "#ffb300", edge: "#04050c"}
+  singer4: {unsung: "#ffffff", sung: "#2ee86b", edge: "#04050c"}
+  singer5: {unsung: "#ffffff", sung: "#a35cff", edge: "#04050c"}
+  group: {unsung: "#ffffff", sung: "#ff6b6b", edge: "#04050c"}
+edge: {width: 0.04}
+shadow: {offset: 0.0, colour: "#000000", alpha: 0.6}
+wipe: {granularity: smooth, offset: 0.0}
+lead_in: {min: 1.0, target: 3.0, max: 5.0}
+clear: {hold: 2.0, replace_after: 0.33}
+breaks: {clear_after: 5.0, notice_after: 15.0, notice: Instrumental, show_title: false, form: progress}
+countdown: {min_gap: 5.0, duration: 2.4, form: dots, count: 4}
+title: {min: 6.0, min_short: 4.0, fields: [title, artist, singers]}
+intro: {solo: 8.0, group: 9.0}
+ending: {end_screen: true, start_after: 2.0, fade: 0.5}
+glow: {sung: 0.6}
+transition: {form: fade, time: 0.3}

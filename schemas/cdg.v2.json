@@ -1,0 +1,184 @@
+{
+  "$defs": {
+    "CdgValues": {
+      "additionalProperties": false,
+      "description": "The CD+G values a file was written with: the look's ``cdg`` section and the fallback.\n\nAttributes:\n    slots: Lines on screen at most.\n    font_px: The line cell in pixels.\n    min_font_px: The smallest line cell in pixels.\n    edge_px: The outline in pixels.\n    wipe_columns: The pixels the wipe moves at a time (6 after the last fallback step).\n    lead_in_min: The lead-in minimum in seconds (raised by the fallback steps).",
+      "properties": {
+        "edge_px": {
+          "title": "Edge Px",
+          "type": "integer"
+        },
+        "font_px": {
+          "title": "Font Px",
+          "type": "integer"
+        },
+        "lead_in_min": {
+          "title": "Lead In Min",
+          "type": "number"
+        },
+        "min_font_px": {
+          "title": "Min Font Px",
+          "type": "integer"
+        },
+        "slots": {
+          "title": "Slots",
+          "type": "integer"
+        },
+        "wipe_columns": {
+          "title": "Wipe Columns",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "slots",
+        "font_px",
+        "min_font_px",
+        "edge_px",
+        "wipe_columns",
+        "lead_in_min"
+      ],
+      "title": "CdgValues",
+      "type": "object"
+    },
+    "Fingerprint": {
+      "additionalProperties": false,
+      "description": "What a stage file was made from.\n\nAttributes:\n    inputs: SHA-256 of the content of every input file, by input name.\n    settings: SHA-256 of the canonical JSON of the settings the stage declares.\n    stage_version: The version of the stage's own code.",
+      "properties": {
+        "inputs": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "title": "Inputs",
+          "type": "object"
+        },
+        "settings": {
+          "title": "Settings",
+          "type": "string"
+        },
+        "stage_version": {
+          "title": "Stage Version",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "inputs",
+        "settings",
+        "stage_version"
+      ],
+      "title": "Fingerprint",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "description": "``cdg.json``: what the cdg stage made.\n\nAttributes:\n    enabled: Whether ``cdg`` is in the config's ``outputs``. When it is not, the stage only\n        writes this file and the other fields keep their defaults.\n    profile: The name of the style profile that was used.\n    files: The names of the files in the output folder: the MP3 and the CD+G file, or only the\n        zip that holds both (``cdg_zip``).\n    zipped: The pair was packed into a zip (ADR-0030).\n    values: The CD+G values used, after the fallback step.\n    step: The fallback step taken (0: the look as declared; the steps are in ADR-0029).\n    step_name: What the step does, in words.\n    in_time: Every line was fully drawn before its first syllable and the wipe was at most\n        50 ms behind. False when no fallback step reached the timing.\n    late_lines: How many lines were drawn late (0 when ``in_time``).\n    palette: The 16 palette entries as ``#rrggbb`` (the 12-bit colours of the file).\n    packets: The number of packets in the CD+G file (300 per second).\n    drawing_packets: How many of them draw (the others are filler).\n    draw_lag: The longest wait in seconds of a tile of a line that appears or goes, from the\n        moment it changed to the packet that drew it.\n    wipe_lag: The same for the tiles of a wipe, a countdown or a progress bar.\n    seconds: How long the stage took.",
+  "properties": {
+    "draw_lag": {
+      "default": 0.0,
+      "title": "Draw Lag",
+      "type": "number"
+    },
+    "drawing_packets": {
+      "default": 0,
+      "title": "Drawing Packets",
+      "type": "integer"
+    },
+    "enabled": {
+      "title": "Enabled",
+      "type": "boolean"
+    },
+    "files": {
+      "default": [],
+      "items": {
+        "type": "string"
+      },
+      "title": "Files",
+      "type": "array"
+    },
+    "fingerprint": {
+      "$ref": "#/$defs/Fingerprint"
+    },
+    "in_time": {
+      "default": true,
+      "title": "In Time",
+      "type": "boolean"
+    },
+    "late_lines": {
+      "default": 0,
+      "title": "Late Lines",
+      "type": "integer"
+    },
+    "packets": {
+      "default": 0,
+      "title": "Packets",
+      "type": "integer"
+    },
+    "palette": {
+      "default": [],
+      "items": {
+        "type": "string"
+      },
+      "title": "Palette",
+      "type": "array"
+    },
+    "profile": {
+      "default": "",
+      "title": "Profile",
+      "type": "string"
+    },
+    "reasons": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Reasons",
+      "type": "array"
+    },
+    "schema_version": {
+      "const": 2,
+      "default": 2,
+      "title": "Schema Version",
+      "type": "integer"
+    },
+    "seconds": {
+      "default": 0.0,
+      "title": "Seconds",
+      "type": "number"
+    },
+    "step": {
+      "default": 0,
+      "title": "Step",
+      "type": "integer"
+    },
+    "step_name": {
+      "default": "",
+      "title": "Step Name",
+      "type": "string"
+    },
+    "values": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/CdgValues"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "wipe_lag": {
+      "default": 0.0,
+      "title": "Wipe Lag",
+      "type": "number"
+    },
+    "zipped": {
+      "default": false,
+      "title": "Zipped",
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "fingerprint",
+    "enabled"
+  ],
+  "title": "CdgFile",
+  "type": "object"
+}

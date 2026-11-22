@@ -1,0 +1,26 @@
+# The demo songs (freely licensed). `make demo-songs` downloads the audio into .corpus/demo/ and
+# checks the SHA-256; the audio never enters git. Credits: CREDITS.md.
+
+[[song]]
+file = "Systemabsturz - Verdächtig.flac"            # name in .corpus/demo/; its stem names the lyrics file
+artist = "Systemabsturz"
+title = "Verdächtig"
+language = "de"
+licence = "CC0 1.0 Universal"
+licence_url = "https://creativecommons.org/publicdomain/zero/1.0/"
+source_url = "https://systemabsturz.band/"
+download_url = "https://archive.org/download/uberwachung-zum-mitsingen/01%20Verd%C3%A4chtig.flac"
+sha256 = "f8e81f6ddf23e73f724958f8ad6c0bb30836740176370a357b99d5193aa0ff1d"
+seconds = 211.08
+
+[[song]]
+file = "Josh Woodward - My Favorite Regret.mp3"
+artist = "Josh Woodward"
+title = "My Favorite Regret"
+language = "en"
+licence = "CC BY 4.0"
+licence_url = "https://creativecommons.org/licenses/by/4.0/"
+source_url = "https://www.joshwoodward.com/song/MyFavoriteRegret"
+download_url = "https://archive.org/download/jamendo-158415/04-1341629-Josh%20Woodward-My%20Favorite%20Regret.mp3"
+sha256 = "579a8f4497f3b0cc29514e9f33613cdcb7acc9c21f9727c4a0ee67b3797727a0"
+seconds = 267.2

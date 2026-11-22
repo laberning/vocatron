@@ -1,0 +1,40 @@
+# serializer version: 1
+# name: test_lyrics_runs_probe_and_lyrics_only_and_prints_a_line_per_song
+  '''
+  [1/4] Volkslied - Entchen ...
+    probe: ran in 0s
+    lyrics: ran in 0s
+  ok        3:00       0s  Volkslied - Entchen
+  [2/4] Volkslied - Messy ...
+    probe: ran in 0s
+    lyrics: ran in 0s
+  review    3:00       0s  Volkslied - Messy    (lyrics: section markers removed (2 lines); lyrics: repeat markers removed (2 lines); lyrics: credits removed (1 line))
+  [3/4] Volkslied - Nothing ...
+    probe: ran in 0s
+    lyrics: failed in 0s
+  failed    3:00       0s  Volkslied - Nothing  lyrics: no lyrics found: put c.txt or c.lrc next to c.mp3
+  [4/4] Volkslied - Found ...
+    probe: ran in 0s
+    lyrics: ran in 0s
+  ok        3:00       0s  Volkslied - Found
+  4 songs: 2 ok, 1 review, 1 failed in 0s
+  
+  '''
+# ---
+# name: test_show_prints_status_reasons_and_flagged_lines
+  '''
+  ok       Volkslied - Entchen  (a.txt, sidecar, language de)
+  review   Volkslied - Messy  (b.txt, sidecar, language de)
+    section markers removed (2 lines)
+    repeat markers removed (2 lines)
+    credits removed (1 line)
+    line 1 [section] [Strophe 1]
+    line 3 [repeat] schwimmen auf dem See (2x)
+    line 5 [section] Refrain:
+    line 7 [repeat] Schwänzchen in die Höh x2
+    line 9 [credit] Text: Volksgut
+  not run  Volkslied - Nothing
+  ok       Volkslied - Found  (d.txt, lookup, language de)
+  
+  '''
+# ---

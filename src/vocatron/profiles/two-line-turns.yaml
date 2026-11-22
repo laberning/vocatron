@@ -1,0 +1,35 @@
+# Two lines in the lower part of the screen taking turns: the line after the one just sung
+# replaces it. White edged text on black, sweeping to a colour per singer (ADR-0009).
+name: two-line-turns
+description: Two lines in the lower third taking turns; each sung line is replaced by the line after next.
+mode: line
+slots: 2
+align: center
+position: lower-third
+safe_area: 0.9
+font:
+  family: bundled-sans-bold
+  size: 0.12
+  min_size: 0.08
+  case: as-written
+background: "#000000"
+colours:
+  singer1: {unsung: "#ffffff", sung: "#3399ff", edge: "#000000"}
+  singer2: {unsung: "#ffffff", sung: "#ff3399", edge: "#000000"}
+  singer3: {unsung: "#ffffff", sung: "#33cc66", edge: "#000000"}
+  singer4: {unsung: "#ffffff", sung: "#ff9933", edge: "#000000"}
+  singer5: {unsung: "#ffffff", sung: "#cc99dd", edge: "#000000"}
+  group: {unsung: "#ffffff", sung: "#ffcc00", edge: "#000000"}
+edge: {width: 0.08}
+shadow: {offset: 0.04, colour: "#000000", alpha: 0.6}
+wipe: {granularity: smooth, offset: 0.0}
+lead_in: {min: 1.0, target: 3.0, max: 5.0}
+clear: {hold: 2.0, replace_after: 0.33}
+breaks: {clear_after: 5.0, notice_after: 15.0, notice: Instrumental, show_title: false}
+countdown: {min_gap: 5.0, duration: 2.4, form: shrinking-bar, count: 4}
+title: {min: 6.0, min_short: 4.0, fields: [title, artist, singers]}
+intro: {solo: 8.0, group: 9.0}
+ending: {end_screen: true, start_after: 2.0, fade: 0.5}
+# On CD+G (ADR-0029): sizes in pixels on the 192 px safe area; colours are rounded to 12 bits, the
+# shadow and the fade are dropped.
+cdg: {made_for_cdg: true, slots: 2, font_px: 24, min_font_px: 18, edge_px: 1, wipe_columns: 3}

@@ -1,0 +1,14 @@
+/*
+ * Site only (ADR-0003): Mermaid draws the hand-drawn look with fixed light node fills inside a
+ * closed shadow root, so the page cannot restyle the nodes. In the dark scheme the diagram is
+ * therefore rendered with the light theme variables and inverted as a whole. Light mode is
+ * untouched; diagram sources carry no colours.
+ */
+[data-md-color-scheme="slate"] div.mermaid {
+  --md-mermaid-label-fg-color: #1f2328;
+  --md-mermaid-label-bg-color: #ffffff;
+  --md-mermaid-edge-color: #444c56;
+  --md-mermaid-node-bg-color: #ececff;
+  --md-mermaid-node-fg-color: #9370db;
+  filter: invert(1) hue-rotate(180deg);
+}

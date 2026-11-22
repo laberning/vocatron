@@ -1,0 +1,41 @@
+# serializer version: 1
+# name: test_make_prints_one_line_per_song_progress_and_a_summary
+  '''
+  [1/3] Queen - Radio Ga Ga ...
+    probe: ran in 0s
+    lyrics: ran in 0s
+    separation: ran in 0s
+    tempo: ran in 0s
+    alignment: ran in 0s
+    syllables: ran in 0s
+    layout: ran in 0s
+    render: ran in 0s
+    cdg: ran in 0s
+  ok        4:00       0s  Queen - Radio Ga Ga
+  [2/3] b ...
+    probe: failed in 0s
+  failed       -       0s  b                        probe: cannot read b.mp3: not audio
+  [3/3] Queen - Radio Ga Ga (2) ...
+    probe: ran in 0s
+    lyrics: ran in 0s
+    separation: ran in 0s
+    tempo: ran in 0s
+    alignment: ran in 0s
+    syllables: ran in 0s
+    layout: ran in 0s
+    render: ran in 0s
+    cdg: ran in 0s
+  review       -       0s  Queen - Radio Ga Ga (2)  (probe: duration unknown)
+  3 songs: 1 ok, 1 review, 1 failed in 0s
+  
+  '''
+# ---
+# name: test_status_prints_the_stored_status_without_running
+  '''
+  ok        4:00       0s  Queen - Radio Ga Ga
+  failed       -       0s  b                        probe: cannot read b.mp3: not audio
+  review       -       0s  Queen - Radio Ga Ga (2)  (probe: duration unknown)
+  3 songs: 1 ok, 1 review, 1 failed in 0s
+  
+  '''
+# ---

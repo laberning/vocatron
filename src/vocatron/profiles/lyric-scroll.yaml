@@ -1,0 +1,37 @@
+# The lyrics as a column that glides up, as in a music app: the line being sung stands a little
+# above the middle, the sung lines above it and the next lines below, all dimmed, with large clean
+# text, a soft shadow and a dark moving background. The column stands still while a line is sung
+# and glides in the silence before the next one. For the video only (ADR-0033): it has no cdg
+# section.
+name: lyric-scroll
+description: Scrolling lyrics with the line being sung a little above the middle. Video only.
+mode: scroll
+line_rows: 2
+align: center
+safe_area: 0.9
+font:
+  family: bundled-sans-bold
+  size: 0.1
+  min_size: 0.07
+  case: as-written
+background: "#101014"
+colours:
+  singer1: {unsung: "#f4f4f4", sung: "#ff9f1c", edge: "#101014"}
+  singer2: {unsung: "#f4f4f4", sung: "#4fc3ff", edge: "#101014"}
+  singer3: {unsung: "#f4f4f4", sung: "#ff4d8d", edge: "#101014"}
+  singer4: {unsung: "#f4f4f4", sung: "#1fd65f", edge: "#101014"}
+  singer5: {unsung: "#f4f4f4", sung: "#a35cff", edge: "#101014"}
+  group: {unsung: "#f4f4f4", sung: "#ff6b6b", edge: "#101014"}
+edge: {width: 0.0}
+shadow: {offset: 0.03, colour: "#000000", alpha: 0.45}
+wipe: {granularity: smooth, offset: 0.0}
+lead_in: {min: 1.0, target: 3.0, max: 5.0}
+clear: {hold: 2.0, replace_after: 0.33}
+breaks: {clear_after: 5.0, notice_after: 15.0, notice: Instrumental, show_title: false, form: notice}
+countdown: {min_gap: 5.0, duration: 2.4, form: shrinking-bar, count: 4}
+title: {min: 6.0, min_short: 4.0, fields: [title, artist, singers]}
+intro: {solo: 8.0, group: 9.0}
+ending: {end_screen: true, start_after: 2.0, fade: 0.5}
+upcoming: {dim: 0.5}
+background_motion: {colours: ["#0b0b12", "#16122a", "#0a1a24"], speed: 0.01}
+scroll: {current: 0.42, before: 2, after: 3, glide: 0.4}

@@ -1,0 +1,11 @@
+{
+  "path": ["src", "tools", "tests"],
+  "format": ["python"],
+  "minTokens": 60,
+  "minLines": 6,
+  "threshold": 0,
+  "reporters": ["console", "json"],
+  "output": "reports/jscpd",
+  "gitignore": true,
+  "absolute": false
+}

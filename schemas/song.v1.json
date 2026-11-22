@@ -1,0 +1,96 @@
+{
+  "$defs": {
+    "Fingerprint": {
+      "additionalProperties": false,
+      "description": "What a stage file was made from.\n\nAttributes:\n    inputs: SHA-256 of the content of every input file, by input name.\n    settings: SHA-256 of the canonical JSON of the settings the stage declares.\n    stage_version: The version of the stage's own code.",
+      "properties": {
+        "inputs": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "title": "Inputs",
+          "type": "object"
+        },
+        "settings": {
+          "title": "Settings",
+          "type": "string"
+        },
+        "stage_version": {
+          "title": "Stage Version",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "inputs",
+        "settings",
+        "stage_version"
+      ],
+      "title": "Fingerprint",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "description": "The ``song.json`` stage file written by the probe stage.\n\nAttributes:\n    artist: The artist, or ``None``.\n    title: The title.\n    name: The safe name of the track and the work folder.\n    source_file: File name of the audio file.\n    duration: Length in seconds, or ``None`` when unknown.",
+  "properties": {
+    "artist": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Artist"
+    },
+    "duration": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Duration"
+    },
+    "fingerprint": {
+      "$ref": "#/$defs/Fingerprint"
+    },
+    "name": {
+      "title": "Name",
+      "type": "string"
+    },
+    "reasons": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Reasons",
+      "type": "array"
+    },
+    "schema_version": {
+      "const": 1,
+      "default": 1,
+      "title": "Schema Version",
+      "type": "integer"
+    },
+    "source_file": {
+      "title": "Source File",
+      "type": "string"
+    },
+    "title": {
+      "title": "Title",
+      "type": "string"
+    }
+  },
+  "required": [
+    "fingerprint",
+    "artist",
+    "title",
+    "name",
+    "source_file",
+    "duration"
+  ],
+  "title": "SongInfo",
+  "type": "object"
+}

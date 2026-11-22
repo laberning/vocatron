@@ -1,0 +1,449 @@
+{
+  "$defs": {
+    "AlignedLine": {
+      "additionalProperties": false,
+      "description": "One line of the lyrics with its time.\n\nAttributes:\n    start: Where the first word starts.\n    end: Where the last word ends.\n    first_word: The index of its first word in ``words``.\n    word_count: How many words it has.",
+      "properties": {
+        "end": {
+          "title": "End",
+          "type": "number"
+        },
+        "first_word": {
+          "title": "First Word",
+          "type": "integer"
+        },
+        "start": {
+          "title": "Start",
+          "type": "number"
+        },
+        "word_count": {
+          "title": "Word Count",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "start",
+        "end",
+        "first_word",
+        "word_count"
+      ],
+      "title": "AlignedLine",
+      "type": "object"
+    },
+    "AlignedWord": {
+      "additionalProperties": false,
+      "description": "One word of the lyrics with its time.\n\nAttributes:\n    line: The index of its line in ``lyrics.json``.\n    text: The word as written.\n    spoken: The letters the model heard (numbers spelled out); empty for a word with no sound.\n    start: Seconds from the start of the song.\n    end: Seconds from the start of the song.\n    confidence: 0 to 1: how sure the model was of the word's letters; 0 for no sound.\n    estimated: The time is interpolated from the neighbours, not measured.\n    letters: Start and end of every letter of a measured word.",
+      "properties": {
+        "confidence": {
+          "title": "Confidence",
+          "type": "number"
+        },
+        "end": {
+          "title": "End",
+          "type": "number"
+        },
+        "estimated": {
+          "title": "Estimated",
+          "type": "boolean"
+        },
+        "letters": {
+          "items": {
+            "maxItems": 2,
+            "minItems": 2,
+            "prefixItems": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "number"
+              }
+            ],
+            "type": "array"
+          },
+          "title": "Letters",
+          "type": "array"
+        },
+        "line": {
+          "title": "Line",
+          "type": "integer"
+        },
+        "spoken": {
+          "title": "Spoken",
+          "type": "string"
+        },
+        "start": {
+          "title": "Start",
+          "type": "number"
+        },
+        "text": {
+          "title": "Text",
+          "type": "string"
+        }
+      },
+      "required": [
+        "line",
+        "text",
+        "spoken",
+        "start",
+        "end",
+        "confidence",
+        "estimated"
+      ],
+      "title": "AlignedWord",
+      "type": "object"
+    },
+    "BackingUsed": {
+      "additionalProperties": false,
+      "description": "What became of the backing vocals in the model's ear (ADR-0014); numbers and phrases only.\n\nAttributes:\n    used: Whether any frame took the backing's output.\n    reason: ``used``, ``switched off``, ``lead voice not plausible`` or ``no backing frames``.\n    frames: How many frames took the backing's output.\n    words: How many measured words have most of their letters in those frames.",
+      "properties": {
+        "frames": {
+          "title": "Frames",
+          "type": "integer"
+        },
+        "reason": {
+          "title": "Reason",
+          "type": "string"
+        },
+        "used": {
+          "title": "Used",
+          "type": "boolean"
+        },
+        "words": {
+          "title": "Words",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "used",
+        "reason",
+        "frames",
+        "words"
+      ],
+      "title": "BackingUsed",
+      "type": "object"
+    },
+    "DroppedHint": {
+      "additionalProperties": false,
+      "description": "A line time of an ``.lrc`` that broke the order of the lines and was left out.\n\nAttributes:\n    line: The number of the line in the lyrics (from 1).\n    time: The time tag as written, ``mm:ss.xx``.",
+      "properties": {
+        "line": {
+          "title": "Line",
+          "type": "integer"
+        },
+        "time": {
+          "title": "Time",
+          "type": "string"
+        }
+      },
+      "required": [
+        "line",
+        "time"
+      ],
+      "title": "DroppedHint",
+      "type": "object"
+    },
+    "Fingerprint": {
+      "additionalProperties": false,
+      "description": "What a stage file was made from.\n\nAttributes:\n    inputs: SHA-256 of the content of every input file, by input name.\n    settings: SHA-256 of the canonical JSON of the settings the stage declares.\n    stage_version: The version of the stage's own code.",
+      "properties": {
+        "inputs": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "title": "Inputs",
+          "type": "object"
+        },
+        "settings": {
+          "title": "Settings",
+          "type": "string"
+        },
+        "stage_version": {
+          "title": "Stage Version",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "inputs",
+        "settings",
+        "stage_version"
+      ],
+      "title": "Fingerprint",
+      "type": "object"
+    },
+    "QualityReport": {
+      "additionalProperties": false,
+      "description": "How good an alignment looks (answer 5 of the story; ``vocatron.core.quality``).\n\nAttributes:\n    words: The number of words.\n    estimated: How many words are estimated.\n    estimated_share: ``estimated / words``.\n    longest_gap: The longest silence between two words of one line in seconds.\n    gap_line: The line with that gap, or ``None`` without a gap.\n    too_short: Measured words shorter than 60 ms.\n    too_long: Measured words longer than 3 s.",
+      "properties": {
+        "estimated": {
+          "title": "Estimated",
+          "type": "integer"
+        },
+        "estimated_share": {
+          "title": "Estimated Share",
+          "type": "number"
+        },
+        "gap_line": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Gap Line"
+        },
+        "longest_gap": {
+          "title": "Longest Gap",
+          "type": "number"
+        },
+        "too_long": {
+          "title": "Too Long",
+          "type": "integer"
+        },
+        "too_short": {
+          "title": "Too Short",
+          "type": "integer"
+        },
+        "words": {
+          "title": "Words",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "words",
+        "estimated",
+        "estimated_share",
+        "longest_gap",
+        "gap_line",
+        "too_short",
+        "too_long"
+      ],
+      "title": "QualityReport",
+      "type": "object"
+    },
+    "RailsUsed": {
+      "additionalProperties": false,
+      "description": "What became of the line times of an ``.lrc``.\n\nAttributes:\n    kind: ``none`` (not used), ``shifted`` (used after correcting an offset) or ``ignored``\n        (they do not fit the singing).\n    offset: Seconds the singing lies after the hints.\n    compared: How many lines were compared.\n    spread: The median absolute deviation from the offset.\n    near: The share of lines within half a second of the offset.\n    dropped: The hints left out because they broke the order of the lines.",
+      "properties": {
+        "compared": {
+          "default": 0,
+          "title": "Compared",
+          "type": "integer"
+        },
+        "dropped": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/DroppedHint"
+          },
+          "title": "Dropped",
+          "type": "array"
+        },
+        "kind": {
+          "enum": [
+            "none",
+            "shifted",
+            "ignored"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "near": {
+          "default": 0.0,
+          "title": "Near",
+          "type": "number"
+        },
+        "offset": {
+          "default": 0.0,
+          "title": "Offset",
+          "type": "number"
+        },
+        "spread": {
+          "default": 0.0,
+          "title": "Spread",
+          "type": "number"
+        }
+      },
+      "required": [
+        "kind"
+      ],
+      "title": "RailsUsed",
+      "type": "object"
+    },
+    "VoiceUsed": {
+      "additionalProperties": false,
+      "description": "What became of the voice activity (ADR-0012); numbers and fixed phrases only.\n\nAttributes:\n    used: Whether the voice placed estimated words and ended measured ones for this song.\n    reason: ``used``, or why not (``switched off``, ``no loudness``, ``too little confident\n        singing``, ``low contrast``, ``voiced share out of range``).\n    threshold_db: The loudness above which a frame counts as voiced (0 if not found).\n    voiced_share: The share of voiced frames (0 if not found).\n    placed: How many estimated words were placed on the voice.\n    re_estimated: How many measured words in silence were estimated instead.\n    kept: How many unsure words kept the model's position because the voice supports it\n        (ADR-0021).\n    held: How many measured words end later, where the voice stops (ADR-0013).\n    held_median: The median move of those ends in seconds (0 without moves).\n    unheard: How many lines the model did not hear were placed at their line time\n        (ADR-0027).",
+      "properties": {
+        "held": {
+          "title": "Held",
+          "type": "integer"
+        },
+        "held_median": {
+          "title": "Held Median",
+          "type": "number"
+        },
+        "kept": {
+          "title": "Kept",
+          "type": "integer"
+        },
+        "placed": {
+          "title": "Placed",
+          "type": "integer"
+        },
+        "re_estimated": {
+          "title": "Re Estimated",
+          "type": "integer"
+        },
+        "reason": {
+          "title": "Reason",
+          "type": "string"
+        },
+        "threshold_db": {
+          "title": "Threshold Db",
+          "type": "number"
+        },
+        "unheard": {
+          "title": "Unheard",
+          "type": "integer"
+        },
+        "used": {
+          "title": "Used",
+          "type": "boolean"
+        },
+        "voiced_share": {
+          "title": "Voiced Share",
+          "type": "number"
+        }
+      },
+      "required": [
+        "used",
+        "reason",
+        "threshold_db",
+        "voiced_share",
+        "placed",
+        "re_estimated",
+        "kept",
+        "held",
+        "held_median",
+        "unheard"
+      ],
+      "title": "VoiceUsed",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "description": "``alignment.json``: when every word is sung.\n\nAttributes:\n    language: The language module that was used.\n    model: The acoustic model's registry name and revision.\n    rails: What became of the line times of an ``.lrc``.\n    words: Every word in order.\n    lines: Every line in order.\n    quality: The quality report.\n    voice: What became of the voice activity.\n    backing: What became of the backing vocals in the model's ear.\n    frames: The number of frames aligned.\n    seconds_per_frame: The length of a frame.\n    device: The device the model ran on.\n    seconds: How long the model took.\n    peak_vram_gib: The most GPU memory used, or ``None`` on the CPU.\n    warnings: What the fan should know, for example the fallback to the CPU.",
+  "properties": {
+    "backing": {
+      "$ref": "#/$defs/BackingUsed"
+    },
+    "device": {
+      "enum": [
+        "cuda",
+        "cpu"
+      ],
+      "title": "Device",
+      "type": "string"
+    },
+    "fingerprint": {
+      "$ref": "#/$defs/Fingerprint"
+    },
+    "frames": {
+      "title": "Frames",
+      "type": "integer"
+    },
+    "language": {
+      "title": "Language",
+      "type": "string"
+    },
+    "lines": {
+      "items": {
+        "$ref": "#/$defs/AlignedLine"
+      },
+      "title": "Lines",
+      "type": "array"
+    },
+    "model": {
+      "title": "Model",
+      "type": "string"
+    },
+    "peak_vram_gib": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Peak Vram Gib"
+    },
+    "quality": {
+      "$ref": "#/$defs/QualityReport"
+    },
+    "rails": {
+      "$ref": "#/$defs/RailsUsed"
+    },
+    "reasons": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Reasons",
+      "type": "array"
+    },
+    "revision": {
+      "title": "Revision",
+      "type": "string"
+    },
+    "schema_version": {
+      "const": 7,
+      "default": 7,
+      "title": "Schema Version",
+      "type": "integer"
+    },
+    "seconds": {
+      "title": "Seconds",
+      "type": "number"
+    },
+    "seconds_per_frame": {
+      "title": "Seconds Per Frame",
+      "type": "number"
+    },
+    "voice": {
+      "$ref": "#/$defs/VoiceUsed"
+    },
+    "warnings": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Warnings",
+      "type": "array"
+    },
+    "words": {
+      "items": {
+        "$ref": "#/$defs/AlignedWord"
+      },
+      "title": "Words",
+      "type": "array"
+    }
+  },
+  "required": [
+    "fingerprint",
+    "language",
+    "model",
+    "revision",
+    "rails",
+    "words",
+    "lines",
+    "quality",
+    "voice",
+    "backing",
+    "frames",
+    "seconds_per_frame",
+    "device",
+    "seconds"
+  ],
+  "title": "AlignmentFile",
+  "type": "object"
+}

@@ -1,0 +1,287 @@
+[project]
+name = "vocatron"
+version = "0.1.0"
+description = "Turn a song and its lyrics into a karaoke track, locally, with as little manual work as possible."
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+requires-python = ">=3.14.2,<3.15"
+dependencies = [
+    "cyclopts>=5.3,<6",
+    "einops>=0.8,<0.9",
+    "lingua-language-detector>=2.2,<3",
+    "numpy>=2.3,<3",
+    "pillow>=12,<13",
+    "pydantic>=2.14,<3",
+    "rich>=15,<16",
+    "rotary-embedding-torch>=0.9,<0.10",
+    "ruamel-yaml>=0.19,<0.20",
+    "soundfile>=0.14,<0.15",
+    "pyphen>=0.18,<0.19",
+    "tinytag>=2.3,<3",
+    "transformers>=5.21,<6",
+    "urllib3>=2.8,<3",
+]
+
+# PyTorch comes with exactly one of two extras (ADR-0002): "cuda" for Linux with an NVIDIA GPU,
+# "cpu" for CI and machines without one. "make env" picks the extra; they cannot be combined.
+[project.optional-dependencies]
+# torchaudio only serves the stage 2 oracles, but it must come in the build that matches torch
+# (see tool.uv.sources), and uv allows that only for packages of the extra.
+cuda = ["torch>=2.14,<2.15", "torchaudio>=2.11,<2.12; sys_platform != 'darwin'"]
+cpu = ["torch>=2.14,<2.15", "torchaudio>=2.11,<2.12; sys_platform != 'darwin'"]
+
+[project.scripts]
+vocatron = "vocatron.cli.app:main"
+
+[build-system]
+requires = ["uv_build>=0.13.6,<0.14"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.2,<10",
+    "pytest-randomly>=5.0,<6",
+    "pytest-xdist>=3.8,<4",
+    "pytest-timeout>=2.4,<2.5",
+    "pytest-socket>=0.8,<0.9",
+    "pytest-cov>=7.1,<8",
+    "hypothesis>=6.170,<7",
+    "syrupy>=6.1,<7",
+    "coverage>=7.17,<8",
+    "diff-cover>=11,<12",
+    "ruff>=0.17,<0.18",
+    "pyrefly>=1.4,<2",
+    "ty>=0.0.93,<0.1",  # advisory while 0.0.x (ADR-0007)
+    "import-linter>=2.15,<3",
+    "deptry>=0.25,<0.26",
+    "vulture>=2.16,<3",
+    "jscpd>=5.4,<6",
+    "mutmut>=3.8,<4",
+    "zensical>=0.0.73,<0.1",
+    "mkdocstrings-python>=2.0,<3",
+]
+
+[tool.uv]
+# The one uv pin: `make env` installs it, setup-uv in CI reads it.
+required-version = "==0.13.7"
+conflicts = [[{ extra = "cuda" }, { extra = "cpu" }]]
+
+[tool.uv.sources]
+torch = [
+    { index = "pytorch-cu130", extra = "cuda" },
+    { index = "pytorch-cpu", extra = "cpu" },
+]
+# torchaudio must match the build of PyTorch: transformers imports it whenever it is installed,
+# so a cu130 torchaudio next to the cpu torch breaks every import of the acoustic model.
+torchaudio = [
+    { index = "pytorch-cu130", extra = "cuda" },
+    { index = "pytorch-cpu", extra = "cpu" },
+]
+
+[[tool.uv.index]]
+name = "pytorch-cu130"
+url = "https://download.pytorch.org/whl/cu130"
+explicit = true
+
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true
+
+# ---------------------------------------------------------------- Ruff (ADR-0003, ADR-0007)
+[tool.ruff]
+target-version = "py314"
+line-length = 100
+src = ["src", "tests", "tools"]
+extend-exclude = [".cache", ".tools", "mutants", "site"]  # generated or downloaded, never ours
+
+[tool.ruff.lint]
+select = [
+    "E", "F", "W", "I", "UP", "B", "SIM", "PERF", "C901",
+    "PLC", "PLE", "PLR", "PLW",  # Pylint subset: convention, error, refactor (incl. PLR09xx), warning
+    "D",                         # pydocstyle, Google convention below
+    "PGH003", "PGH004",          # no blanket type: ignore / noqa
+    "RUF100",                    # no unused noqa
+]
+
+[tool.ruff.lint.mccabe]
+max-complexity = 10
+
+[tool.ruff.lint.pylint]
+max-args = 6
+max-branches = 12
+max-returns = 6
+max-statements = 50
+max-public-methods = 20
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.ruff.lint.per-file-ignores]
+# Tests are documented by their names; magic values are the point of assertions.
+"tests/**" = ["D", "PLR2004"]
+
+[tool.ruff.format]
+docstring-code-format = true
+
+# ---------------------------------------------------------------- Pyrefly (ADR-0007)
+[tool.pyrefly]
+preset = "strict"
+project-includes = ["src", "tests", "tools"]
+search-path = ["src", "tools", "tests"]
+python-version = "3.14"
+
+[tool.pyrefly.errors]
+# ADR-0007: errors for implicit and explicit Any, unannotated returns and unused ignores.
+explicit-any = true
+implicit-any = true
+unannotated-return = true
+unannotated-parameter = true
+unused-ignore = true
+unused-type-ignore = true
+
+# ADR-0007: relaxed overrides only for tests (mock and fixture signatures may use Any).
+[[tool.pyrefly.sub-config]]
+matches = "tests/**"
+[tool.pyrefly.sub-config.errors]
+explicit-any = false
+
+# ty is advisory (ADR-0007)
+[tool.ty.environment]
+extra-paths = ["tools", "tests"]
+
+# The copied model code (docs/dev/separation.md) keeps the shape of its source: PyTorch's
+# ``forward`` overrides and keyword dictionaries that ty cannot follow yet.
+[[tool.ty.overrides]]
+include = ["src/vocatron/engines/separation/roformer/**"]
+rules = { invalid-mutable-override = "ignore", invalid-argument-type = "ignore", call-non-callable = "ignore" }
+
+# ---------------------------------------------------------------- import-linter (ADR-0007)
+[tool.importlinter]
+root_package = "vocatron"
+include_external_packages = true
+
+[[tool.importlinter.contracts]]
+name = "Layers: cli > stages > engines > lab > core"
+type = "layers"
+layers = ["vocatron.cli", "vocatron.stages", "vocatron.engines", "vocatron.lab", "vocatron.core"]
+
+[[tool.importlinter.contracts]]
+name = "core is pure"
+type = "forbidden"
+source_modules = ["vocatron.core"]
+forbidden_modules = [
+    "vocatron.engines", "vocatron.stages", "vocatron.cli",
+    "torch", "transformers", "subprocess", "urllib3", "PIL",
+]
+
+[[tool.importlinter.contracts]]
+name = "lab is as pure as core (research code, ADR-0042)"
+type = "forbidden"
+source_modules = ["vocatron.lab"]
+forbidden_modules = [
+    "vocatron.engines", "vocatron.stages", "vocatron.cli",
+    "torch", "transformers", "subprocess", "urllib3", "PIL",
+]
+
+[[tool.importlinter.contracts]]
+name = "stages and cli do not import lab (no command runs it, ADR-0042)"
+type = "forbidden"
+source_modules = ["vocatron.stages", "vocatron.cli"]
+forbidden_modules = ["vocatron.lab"]
+
+[[tool.importlinter.contracts]]
+name = "language modules do not know the model registry (it knows them, ADR-0016)"
+type = "forbidden"
+source_modules = ["vocatron.core.languages"]
+forbidden_modules = ["vocatron.core.models"]
+
+[[tool.importlinter.contracts]]
+name = "stages use engine protocols only"
+type = "forbidden"
+source_modules = ["vocatron.stages"]
+forbidden_modules = ["vocatron.engines"]
+ignore_imports = ["vocatron.stages.** -> vocatron.engines.protocols"]
+# The allowance matches no import until the first stage imports a protocol.
+unmatched_ignore_imports_alerting = "none"
+
+[[tool.importlinter.contracts]]
+name = "the parents of the GPU workers import no PyTorch (only the worker processes do, ADR-0007)"
+type = "forbidden"
+source_modules = [
+    "vocatron.engines.child",
+    "vocatron.engines.gpu_process",
+    "vocatron.engines.separation.process",
+    "vocatron.engines.alignment.process",
+]
+forbidden_modules = [
+    "torch",
+    "transformers",
+    "vocatron.engines.gpu_worker",
+    "vocatron.engines.separation.worker",
+    "vocatron.engines.separation.inference",
+    "vocatron.engines.alignment.worker",
+    "vocatron.engines.alignment.inference",
+]
+
+# ---------------------------------------------------------------- deptry, vulture
+[tool.deptry]
+known_first_party = ["vocatron", "picture_song", "profile_pictures"]  # tools/picture_song.py and tools/profile_pictures.py, imported by other tools and the vulture whitelist
+extend_exclude = ["\\.cache", "\\.tools", "mutants", "site"]
+# torchaudio sits in the torch extras only to get the matching build; the stage 2 oracles use it.
+# tools/mutate.py (make mutation) imports mutmut, a dev dependency, to write the mutants; it is a
+# development tool and not part of the shipped package. It cannot call mutmut as a command
+# instead: mutmut has no command that only writes the mutants, and 'mutmut run' always runs all
+# the tests first, which is what the tool avoids.
+per_rule_ignores = { DEP002 = ["torchaudio"], DEP004 = ["mutmut"] }
+
+[tool.vulture]
+paths = ["src", "tools", "tools/vulture_whitelist.py"]
+min_confidence = 60
+# PyTorch calls ``forward`` when a module is called.
+ignore_names = ["forward"]
+# Cyclopts calls the functions it registers through these decorators; Pydantic calls validators.
+ignore_decorators = [
+    "@app.default",
+    "@app.command",
+    "@models_app.default",
+    "@models_app.command",
+    "@lyrics_app.default",
+    "@lyrics_app.command",
+    "@profiles_app.default",
+    "@profiles_app.command",
+]
+
+# ---------------------------------------------------------------- pytest, coverage (ADR-0004)
+[tool.pytest]
+minversion = "9.0"
+strict = true
+testpaths = ["tests/fast"]
+pythonpath = ["tools", "tests"]
+addopts = [
+    "-ra",
+    "--timeout=10",
+    "--disable-socket",
+    "--import-mode=importlib",
+]
+markers = [
+    "slow: stage 2, real engines and the local corpus",
+    "gpu: a stage 2 test that needs an NVIDIA GPU (make slow-cpu leaves it out)",
+    "bench: stage 3, benchmark against the local corpus",
+]
+
+[tool.coverage.run]
+branch = true
+source = ["src/vocatron"]
+
+[tool.coverage.report]
+show_missing = true
+exclude_also = ["if TYPE_CHECKING:", "raise NotImplementedError"]
+
+# ---------------------------------------------------------------- mutmut
+[tool.mutmut]
+source_paths = ["src/vocatron/core/", "src/vocatron/lab/"]
+pytest_add_cli_args_test_selection = ["tests/fast/"]
+also_copy = ["THIRD_PARTY.md", "README.md", "CONTRIBUTING.md", "SECURITY.md", "LICENSE", "CHANGELOG.md", "src/vocatron/__init__.py", "src/vocatron/__main__.py", "src/vocatron/cli/", "src/vocatron/engines/", "src/vocatron/profiles/", "src/vocatron/fonts/", "src/vocatron/stages/", "tools/", "schemas/", "docs/", "mkdocs.yml", "Makefile", ".github/"]  # tests/ is copied by mutmut itself; mutmut copies only the .py files of source_paths, so the package data (profiles, font) is listed
+

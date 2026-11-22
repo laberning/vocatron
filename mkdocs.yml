@@ -1,0 +1,114 @@
+site_name: Vocatron
+site_description: Turn a song and its lyrics into a karaoke track, locally.
+docs_dir: docs
+site_dir: site
+strict: true
+
+extra_css:
+  - assets/mermaid-dark.css
+
+nav:
+  - Home: index.md
+  - User:
+      - Getting started:
+          - Installation: user/install.md
+          - Everyday use: user/everyday.md
+      - Guides:
+          - Lyrics: user/lyrics.md
+          - Languages: user/languages.md
+          - Looks: user/looks.md
+          - The karaoke video: user/video.md
+          - CD+G: user/cdg.md
+      - How it works:
+          - Models: user/models.md
+          - Separating the vocals: user/separation.md
+          - Synchronising the lyrics: user/sync.md
+      - Reference:
+          - Commands: user/commands.md
+          - Configuration: user/config.md
+          - Files and folders: user/folders.md
+          - FAQ and known limits: user/faq.md
+  - Developer:
+      - Architecture: dev/architecture.md
+      - Adding a stage: dev/adding-a-stage.md
+      - Copied model code: dev/separation.md
+      - Language modules: dev/languages.md
+      - Alignment and benchmark: dev/alignment.md
+      - Layout and video: dev/video.md
+      - CD+G writer, decoder and analysis: dev/cdg.md
+      - Test harness: dev/harness.md
+      - The local corpus: dev/corpus.md
+      - Contributing: contributing.md
+      - Releasing: dev/releasing.md
+      - API reference: dev/api.md
+  - ADRs:
+      - adr/README.md
+      - adr/0001-repository-and-documentation-structure.md
+      - adr/0002-tech-stack.md
+      - adr/0003-code-documentation.md
+      - adr/0004-test-harness-and-definition-of-done.md
+      - adr/0005-language-support.md
+      - adr/0006-pipeline-stages-and-files.md
+      - adr/0007-architecture-and-code-quality.md
+      - adr/0008-lyrics-format.md
+      - adr/0009-style-profiles-and-output-presets.md
+      - adr/0010-model-licences.md
+      - adr/0011-default-separation-model.md
+      - adr/0012-voice-activity-from-vocal-loudness.md
+      - adr/0013-word-ends-at-the-voice-end.md
+      - adr/0014-the-model-hears-the-backing-where-the-lead-is-silent.md
+      - adr/0015-the-cpu-part-of-the-slow-tests-in-every-change.md
+      - adr/0016-english-alignment-model.md
+      - adr/0017-short-words-are-judged-on-their-held-length.md
+      - adr/0018-singer-marks-in-braces.md
+      - adr/0019-own-profiles-by-name.md
+      - adr/0020-a-silent-intro-before-the-song.md
+      - adr/0021-uncertain-words-keep-the-model-position.md
+      - adr/0022-countdown-in-beats.md
+      - adr/0023-cdg-output.md
+      - adr/0024-mp3-for-cdg.md
+      - adr/0025-cdgraphics-as-a-test-decoder.md
+
+theme:
+  name: material
+  palette:
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to system preference
+  features:
+    - content.code.copy
+    - navigation.sections
+    - navigation.top
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - toc:
+      permalink: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          paths: [src]
+          options:
+            docstring_style: google
+            show_source: false
+            members_order: source

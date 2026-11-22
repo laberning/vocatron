@@ -1,0 +1,84 @@
+# serializer version: 1
+# name: test_status_json_is_golden
+  '''
+  {
+    "schema_version": 2,
+    "name": "Artist - Title",
+    "source": "a.mp3",
+    "state": "ok",
+    "current": null,
+    "reasons": [],
+    "error": null,
+    "stages": [
+      {
+        "stage": "probe",
+        "action": "ran",
+        "reasons": []
+      },
+      {
+        "stage": "lyrics",
+        "action": "ran",
+        "reasons": []
+      },
+      {
+        "stage": "separation",
+        "action": "ran",
+        "reasons": []
+      },
+      {
+        "stage": "tempo",
+        "action": "ran",
+        "reasons": []
+      },
+      {
+        "stage": "alignment",
+        "action": "ran",
+        "reasons": []
+      },
+      {
+        "stage": "syllables",
+        "action": "ran",
+        "reasons": []
+      },
+      {
+        "stage": "layout",
+        "action": "ran",
+        "reasons": []
+      },
+      {
+        "stage": "render",
+        "action": "ran",
+        "reasons": []
+      },
+      {
+        "stage": "cdg",
+        "action": "ran",
+        "reasons": []
+      }
+    ],
+    "updated": "2026-01-02T03:05:05+00:00"
+  }
+  
+  '''
+# ---
+# name: test_status_json_is_golden.1
+  '''
+  {
+    "fingerprint": {
+      "inputs": {
+        "audio": "d5e42b11634fa8f63943a92a3a847b1c165c8b0b2b9dc3a1ad284ac1003a034c"
+      },
+      "settings": "23bd8c491b6e95a7ccc021fc2ac1da8b19277bdaf6d26fcc0784ff53a1f39bfd",
+      "stage_version": 1
+    },
+    "reasons": [],
+    "schema_version": 1,
+    "artist": "Artist",
+    "title": "Title",
+    "name": "Artist - Title",
+    "source_file": "a.mp3",
+    "duration": 180.0
+  }
+  
+  '''
+# ---

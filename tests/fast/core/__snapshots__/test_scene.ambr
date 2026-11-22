@@ -1,0 +1,696 @@
+# serializer version: 1
+# name: test_the_layout_of_a_duet_is_golden
+  list([
+    'title       0.000   6.000  198.51  224.31  562.98 271.54  Hänschen klein / Anna / Ben / Beide',
+    'countdown   6.000   8.400  207.84  390.59  139.97  23.33  shrinking-bar x4',
+    "line        6.000  11.200  198.51  421.69  562.98  96.42  'Hänschen klein' slot 0 singers 1",
+    "line        6.000  12.770  256.83  525.89  446.34  96.42  'ging allein' slot 1 singers 2",
+    "line       11.200  14.100  237.39  421.69  485.22  96.42  'in die weite' slot 0 singers all",
+    "line       12.770  15.760  256.83  525.89  446.34  96.42  'Welt hinein' slot 1 singers all",
+    "line       14.100  20.570  217.95  421.69  524.10  96.42  'Stock und Hut' slot 0 singers 1",
+    "line       15.760  20.570  217.95  525.89  524.10  96.42  'steht ihm gut' slot 1 singers 2",
+    'end        20.570  45.000  198.51  311.79  562.98  96.42  Hänschen klein',
+  ])
+# ---
+# name: test_the_layout_of_a_duet_with_turns_is_golden
+  list([
+    'title       0.000   6.000  198.51  224.31  562.98 271.54  Hänschen klein / Anna / Ben / Beide',
+    'countdown   6.000   8.400  207.84  390.59  139.97  23.33  shrinking-bar x4',
+    "line        6.000  11.200  198.51  421.69  562.98  96.42  'Hänschen klein' slot 0 singers 1",
+    "line        6.000  12.770  256.83  525.89  446.34  96.42  'ging allein' slot 1 singers 2",
+    "line       11.200  14.100  237.39  421.69  485.22  96.42  'in die weite' slot 0 singers all",
+    "line       12.770  15.760  256.83  525.89  446.34  96.42  'Welt hinein' slot 1 singers all turns [(1, '1')]",
+    "line       14.100  20.570  217.95  421.69  524.10  96.42  'Stock und Hut' slot 0 singers 1 turns [(2, '2')]",
+    "line       15.760  20.570  217.95  525.89  524.10  96.42  'steht ihm gut' slot 1 singers 2",
+    'end        20.570  45.000  198.51  311.79  562.98  96.42  Hänschen klein',
+  ])
+# ---
+# name: test_the_layout_of_a_folk_song_is_golden
+  list([
+    'title       0.000   6.000  120.75  277.77  718.50 164.58  Alle meine Entchen / Volkslied',
+    'countdown   6.000   8.400  130.08  390.59  139.97  23.33  shrinking-bar x4',
+    "line        6.000  15.160  120.75  421.69  718.50  96.42  'Alle meine Entchen' slot 0 singers 1",
+    "line        6.260  15.160   62.43  525.89  835.14  96.42  'schwimmen auf dem See' slot 1 singers 1",
+    "line       15.160  21.880   62.43  421.69  835.14  96.42  'schwimmen auf dem See' slot 0 singers 1",
+    'countdown  16.240  18.640   71.76  390.59  139.97  23.33  shrinking-bar x4',
+    "line       16.820  25.790  256.83  525.89  446.34  96.42  'Köpfchen in' slot 1 singers 1",
+    "line       21.880  25.790  276.27  421.69  407.46  96.42  'das Wasser' slot 0 singers 1",
+    'break      25.790  40.870  261.65  316.61  436.70  86.78  Instrumental',
+    "line       40.870  49.840  256.83  421.69  446.34  96.42  'Schwänzchen' slot 0 singers 1",
+    "line       41.820  49.840  276.27  525.89  407.46  96.42  'in die Höh' slot 1 singers 1",
+    'countdown  42.870  45.270  266.16  390.59  139.97  23.33  shrinking-bar x4',
+    'end        49.840  60.000  120.75  277.77  718.50 164.58  Alle meine Entchen / Volkslied',
+  ])
+# ---
+# name: test_the_scene_of_a_folk_song_is_golden_as_json
+  '''
+  {
+   "width": 960,
+   "height": 720,
+   "safe": {
+    "x": 48.0,
+    "y": 36.0,
+    "w": 864.0,
+    "h": 648.0
+   },
+   "background": "#000000",
+   "background_motion": null,
+   "duration": 60.0,
+   "lead": 0.0,
+   "bpm": 100.0,
+   "slots": [
+    {
+     "x": 48.0,
+     "y": 421.69,
+     "w": 864.0,
+     "h": 96.422
+    },
+    {
+     "x": 48.0,
+     "y": 525.888,
+     "w": 864.0,
+     "h": 96.422
+    }
+   ],
+   "scroll": null,
+   "preview_row": null,
+   "look": {
+    "font": "Noto Sans",
+    "wipe": "smooth",
+    "wipe_offset": 0.0,
+    "shadow_colour": "#000000",
+    "shadow_alpha": 0.6,
+    "glow": 0.0,
+    "glow_colour": null,
+    "pop_scale": 1.0,
+    "pop_time": 0.25,
+    "upcoming_dim": 0.0,
+    "transition": "none",
+    "sung_dim": 0.0
+   },
+   "elements": [
+    {
+     "start": 0.0,
+     "end": 6.0,
+     "box": {
+      "x": 120.749,
+      "y": 277.769,
+      "w": 718.502,
+      "h": 164.579
+     },
+     "kind": "title",
+     "lines": [
+      {
+       "text": "Alle meine Entchen",
+       "size": 77.76,
+       "edge": 6.221,
+       "shadow": 3.11,
+       "colour": "#ffffff",
+       "edge_colour": "#000000",
+       "box": {
+        "x": 120.749,
+        "y": 277.769,
+        "w": 718.502,
+        "h": 96.422
+       },
+       "text_x": 130.08,
+       "text_y": 287.1
+      },
+      {
+       "text": "Volkslied",
+       "size": 54.432,
+       "edge": 4.355,
+       "shadow": 2.177,
+       "colour": "#ffffff",
+       "edge_colour": "#000000",
+       "box": {
+        "x": 350.996,
+        "y": 374.852,
+        "w": 258.008,
+        "h": 67.496
+       },
+       "text_x": 357.528,
+       "text_y": 381.384
+      }
+     ],
+     "fade_out": 0.0,
+     "mark": null,
+     "symbol": null
+    },
+    {
+     "start": 6.0,
+     "end": 8.4,
+     "box": {
+      "x": 130.08,
+      "y": 390.586,
+      "w": 139.968,
+      "h": 23.328
+     },
+     "kind": "countdown",
+     "form": "shrinking-bar",
+     "count": 4,
+     "colour": "#ffcc00",
+     "beat": 0.6
+    },
+    {
+     "start": 6.0,
+     "end": 15.16,
+     "box": {
+      "x": 120.749,
+      "y": 421.69,
+      "w": 718.502,
+      "h": 96.422
+     },
+     "path": [],
+     "kind": "line",
+     "text": "Alle meine Entchen",
+     "singers": "1",
+     "voice": 1,
+     "slot": 0,
+     "page": null,
+     "row": 0,
+     "part": 0,
+     "enter": 0.0,
+     "exit": 0.0,
+     "size": 77.76,
+     "edge": 6.221,
+     "shadow": 3.11,
+     "colours": {
+      "unsung": "#ffffff",
+      "sung": "#3399ff",
+      "edge": "#000000"
+     },
+     "turns": [],
+     "text_x": 130.08,
+     "text_y": 431.021,
+     "spans": [
+      {
+       "text": "Al",
+       "start": 9.0,
+       "end": 9.19,
+       "x0": 0.0,
+       "x1": 77.76
+      },
+      {
+       "text": "le ",
+       "start": 9.19,
+       "end": 9.38,
+       "x0": 77.76,
+       "x1": 194.4
+      },
+      {
+       "text": "mei",
+       "start": 9.46,
+       "end": 9.73,
+       "x0": 194.4,
+       "x1": 311.04
+      },
+      {
+       "text": "ne ",
+       "start": 9.73,
+       "end": 9.91,
+       "x0": 311.04,
+       "x1": 427.68
+      },
+      {
+       "text": "Ent",
+       "start": 9.99,
+       "end": 10.243,
+       "x0": 427.68,
+       "x1": 544.32
+      },
+      {
+       "text": "chen",
+       "start": 10.243,
+       "end": 10.58,
+       "x0": 544.32,
+       "x1": 699.84
+      }
+     ]
+    },
+    {
+     "start": 6.26,
+     "end": 15.16,
+     "box": {
+      "x": 62.429,
+      "y": 525.888,
+      "w": 835.142,
+      "h": 96.422
+     },
+     "path": [],
+     "kind": "line",
+     "text": "schwimmen auf dem See",
+     "singers": "1",
+     "voice": 1,
+     "slot": 1,
+     "page": null,
+     "row": 0,
+     "part": 0,
+     "enter": 0.0,
+     "exit": 0.0,
+     "size": 77.76,
+     "edge": 6.221,
+     "shadow": 3.11,
+     "colours": {
+      "unsung": "#ffffff",
+      "sung": "#3399ff",
+      "edge": "#000000"
+     },
+     "turns": [],
+     "text_x": 71.76,
+     "text_y": 535.219,
+     "spans": [
+      {
+       "text": "schwim",
+       "start": 11.26,
+       "end": 11.747,
+       "x0": 0.0,
+       "x1": 233.28
+      },
+      {
+       "text": "men ",
+       "start": 11.747,
+       "end": 11.99,
+       "x0": 233.28,
+       "x1": 388.8
+      },
+      {
+       "text": "auf ",
+       "start": 12.07,
+       "end": 12.38,
+       "x0": 388.8,
+       "x1": 544.32
+      },
+      {
+       "text": "dem ",
+       "start": 12.46,
+       "end": 12.77,
+       "x0": 544.32,
+       "x1": 699.84
+      },
+      {
+       "text": "See",
+       "start": 12.85,
+       "end": 13.16,
+       "x0": 699.84,
+       "x1": 816.48
+      }
+     ]
+    },
+    {
+     "start": 15.16,
+     "end": 21.88,
+     "box": {
+      "x": 62.429,
+      "y": 421.69,
+      "w": 835.142,
+      "h": 96.422
+     },
+     "path": [],
+     "kind": "line",
+     "text": "schwimmen auf dem See",
+     "singers": "1",
+     "voice": 1,
+     "slot": 0,
+     "page": null,
+     "row": 0,
+     "part": 0,
+     "enter": 0.0,
+     "exit": 0.0,
+     "size": 77.76,
+     "edge": 6.221,
+     "shadow": 3.11,
+     "colours": {
+      "unsung": "#ffffff",
+      "sung": "#3399ff",
+      "edge": "#000000"
+     },
+     "turns": [],
+     "text_x": 71.76,
+     "text_y": 431.021,
+     "spans": [
+      {
+       "text": "schwim",
+       "start": 19.24,
+       "end": 19.727,
+       "x0": 0.0,
+       "x1": 233.28
+      },
+      {
+       "text": "men ",
+       "start": 19.727,
+       "end": 19.97,
+       "x0": 233.28,
+       "x1": 388.8
+      },
+      {
+       "text": "auf ",
+       "start": 20.05,
+       "end": 20.36,
+       "x0": 388.8,
+       "x1": 544.32
+      },
+      {
+       "text": "dem ",
+       "start": 20.44,
+       "end": 20.75,
+       "x0": 544.32,
+       "x1": 699.84
+      },
+      {
+       "text": "See",
+       "start": 20.83,
+       "end": 21.14,
+       "x0": 699.84,
+       "x1": 816.48
+      }
+     ]
+    },
+    {
+     "start": 16.24,
+     "end": 18.64,
+     "box": {
+      "x": 71.76,
+      "y": 390.586,
+      "w": 139.968,
+      "h": 23.328
+     },
+     "kind": "countdown",
+     "form": "shrinking-bar",
+     "count": 4,
+     "colour": "#ffcc00",
+     "beat": 0.6
+    },
+    {
+     "start": 16.82,
+     "end": 25.79,
+     "box": {
+      "x": 256.829,
+      "y": 525.888,
+      "w": 446.342,
+      "h": 96.422
+     },
+     "path": [],
+     "kind": "line",
+     "text": "Köpfchen in",
+     "singers": "1",
+     "voice": 1,
+     "slot": 1,
+     "page": null,
+     "row": 0,
+     "part": 0,
+     "enter": 0.0,
+     "exit": 0.0,
+     "size": 77.76,
+     "edge": 6.221,
+     "shadow": 3.11,
+     "colours": {
+      "unsung": "#ffffff",
+      "sung": "#3399ff",
+      "edge": "#000000"
+     },
+     "turns": [],
+     "text_x": 266.16,
+     "text_y": 535.219,
+     "spans": [
+      {
+       "text": "Köpf",
+       "start": 21.82,
+       "end": 22.15,
+       "x0": 0.0,
+       "x1": 155.52
+      },
+      {
+       "text": "chen ",
+       "start": 22.15,
+       "end": 22.48,
+       "x0": 155.52,
+       "x1": 349.92
+      },
+      {
+       "text": "in",
+       "start": 22.56,
+       "end": 22.8,
+       "x0": 349.92,
+       "x1": 427.68
+      }
+     ]
+    },
+    {
+     "start": 21.88,
+     "end": 25.79,
+     "box": {
+      "x": 276.269,
+      "y": 421.69,
+      "w": 407.462,
+      "h": 96.422
+     },
+     "path": [],
+     "kind": "line",
+     "text": "das Wasser",
+     "singers": "1",
+     "voice": 1,
+     "slot": 0,
+     "page": null,
+     "row": 0,
+     "part": 1,
+     "enter": 0.0,
+     "exit": 0.0,
+     "size": 77.76,
+     "edge": 6.221,
+     "shadow": 3.11,
+     "colours": {
+      "unsung": "#ffffff",
+      "sung": "#3399ff",
+      "edge": "#000000"
+     },
+     "turns": [],
+     "text_x": 285.6,
+     "text_y": 431.021,
+     "spans": [
+      {
+       "text": "das ",
+       "start": 22.88,
+       "end": 23.19,
+       "x0": 0.0,
+       "x1": 155.52
+      },
+      {
+       "text": "Was",
+       "start": 23.27,
+       "end": 23.53,
+       "x0": 155.52,
+       "x1": 272.16
+      },
+      {
+       "text": "ser",
+       "start": 23.53,
+       "end": 23.79,
+       "x0": 272.16,
+       "x1": 388.8
+      }
+     ]
+    },
+    {
+     "start": 25.79,
+     "end": 40.87,
+     "box": {
+      "x": 261.65,
+      "y": 316.61,
+      "w": 436.7,
+      "h": 86.78
+     },
+     "kind": "break",
+     "lines": [
+      {
+       "text": "Instrumental",
+       "size": 69.984,
+       "edge": 5.599,
+       "shadow": 2.799,
+       "colour": "#ffffff",
+       "edge_colour": "#000000",
+       "box": {
+        "x": 261.65,
+        "y": 316.61,
+        "w": 436.7,
+        "h": 86.78
+       },
+       "text_x": 270.048,
+       "text_y": 325.008
+      }
+     ],
+     "fade_out": 0.0,
+     "mark": null,
+     "symbol": null
+    },
+    {
+     "start": 40.87,
+     "end": 49.84,
+     "box": {
+      "x": 256.829,
+      "y": 421.69,
+      "w": 446.342,
+      "h": 96.422
+     },
+     "path": [],
+     "kind": "line",
+     "text": "Schwänzchen",
+     "singers": "1",
+     "voice": 1,
+     "slot": 0,
+     "page": null,
+     "row": 0,
+     "part": 0,
+     "enter": 0.0,
+     "exit": 0.0,
+     "size": 77.76,
+     "edge": 6.221,
+     "shadow": 3.11,
+     "colours": {
+      "unsung": "#ffffff",
+      "sung": "#3399ff",
+      "edge": "#000000"
+     },
+     "turns": [],
+     "text_x": 266.16,
+     "text_y": 431.021,
+     "spans": [
+      {
+       "text": "Schwänz",
+       "start": 45.87,
+       "end": 46.424,
+       "x0": 0.0,
+       "x1": 272.16
+      },
+      {
+       "text": "chen",
+       "start": 46.424,
+       "end": 46.74,
+       "x0": 272.16,
+       "x1": 427.68
+      }
+     ]
+    },
+    {
+     "start": 41.82,
+     "end": 49.84,
+     "box": {
+      "x": 276.269,
+      "y": 525.888,
+      "w": 407.462,
+      "h": 96.422
+     },
+     "path": [],
+     "kind": "line",
+     "text": "in die Höh",
+     "singers": "1",
+     "voice": 1,
+     "slot": 1,
+     "page": null,
+     "row": 0,
+     "part": 1,
+     "enter": 0.0,
+     "exit": 0.0,
+     "size": 77.76,
+     "edge": 6.221,
+     "shadow": 3.11,
+     "colours": {
+      "unsung": "#ffffff",
+      "sung": "#3399ff",
+      "edge": "#000000"
+     },
+     "turns": [],
+     "text_x": 285.6,
+     "text_y": 535.219,
+     "spans": [
+      {
+       "text": "in ",
+       "start": 46.82,
+       "end": 47.06,
+       "x0": 0.0,
+       "x1": 116.64
+      },
+      {
+       "text": "die ",
+       "start": 47.14,
+       "end": 47.45,
+       "x0": 116.64,
+       "x1": 272.16
+      },
+      {
+       "text": "Höh",
+       "start": 47.53,
+       "end": 47.84,
+       "x0": 272.16,
+       "x1": 388.8
+      }
+     ]
+    },
+    {
+     "start": 42.87,
+     "end": 45.27,
+     "box": {
+      "x": 266.16,
+      "y": 390.586,
+      "w": 139.968,
+      "h": 23.328
+     },
+     "kind": "countdown",
+     "form": "shrinking-bar",
+     "count": 4,
+     "colour": "#ffcc00",
+     "beat": 0.6
+    },
+    {
+     "start": 49.84,
+     "end": 60.0,
+     "box": {
+      "x": 120.749,
+      "y": 277.769,
+      "w": 718.502,
+      "h": 164.579
+     },
+     "kind": "end",
+     "lines": [
+      {
+       "text": "Alle meine Entchen",
+       "size": 77.76,
+       "edge": 6.221,
+       "shadow": 3.11,
+       "colour": "#ffffff",
+       "edge_colour": "#000000",
+       "box": {
+        "x": 120.749,
+        "y": 277.769,
+        "w": 718.502,
+        "h": 96.422
+       },
+       "text_x": 130.08,
+       "text_y": 287.1
+      },
+      {
+       "text": "Volkslied",
+       "size": 54.432,
+       "edge": 4.355,
+       "shadow": 2.177,
+       "colour": "#ffffff",
+       "edge_colour": "#000000",
+       "box": {
+        "x": 350.996,
+        "y": 374.852,
+        "w": 258.008,
+        "h": 67.496
+       },
+       "text_x": 357.528,
+       "text_y": 381.384
+      }
+     ],
+     "fade_out": 0.5,
+     "mark": null,
+     "symbol": null
+    }
+   ],
+   "shortfalls": []
+  }
+  '''
+# ---

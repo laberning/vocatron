@@ -1,0 +1,50 @@
+# serializer version: 1
+# name: test_a_frame_is_one_image_at_a_time
+  'ffmpeg -nostdin -y -v info -f lavfi -i color=c=0x000000:s=960x720:r=30 -vf subtitles=filename=/work/Artist - Title/lyrics.ass:fontsdir=/pkg/vocatron/fonts -ss 12.500 -frames:v 1 /t/f.png'
+# ---
+# name: test_a_gif_is_a_thinned_cut_of_the_video_scaled_with_a_palette_of_its_own
+  'ffmpeg -nostdin -y -v info -f lavfi -i color=c=0x000000:s=960x720:r=30 -filter_complex fps=12,split=3[s0][s1][s2];[s0]trim=start=0.000:duration=2.000,subtitles=filename=/work/Artist - Title/lyrics.ass:fontsdir=/pkg/vocatron/fonts,setpts=PTS-STARTPTS[c0];[s1]trim=start=91.000:duration=4.000,subtitles=filename=/work/Artist - Title/lyrics.ass:fontsdir=/pkg/vocatron/fonts,setpts=PTS-STARTPTS[c1];[s2]trim=start=120.000:duration=3.000,subtitles=filename=/work/Artist - Title/lyrics.ass:fontsdir=/pkg/vocatron/fonts,setpts=PTS-STARTPTS[c2];[c0][c1][c2]concat=n=3:v=1:a=0,scale=640:480:flags=lanczos,split[a][b];[a]palettegen=stats_mode=diff[p];[b][p]paletteuse=dither=none:diff_mode=rectangle -t 9.000 -loop 0 /t/c.gif'
+# ---
+# name: test_the_audio_commands_of_both_encoders_are_golden[fdkaac]
+  list([
+    'ffmpeg -nostdin -v error -i /work/Artist - Title/stems/karaoke.flac -vn -f wav -',
+    'fdkaac -S -I -b 192000 --moov-before-mdat -o /work/Artist - Title/audio.m4a -',
+  ])
+# ---
+# name: test_the_audio_commands_of_both_encoders_are_golden[ffmpeg-aac]
+  list([
+    'ffmpeg -nostdin -y -v error -i /work/Artist - Title/stems/karaoke.flac -vn -c:a aac -b:a 256k -movflags +faststart /work/Artist - Title/audio.m4a',
+  ])
+# ---
+# name: test_the_flac_export_is_written_again_with_the_delay
+  'ffmpeg -nostdin -y -v error -i /work/Artist - Title/stems/karaoke.flac -vn -af adelay=4500:all=1 -c:a flac /out/Artist - Title.flac'
+# ---
+# name: test_the_lead_is_a_delay_in_milliseconds_in_the_decoding_step[fdkaac]
+  list([
+    'ffmpeg -nostdin -v error -i /work/Artist - Title/stems/karaoke.flac -vn -af adelay=4500:all=1 -f wav -',
+    'fdkaac -S -I -b 192000 --moov-before-mdat -o /work/Artist - Title/audio.m4a -',
+  ])
+# ---
+# name: test_the_lead_is_a_delay_in_milliseconds_in_the_decoding_step[ffmpeg-aac]
+  list([
+    'ffmpeg -nostdin -y -v error -i /work/Artist - Title/stems/karaoke.flac -vn -af adelay=4500:all=1 -c:a aac -b:a 256k -movflags +faststart /work/Artist - Title/audio.m4a',
+  ])
+# ---
+# name: test_the_mp3_is_lame_at_192_kbit_44100_hz_stereo
+  'ffmpeg -nostdin -y -v error -i /work/Artist - Title/stems/karaoke.flac -vn -c:a libmp3lame -b:a 192k -ar 44100 -ac 2 -map_metadata -1 -id3v2_version 0 /out/Artist - Title.part.mp3'
+# ---
+# name: test_the_video_command_of_every_preset_is_golden[16x9-1080]
+  'ffmpeg -nostdin -y -v info -f lavfi -i color=c=0x000000:s=1920x1080:r=30 -i /work/Artist - Title/audio.m4a -vf subtitles=filename=/work/Artist - Title/lyrics.ass:fontsdir=/pkg/vocatron/fonts,scale=in_color_matrix=bt601:in_range=tv:out_color_matrix=bt709:out_range=tv,format=yuv420p,setparams=colorspace=bt709:color_primaries=bt709:color_trc=bt709:range=tv -map 0:v -map 1:a -c:v libx264 -preset medium -crf 18 -pix_fmt yuv420p -colorspace bt709 -color_primaries bt709 -color_trc bt709 -color_range tv -c:a copy -shortest -movflags +faststart -map_metadata -1 /out/Artist - Title.part.mp4'
+# ---
+# name: test_the_video_command_of_every_preset_is_golden[16x9-720]
+  'ffmpeg -nostdin -y -v info -f lavfi -i color=c=0x000000:s=1280x720:r=30 -i /work/Artist - Title/audio.m4a -vf subtitles=filename=/work/Artist - Title/lyrics.ass:fontsdir=/pkg/vocatron/fonts,scale=in_color_matrix=bt601:in_range=tv:out_color_matrix=bt709:out_range=tv,format=yuv420p,setparams=colorspace=bt709:color_primaries=bt709:color_trc=bt709:range=tv -map 0:v -map 1:a -c:v libx264 -preset medium -crf 18 -pix_fmt yuv420p -colorspace bt709 -color_primaries bt709 -color_trc bt709 -color_range tv -c:a copy -shortest -movflags +faststart -map_metadata -1 /out/Artist - Title.part.mp4'
+# ---
+# name: test_the_video_command_of_every_preset_is_golden[4x3-720-nvenc]
+  'ffmpeg -nostdin -y -v info -f lavfi -i color=c=0x000000:s=960x720:r=30 -i /work/Artist - Title/audio.m4a -vf subtitles=filename=/work/Artist - Title/lyrics.ass:fontsdir=/pkg/vocatron/fonts,scale=in_color_matrix=bt601:in_range=tv:out_color_matrix=bt709:out_range=tv,format=yuv420p,setparams=colorspace=bt709:color_primaries=bt709:color_trc=bt709:range=tv -map 0:v -map 1:a -c:v h264_nvenc -preset p5 -rc vbr -cq 19 -b:v 0 -pix_fmt yuv420p -colorspace bt709 -color_primaries bt709 -color_trc bt709 -color_range tv -c:a copy -shortest -movflags +faststart -map_metadata -1 /out/Artist - Title.part.mp4'
+# ---
+# name: test_the_video_command_of_every_preset_is_golden[4x3-720]
+  'ffmpeg -nostdin -y -v info -f lavfi -i color=c=0x000000:s=960x720:r=30 -i /work/Artist - Title/audio.m4a -vf subtitles=filename=/work/Artist - Title/lyrics.ass:fontsdir=/pkg/vocatron/fonts,scale=in_color_matrix=bt601:in_range=tv:out_color_matrix=bt709:out_range=tv,format=yuv420p,setparams=colorspace=bt709:color_primaries=bt709:color_trc=bt709:range=tv -map 0:v -map 1:a -c:v libx264 -preset medium -crf 18 -pix_fmt yuv420p -colorspace bt709 -color_primaries bt709 -color_trc bt709 -color_range tv -c:a copy -shortest -movflags +faststart -map_metadata -1 /out/Artist - Title.part.mp4'
+# ---
+# name: test_the_video_command_of_every_preset_is_golden[av1-720]
+  'ffmpeg -nostdin -y -v info -f lavfi -i color=c=0x000000:s=960x720:r=30 -i /work/Artist - Title/audio.m4a -vf subtitles=filename=/work/Artist - Title/lyrics.ass:fontsdir=/pkg/vocatron/fonts,scale=in_color_matrix=bt601:in_range=tv:out_color_matrix=bt709:out_range=tv,format=yuv420p,setparams=colorspace=bt709:color_primaries=bt709:color_trc=bt709:range=tv -map 0:v -map 1:a -c:v libsvtav1 -preset 6 -crf 30 -pix_fmt yuv420p -colorspace bt709 -color_primaries bt709 -color_trc bt709 -color_range tv -c:a copy -shortest -movflags +faststart -map_metadata -1 /out/Artist - Title.part.mp4'
+# ---

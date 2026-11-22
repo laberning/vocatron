@@ -1,0 +1,36 @@
+# Three big lines in the middle, replaced one by one, on dark blue-grey; in long breaks the word
+# Instrumental with the seconds until the next lines appear counting down under it. Singer 1 sings
+# orange to white, the others white to a bright colour (the newer discs of classic karaoke, ADR-0009).
+name: three-line
+description: Three big lines replaced one by one on blue-grey, with a seconds timer in long breaks.
+mode: line
+slots: 3
+line_rows: 1
+align: center
+position: middle
+safe_area: 0.9
+font:
+  family: bundled-sans-bold
+  size: 0.13
+  min_size: 0.09
+  case: as-written
+background: "#444466"
+colours:
+  singer1: {unsung: "#ff9900", sung: "#ffffff", edge: "#222244"}
+  singer2: {unsung: "#ffffff", sung: "#ff66cc", edge: "#222244"}
+  singer3: {unsung: "#ffffff", sung: "#33cc33", edge: "#222244"}
+  singer4: {unsung: "#ffffff", sung: "#66aaff", edge: "#222244"}
+  singer5: {unsung: "#ffffff", sung: "#cc99ff", edge: "#222244"}
+  group: {unsung: "#ffffff", sung: "#ff6666", edge: "#222244"}
+edge: {width: 0.08}
+shadow: {offset: 0.04, colour: "#000000", alpha: 0.6}
+wipe: {granularity: smooth, offset: 0.0}
+lead_in: {min: 1.0, target: 4.0, max: 6.0}
+clear: {hold: 1.5, replace_after: 0.33}
+breaks: {clear_after: 5.0, notice_after: 15.0, notice: Instrumental, show_title: false, form: timer}
+countdown: {min_gap: 5.0, duration: 2.4, form: shrinking-bar, count: 4}
+title: {min: 6.0, min_short: 4.0, fields: [title, artist, singers]}
+intro: {solo: 8.0, group: 9.0}
+ending: {end_screen: true, start_after: 2.0, fade: 0.5}
+# On CD+G (ADR-0029): sizes in pixels on the 192 px safe area; a 2 px edge, the shadow is dropped.
+cdg: {made_for_cdg: true, slots: 3, font_px: 36, min_font_px: 24, edge_px: 2, wipe_columns: 3}

@@ -1,0 +1,52 @@
+# serializer version: 1
+# name: test_the_report_blocks_are_golden
+  '''
+  song a.cdg: 50.0 s, 3 wiped lines
+    title: shown 0.50 s, cleared 6.00 s, first wipe 9.00 s, phase 8.50 s, first line drawn 7.00 s, rows [4, 6], 2 lines
+    lines per screen: median 2.0, max 2; tile rows [5]x2, [8]x1
+    alignment: centred (spread px: left 14.7, centre 0.0, right 14.7; centre offset 0.0, left edge median 66)
+    lead-in (drawn to first wipe): median 2.00 s
+    wipe: {'xor': 3}, speed 60.0 px/s = 10.0 tiles/s, step 6.0 px, sample 6.0 px, 28 steps per line
+    hold after wipe: median 3.49 s; ends {'cleared': 2, 'open': 1}; next line drawn 26.10 s after the wipe in the same rows
+    palette: background #0 (000), unsung #2 (fff), sung #3 (f00), edge -
+    singers: #2 (fff) -> #3 (f00) x2; #4 (00f) -> #5 (0ff) x1
+    presets 2, scrolls 0, ending 7.30 s, rows left at the end [3, 5]
+    intro gap 0.0-9.0 s (9.0 s) BREAK: lyric rows kept [], other text rows [4, 6], 56 other changes; countdown: none; progress bar: -
+    between gap 15.1-40.0 s (24.9 s) BREAK: lyric rows kept [], other text rows [], 4 other changes; countdown: 4 ticks every 1.00 s from 36.0 s, 4.0 s long, last tick 1.00 s before the wipe, left column 1, rows [3], 4 drawn / 0 erased / 0 recoloured; progress bar: -
+    outro gap 42.7-50.0 s (7.3 s): lyric rows kept [5], other text rows [3], 0 other changes; countdown: none; progress bar: -
+  
+  song b.cdg: 1.0 s, 0 wiped lines
+    title: none found
+    lines per screen: median -, max 0; tile rows -
+    alignment: unknown (spread px: left 0.0, centre 0.0, right 0.0; centre offset 0.0, left edge median 0)
+    lead-in (drawn to first wipe): median -
+    wipe: -, speed - = -, step -, sample -, -
+    hold after wipe: median -; ends {}; next line drawn - after the wipe in the same rows
+    palette: background -, unsung -, sung -, edge -
+    singers: -
+    presets 0, scrolls 0, ending -, rows left at the end []
+  
+  vendor V: 1 songs
+    title phase (median): 8.50 s
+    lines per screen (median): 2.0
+    most lines on screen: 2
+    alignment: centred x1
+    lead-in (median): 2.00 s
+    wipe speed (median): 60.0 px/s
+    wipe step (median): 6.0 px
+    wipe sample advance (median): 6.0 px
+    wipe methods: xor x1
+    hold after the wipe (median): 3.49 s
+    next line drawn after the wipe: 26.10 s
+    ways lines end: cleared x1, open x1
+    unsung colour: #2 (fff) x1
+    sung colour: #3 (f00) x1
+    background colour: #0 (000) x1
+    breaks / countdowns / progress bars found: 2 / 1 / 0
+    countdown ticks (median): 4
+    countdown interval (median): 1.00 s
+    countdown length (median): 4.0 s
+    ending after the last wipe: 7.3 s
+    most colour pairs in one song: 2
+  '''
+# ---

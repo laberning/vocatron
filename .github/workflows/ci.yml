@@ -1,0 +1,130 @@
+# Stages 0 and 1 on every push and pull request (no GPU). One job per make target;
+# tools/check_ci_targets.py fails if a target in CI_TARGETS (Makefile) has no job here.
+name: ci
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  static:
+    runs-on: ubuntu-26.04
+    steps:
+      - uses: actions/checkout@v7
+      - uses: astral-sh/setup-uv@v10.3.3
+      - run: make env UV=uv TORCH_EXTRA=cpu
+      - run: make static UV=uv
+      - if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: reports-static
+          path: reports/
+
+  fast:
+    runs-on: ubuntu-26.04
+    steps:
+      - uses: actions/checkout@v7
+      - uses: astral-sh/setup-uv@v10.3.3
+      - run: sudo apt-get update && sudo apt-get install -y --no-install-recommends ffmpeg
+      - run: make env UV=uv TORCH_EXTRA=cpu
+      - run: make fast UV=uv
+      - if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: reports-fast
+          path: reports/
+
+  dup:
+    runs-on: ubuntu-26.04
+    steps:
+      - uses: actions/checkout@v7
+      - uses: astral-sh/setup-uv@v10.3.3
+      - run: make env UV=uv TORCH_EXTRA=cpu
+      - run: make dup UV=uv
+      - if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: reports-dup
+          path: reports/
+
+  docs:
+    runs-on: ubuntu-26.04
+    steps:
+      - uses: actions/checkout@v7
+      - uses: astral-sh/setup-uv@v10.3.3
+      - run: make env UV=uv TORCH_EXTRA=cpu
+      - run: make docs UV=uv
+      - if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: reports-docs
+          path: reports/
+
+  # Pull requests only: the lines a change touches must be covered (against the PR base).
+  diff-cover:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-26.04
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - uses: astral-sh/setup-uv@v10.3.3
+      - run: sudo apt-get update && sudo apt-get install -y --no-install-recommends ffmpeg
+      - run: make env UV=uv TORCH_EXTRA=cpu
+      - run: make fast UV=uv
+      - run: git fetch origin "${{ github.base_ref }}"
+      - run: make diff-cover UV=uv DIFF_BASE="origin/${{ github.base_ref }}"
+      - if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: reports-diff-cover
+          path: reports/
+
+  ci-targets:
+    runs-on: ubuntu-26.04
+    steps:
+      - uses: actions/checkout@v7
+      - uses: astral-sh/setup-uv@v10.3.3
+      - run: make env UV=uv TORCH_EXTRA=cpu
+      - run: make ci-targets UV=uv
+      - if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: reports-ci-targets
+          path: reports/
+
+  licenses:
+    runs-on: ubuntu-26.04
+    steps:
+      - uses: actions/checkout@v7
+      - uses: astral-sh/setup-uv@v10.3.3
+      - run: make env UV=uv TORCH_EXTRA=cpu
+      - run: make licenses UV=uv
+      - if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: reports-licenses
+          path: reports/
+
+  # Tags only: a tag vX.Y.Z must match the version in pyproject.toml and have a changelog section.
+  tag-check:
+    if: github.ref_type == 'tag' && startsWith(github.ref_name, 'v')
+    runs-on: ubuntu-26.04
+    steps:
+      - uses: actions/checkout@v7
+      - uses: astral-sh/setup-uv@v10.3.3
+      - run: make env UV=uv TORCH_EXTRA=cpu
+      - run: make tag-check UV=uv TAG="${{ github.ref_name }}"
+
+  # Advisory: ty is 0.0.x, so a failure here does not fail the workflow.
+  ty:
+    runs-on: ubuntu-26.04
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v7
+      - uses: astral-sh/setup-uv@v10.3.3
+      - run: make env UV=uv TORCH_EXTRA=cpu
+      - run: make ty UV=uv

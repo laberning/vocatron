@@ -1,0 +1,36 @@
+# Large clean text with no outline on a dark background: the line being sung is bright, the lines
+# coming up are dimmed, and lines slide in from below and out upwards while they fade. Two lines
+# in the middle. For the video only (ADR-0032): it has no cdg section.
+name: lyric-video
+description: Large clean text, upcoming lines dimmed, lines that slide and fade. Video only.
+mode: line
+slots: 2
+line_rows: 1
+align: center
+position: middle
+safe_area: 0.9
+font:
+  family: bundled-sans-bold
+  size: 0.14
+  min_size: 0.09
+  case: as-written
+background: "#101014"
+colours:
+  singer1: {unsung: "#f4f4f4", sung: "#ff9f1c", edge: "#101014"}
+  singer2: {unsung: "#f4f4f4", sung: "#4fc3ff", edge: "#101014"}
+  singer3: {unsung: "#f4f4f4", sung: "#ff4d8d", edge: "#101014"}
+  singer4: {unsung: "#f4f4f4", sung: "#1fd65f", edge: "#101014"}
+  singer5: {unsung: "#f4f4f4", sung: "#a35cff", edge: "#101014"}
+  group: {unsung: "#f4f4f4", sung: "#ff6b6b", edge: "#101014"}
+edge: {width: 0.0}
+shadow: {offset: 0.03, colour: "#000000", alpha: 0.45}
+wipe: {granularity: smooth, offset: 0.0}
+lead_in: {min: 1.0, target: 3.0, max: 5.0}
+clear: {hold: 2.0, replace_after: 0.33}
+breaks: {clear_after: 5.0, notice_after: 15.0, notice: Instrumental, show_title: false, form: notice}
+countdown: {min_gap: 5.0, duration: 2.4, form: shrinking-bar, count: 4}
+title: {min: 6.0, min_short: 4.0, fields: [title, artist, singers]}
+intro: {solo: 8.0, group: 9.0}
+ending: {end_screen: true, start_after: 2.0, fade: 0.5}
+transition: {form: slide, time: 0.3}
+upcoming: {dim: 0.5}

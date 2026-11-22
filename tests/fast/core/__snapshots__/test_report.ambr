@@ -1,0 +1,26 @@
+# serializer version: 1
+# name: test_the_report_text_has_the_date_the_lines_and_the_total
+  '''
+  Vocatron report, 2026-10-29 12:00
+  
+  ok        3:05   2m 05s  Artist - First
+  review    4:00   3m 11s  Artist - Second long name  (lyrics: 2 lines flagged; alignment: 4.2 s gap in line 3)
+  failed       -       0s  Third                      separation: too slow
+  running   3:20        -  A - B                      interrupted in alignment
+  not run      -        -  Fifth
+  
+  5 songs: 1 ok, 1 review, 1 failed, 1 interrupted, 1 not run in 10m 50s
+  
+  '''
+# ---
+# name: test_the_summary_is_golden
+  '''
+  ok        3:05   2m 05s  Artist - First
+  review    4:00   3m 11s  Artist - Second long name  (lyrics: 2 lines flagged; alignment: 4.2 s gap in line 3)
+  failed       -       0s  Third                      separation: too slow
+  running   3:20        -  A - B                      interrupted in alignment
+  not run      -        -  Fifth
+  
+  5 songs: 1 ok, 1 review, 1 failed, 1 interrupted, 1 not run in 10m 50s
+  '''
+# ---

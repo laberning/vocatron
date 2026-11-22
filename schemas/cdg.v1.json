@@ -1,0 +1,108 @@
+{
+  "$defs": {
+    "Fingerprint": {
+      "additionalProperties": false,
+      "description": "What a stage file was made from.\n\nAttributes:\n    inputs: SHA-256 of the content of every input file, by input name.\n    settings: SHA-256 of the canonical JSON of the settings the stage declares.\n    stage_version: The version of the stage's own code.",
+      "properties": {
+        "inputs": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "title": "Inputs",
+          "type": "object"
+        },
+        "settings": {
+          "title": "Settings",
+          "type": "string"
+        },
+        "stage_version": {
+          "title": "Stage Version",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "inputs",
+        "settings",
+        "stage_version"
+      ],
+      "title": "Fingerprint",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "description": "``cdg.json``: what the cdg stage made.\n\nAttributes:\n    enabled: Whether ``cdg`` is in the config's ``outputs``. When it is not, the stage only\n        writes this file and the other fields keep their defaults.\n    profile: The name of the style profile that was used.\n    files: The names of the files in the output folder: the MP3 and the CD+G file.\n    palette: The 16 palette entries as ``#rrggbb`` (the 12-bit colours of the file).\n    packets: The number of packets in the CD+G file (300 per second).\n    drawing_packets: How many of them draw (the others are filler).\n    draw_lag: The longest wait in seconds of a tile of a line that appears or goes, from the\n        moment it changed to the packet that drew it.\n    wipe_lag: The same for the tiles of a wipe, a countdown or a progress bar.\n    seconds: How long the stage took.",
+  "properties": {
+    "draw_lag": {
+      "default": 0.0,
+      "title": "Draw Lag",
+      "type": "number"
+    },
+    "drawing_packets": {
+      "default": 0,
+      "title": "Drawing Packets",
+      "type": "integer"
+    },
+    "enabled": {
+      "title": "Enabled",
+      "type": "boolean"
+    },
+    "files": {
+      "default": [],
+      "items": {
+        "type": "string"
+      },
+      "title": "Files",
+      "type": "array"
+    },
+    "fingerprint": {
+      "$ref": "#/$defs/Fingerprint"
+    },
+    "packets": {
+      "default": 0,
+      "title": "Packets",
+      "type": "integer"
+    },
+    "palette": {
+      "default": [],
+      "items": {
+        "type": "string"
+      },
+      "title": "Palette",
+      "type": "array"
+    },
+    "profile": {
+      "default": "",
+      "title": "Profile",
+      "type": "string"
+    },
+    "reasons": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Reasons",
+      "type": "array"
+    },
+    "schema_version": {
+      "const": 1,
+      "default": 1,
+      "title": "Schema Version",
+      "type": "integer"
+    },
+    "seconds": {
+      "default": 0.0,
+      "title": "Seconds",
+      "type": "number"
+    },
+    "wipe_lag": {
+      "default": 0.0,
+      "title": "Wipe Lag",
+      "type": "number"
+    }
+  },
+  "required": [
+    "fingerprint",
+    "enabled"
+  ],
+  "title": "CdgFile",
+  "type": "object"
+}

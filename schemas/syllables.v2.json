@@ -1,0 +1,152 @@
+{
+  "$defs": {
+    "Fingerprint": {
+      "additionalProperties": false,
+      "description": "What a stage file was made from.\n\nAttributes:\n    inputs: SHA-256 of the content of every input file, by input name.\n    settings: SHA-256 of the canonical JSON of the settings the stage declares.\n    stage_version: The version of the stage's own code.",
+      "properties": {
+        "inputs": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "title": "Inputs",
+          "type": "object"
+        },
+        "settings": {
+          "title": "Settings",
+          "type": "string"
+        },
+        "stage_version": {
+          "title": "Stage Version",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "inputs",
+        "settings",
+        "stage_version"
+      ],
+      "title": "Fingerprint",
+      "type": "object"
+    },
+    "Syllable": {
+      "additionalProperties": false,
+      "description": "One sung syllable.\n\nAttributes:\n    text: The syllable as written (the parts of a word join to the word).\n    start: Seconds from the start of the song.\n    end: Seconds from the start of the song.",
+      "properties": {
+        "end": {
+          "title": "End",
+          "type": "number"
+        },
+        "start": {
+          "title": "Start",
+          "type": "number"
+        },
+        "text": {
+          "title": "Text",
+          "type": "string"
+        }
+      },
+      "required": [
+        "text",
+        "start",
+        "end"
+      ],
+      "title": "Syllable",
+      "type": "object"
+    },
+    "SyllableWord": {
+      "additionalProperties": false,
+      "description": "A word with its syllables.\n\nAttributes:\n    line: The index of its line in ``lyrics.json``.\n    text: The word as written.\n    start: Seconds from the start of the song.\n    end: Seconds from the start of the song.\n    estimated: The word's time is interpolated, so the syllables are shared proportionally.\n    syllables: Its syllables in order.",
+      "properties": {
+        "end": {
+          "title": "End",
+          "type": "number"
+        },
+        "estimated": {
+          "title": "Estimated",
+          "type": "boolean"
+        },
+        "line": {
+          "title": "Line",
+          "type": "integer"
+        },
+        "start": {
+          "title": "Start",
+          "type": "number"
+        },
+        "syllables": {
+          "items": {
+            "$ref": "#/$defs/Syllable"
+          },
+          "title": "Syllables",
+          "type": "array"
+        },
+        "text": {
+          "title": "Text",
+          "type": "string"
+        }
+      },
+      "required": [
+        "line",
+        "text",
+        "start",
+        "end",
+        "estimated",
+        "syllables"
+      ],
+      "title": "SyllableWord",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "description": "``syllables.json``: when every syllable is sung.\n\nAttributes:\n    language: The language module that split the words.\n    words: Every word with its syllables, in order.\n    voices: The voice of every line of ``lyrics.json`` (``alignment.json``): ``2`` for a line\n        the second voice sings, from the file or found in the audio (ADR-0052), ``1`` for\n        the others. Empty when the alignment has no line of that index.",
+  "properties": {
+    "fingerprint": {
+      "$ref": "#/$defs/Fingerprint"
+    },
+    "language": {
+      "title": "Language",
+      "type": "string"
+    },
+    "reasons": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Reasons",
+      "type": "array"
+    },
+    "schema_version": {
+      "default": 2,
+      "enum": [
+        1,
+        2
+      ],
+      "title": "Schema Version",
+      "type": "integer"
+    },
+    "voices": {
+      "items": {
+        "enum": [
+          1,
+          2
+        ],
+        "type": "integer"
+      },
+      "title": "Voices",
+      "type": "array"
+    },
+    "words": {
+      "items": {
+        "$ref": "#/$defs/SyllableWord"
+      },
+      "title": "Words",
+      "type": "array"
+    }
+  },
+  "required": [
+    "fingerprint",
+    "language",
+    "words"
+  ],
+  "title": "SyllablesFile",
+  "type": "object"
+}

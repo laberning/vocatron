@@ -1,0 +1,12 @@
+# serializer version: 1
+# name: test_the_lrc_of_a_folk_song_is_golden
+  '''
+  [ti: Alle meine Entchen]
+  [ar: Volkslied]
+  [length: 1:15]
+  [00:12.30] <00:12.30>Alle <00:12.76>meine <00:13.29>Entchen <00:13.88>
+  [00:14.56] <00:14.56>schwimmen <00:15.37>auf <00:15.76>dem <00:16.15>See <00:16.46>
+  [00:17.14] <00:17.14>Köpfchen <00:17.88>in <00:18.20>das <00:18.59>Wasser <00:19.11>
+  
+  '''
+# ---

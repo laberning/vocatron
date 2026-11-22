@@ -1,0 +1,246 @@
+{
+  "$defs": {
+    "CountdownNote": {
+      "additionalProperties": false,
+      "description": "What the countdowns of a song counted (ADR-0022): a note, not a reason for review.\n\nAttributes:\n    tempo: The tempo in beats per minute, or ``None`` when it was unclear.\n    unit: ``beats`` when the countdowns counted beats of the tempo, ``seconds`` when they ran\n        over a fixed number of seconds.",
+      "properties": {
+        "tempo": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Tempo"
+        },
+        "unit": {
+          "enum": [
+            "beats",
+            "seconds"
+          ],
+          "title": "Unit",
+          "type": "string"
+        }
+      },
+      "required": [
+        "tempo",
+        "unit"
+      ],
+      "title": "CountdownNote",
+      "type": "object"
+    },
+    "ErrorInfo": {
+      "additionalProperties": false,
+      "description": "The error that failed a song.\n\nAttributes:\n    stage: The stage that failed.\n    kind: A short stable code, or the exception class of an unexpected error.\n    message: What went wrong.",
+      "properties": {
+        "kind": {
+          "title": "Kind",
+          "type": "string"
+        },
+        "message": {
+          "title": "Message",
+          "type": "string"
+        },
+        "stage": {
+          "title": "Stage",
+          "type": "string"
+        }
+      },
+      "required": [
+        "stage",
+        "kind",
+        "message"
+      ],
+      "title": "ErrorInfo",
+      "type": "object"
+    },
+    "QualityReport": {
+      "additionalProperties": false,
+      "description": "How good an alignment looks (answer 5 of the story; ``vocatron.core.quality``).\n\nAttributes:\n    words: The number of words.\n    estimated: How many words are estimated.\n    estimated_share: ``estimated / words``.\n    longest_gap: The longest silence between two words of one line in seconds.\n    gap_line: The line with that gap, or ``None`` without a gap.\n    too_short: Measured words shorter than 60 ms.\n    too_long: Measured words longer than 3 s.",
+      "properties": {
+        "estimated": {
+          "title": "Estimated",
+          "type": "integer"
+        },
+        "estimated_share": {
+          "title": "Estimated Share",
+          "type": "number"
+        },
+        "gap_line": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Gap Line"
+        },
+        "longest_gap": {
+          "title": "Longest Gap",
+          "type": "number"
+        },
+        "too_long": {
+          "title": "Too Long",
+          "type": "integer"
+        },
+        "too_short": {
+          "title": "Too Short",
+          "type": "integer"
+        },
+        "words": {
+          "title": "Words",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "words",
+        "estimated",
+        "estimated_share",
+        "longest_gap",
+        "gap_line",
+        "too_short",
+        "too_long"
+      ],
+      "title": "QualityReport",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "description": "``report.json``: the verdict on one song.\n\nAttributes:\n    schema_version: Version of this file's schema.\n    name: The safe name of the song (track and work folder).\n    source: File name of the audio file.\n    status: ``ok``, ``review`` or ``failed``.\n    reasons: Why the song needs review, each prefixed with its stage.\n    error: The error when the status is ``failed``.\n    duration: The length of the song in seconds, or ``None`` when unknown.\n    seconds: The processing time of the song: the sum of ``stage_seconds``.\n    stage_seconds: How long each stage took when it last ran.\n    lyrics: The status of the lyrics (``ok``, ``review``, ...), when there are lyrics.\n    quality: The quality numbers of the alignment, when it ran.\n    rails: How the line times of an ``.lrc`` were used (``used``, ``ignored``, ...).\n    countdown: The tempo and whether the countdowns counted beats or seconds, when the tempo\n        stage ran.\n    outputs: The files made in the output folder (the MP4 first).\n    updated: When the file was written (ISO 8601, from the injected clock).",
+  "properties": {
+    "countdown": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/CountdownNote"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "duration": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Duration"
+    },
+    "error": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/ErrorInfo"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "lyrics": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Lyrics"
+    },
+    "name": {
+      "title": "Name",
+      "type": "string"
+    },
+    "outputs": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Outputs",
+      "type": "array"
+    },
+    "quality": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/QualityReport"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "rails": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Rails"
+    },
+    "reasons": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Reasons",
+      "type": "array"
+    },
+    "schema_version": {
+      "const": 2,
+      "default": 2,
+      "title": "Schema Version",
+      "type": "integer"
+    },
+    "seconds": {
+      "default": 0.0,
+      "title": "Seconds",
+      "type": "number"
+    },
+    "source": {
+      "title": "Source",
+      "type": "string"
+    },
+    "stage_seconds": {
+      "additionalProperties": {
+        "type": "number"
+      },
+      "title": "Stage Seconds",
+      "type": "object"
+    },
+    "status": {
+      "enum": [
+        "ok",
+        "review",
+        "failed"
+      ],
+      "title": "Status",
+      "type": "string"
+    },
+    "updated": {
+      "title": "Updated",
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "source",
+    "status",
+    "updated"
+  ],
+  "title": "ReportFile",
+  "type": "object"
+}

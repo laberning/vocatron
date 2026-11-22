@@ -1,0 +1,36 @@
+# Four lines stacked in the middle of the screen, replaced two lines at a time (two blocks of
+# two): white edged text on black, a progress bar in long breaks (ADR-0009, ADR-0038).
+name: four-line-stack
+description: Four lines stacked in the middle, replaced two lines at a time, with a progress bar in long breaks.
+mode: line
+slots: 4
+block: 2
+align: center
+position: middle
+safe_area: 0.9
+font:
+  family: bundled-sans-bold
+  size: 0.10
+  min_size: 0.075
+  case: as-written
+background: "#000000"
+colours:
+  singer1: {unsung: "#ffffff", sung: "#33ccff", edge: "#000000"}
+  singer2: {unsung: "#ffffff", sung: "#ff33ff", edge: "#000000"}
+  singer3: {unsung: "#ffffff", sung: "#33cc66", edge: "#000000"}
+  singer4: {unsung: "#ffffff", sung: "#ff9933", edge: "#000000"}
+  singer5: {unsung: "#ffffff", sung: "#dd77bb", edge: "#000000"}
+  group: {unsung: "#ffffff", sung: "#ffcc00", edge: "#000000"}
+edge: {width: 0.08}
+shadow: {offset: 0.04, colour: "#000000", alpha: 0.6}
+wipe: {granularity: smooth, offset: 0.0}
+lead_in: {min: 1.0, target: 5.0, max: 6.0}
+clear: {hold: 1.0, replace_after: 0.33}
+breaks: {clear_after: 5.0, notice_after: 15.0, notice: Instrumental, show_title: false, form: progress}
+countdown: {min_gap: 5.0, duration: 2.4, form: dots, count: 4}
+title: {min: 6.0, min_short: 4.0, fields: [title, artist, singers]}
+intro: {solo: 8.0, group: 9.0}
+ending: {end_screen: true, start_after: 2.0, fade: 0.5}
+# On CD+G (ADR-0029): sizes in pixels on the 192 px safe area; colours are rounded to 12 bits, the
+# shadow and the fade are dropped.
+cdg: {made_for_cdg: true, slots: 4, font_px: 24, min_font_px: 18, edge_px: 1, wipe_columns: 3}

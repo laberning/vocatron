@@ -1,0 +1,116 @@
+# serializer version: 1
+# name: test_the_ass_file_of_a_duet_is_golden
+  '''
+  [Script Info]
+  ; Written by Vocatron
+  ScriptType: v4.00+
+  PlayResX: 960
+  PlayResY: 720
+  WrapStyle: 2
+  ScaledBorderAndShadow: yes
+  YCbCr Matrix: None
+  
+  [V4+ Styles]
+  Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+  Style: ffffff-ffffff-000000,Noto Sans,40,&H00FFFFFF,&H00FFFFFF,&H00000000,&H66000000,-1,0,0,0,100,100,0,0,1,0,0,7,0,0,0,1
+  Style: 22aa55-22aa55-000000,Noto Sans,40,&H0055AA22,&H0055AA22,&H00000000,&H66000000,-1,0,0,0,100,100,0,0,1,0,0,7,0,0,0,1
+  Style: ff3399-ff3399-000000,Noto Sans,40,&H009933FF,&H009933FF,&H00000000,&H66000000,-1,0,0,0,100,100,0,0,1,0,0,7,0,0,0,1
+  Style: ffcc00-ffcc00-000000,Noto Sans,40,&H0000CCFF,&H0000CCFF,&H00000000,&H66000000,-1,0,0,0,100,100,0,0,1,0,0,7,0,0,0,1
+  Style: ffcc00-ffcc00-ffcc00,Noto Sans,40,&H0000CCFF,&H0000CCFF,&H0000CCFF,&H66000000,-1,0,0,0,100,100,0,0,1,0,0,7,0,0,0,1
+  Style: ffffff-22aa55-000000,Noto Sans,40,&H0055AA22,&H00FFFFFF,&H00000000,&H66000000,-1,0,0,0,100,100,0,0,1,0,0,7,0,0,0,1
+  Style: ffffff-ff3399-000000,Noto Sans,40,&H009933FF,&H00FFFFFF,&H00000000,&H66000000,-1,0,0,0,100,100,0,0,1,0,0,7,0,0,0,1
+  Style: ffffff-ffcc00-000000,Noto Sans,40,&H0000CCFF,&H00FFFFFF,&H00000000,&H66000000,-1,0,0,0,100,100,0,0,1,0,0,7,0,0,0,1
+  
+  [Events]
+  Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+  Dialogue: 0,0:00:00.00,0:00:06.00,ffffff-ffffff-000000,,0,0,0,,{\an7\pos(207.84,233.64)\fs77.76\bord6.22\shad3.11}Hänschen klein
+  Dialogue: 0,0:00:00.00,0:00:06.00,22aa55-22aa55-000000,,0,0,0,,{\an7\pos(433.34,326.95)\fs46.66\bord3.73\shad1.87}Anna
+  Dialogue: 0,0:00:00.00,0:00:06.00,ff3399-ff3399-000000,,0,0,0,,{\an7\pos(445.01,385.27)\fs46.66\bord3.73\shad1.87}Ben
+  Dialogue: 0,0:00:00.00,0:00:06.00,ffcc00-ffcc00-000000,,0,0,0,,{\an7\pos(421.68,443.59)\fs46.66\bord3.73\shad1.87}Beide
+  Dialogue: 0,0:00:06.00,0:00:08.40,ffcc00-ffcc00-ffcc00,,0,0,0,,{\an7\bord0\shad0\p1\1c&H0000CCFF\pos(207.84,390.59)\t(0,2400,\fscx1)}m 0 0 l 139.97 0 139.97 23.33 0 23.33
+  Dialogue: 0,0:00:06.00,0:00:11.20,ffffff-22aa55-000000,,0,0,0,,{\an7\pos(207.84,431.02)\fs77.76\bord6.22\shad3.11}{\k300}{\kf33}Häns{\kf33}chen {\k8}{\kf45}klein
+  Dialogue: 0,0:00:06.00,0:00:12.77,ffffff-ff3399-000000,,0,0,0,,{\an7\pos(266.16,535.22)\fs77.76\bord6.22\shad3.11}{\k487}{\kf38}ging {\k8}{\kf17}al{\kf35}lein
+  Dialogue: 0,0:00:11.20,0:00:14.10,ffffff-ffcc00-000000,,0,0,0,,{\an7\pos(246.72,431.02)\fs77.76\bord6.22\shad3.11}{\k133}{\kf24}in {\k8}{\kf31}die {\k8}{\kf27}wei{\kf18}te
+  Dialogue: 0,0:00:12.77,0:00:15.76,ffffff-ffcc00-000000,,0,0,0,,{\an7\pos(266.16,535.22)\fs77.76\bord6.22\shad3.11}{\k100}{\kf38}Welt {\k8}{\kf26}hin{\kf26}ein
+  Dialogue: 0,0:00:14.10,0:00:20.57,ffffff-22aa55-000000,,0,0,0,,{\an7\pos(227.28,431.02)\fs77.76\bord6.22\shad3.11}{\k133}{\kf45}Stock {\k8}{\kf31}und {\k8}{\kf31}Hut
+  Dialogue: 0,0:00:15.76,0:00:20.57,ffffff-ff3399-000000,,0,0,0,,{\an7\pos(227.28,535.22)\fs77.76\bord6.22\shad3.11}{\k158}{\kf45}steht {\k8}{\kf31}ihm {\k8}{\kf31}gut
+  Dialogue: 0,0:00:20.57,0:00:45.00,ffffff-ffffff-000000,,0,0,0,,{\an7\pos(207.84,321.12)\fs77.76\bord6.22\shad3.11\fad(0,500)}Hänschen klein
+  
+  '''
+# ---
+# name: test_the_ass_file_of_a_duet_with_turns_is_golden
+  '''
+  [Script Info]
+  ; Written by Vocatron
+  ScriptType: v4.00+
+  PlayResX: 960
+  PlayResY: 720
+  WrapStyle: 2
+  ScaledBorderAndShadow: yes
+  YCbCr Matrix: None
+  
+  [V4+ Styles]
+  Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+  Style: ffffff-ffffff-000000,Noto Sans,40,&H00FFFFFF,&H00FFFFFF,&H00000000,&H66000000,-1,0,0,0,100,100,0,0,1,0,0,7,0,0,0,1
+  Style: 22aa55-22aa55-000000,Noto Sans,40,&H0055AA22,&H0055AA22,&H00000000,&H66000000,-1,0,0,0,100,100,0,0,1,0,0,7,0,0,0,1
+  Style: ff3399-ff3399-000000,Noto Sans,40,&H009933FF,&H009933FF,&H00000000,&H66000000,-1,0,0,0,100,100,0,0,1,0,0,7,0,0,0,1
+  Style: ffcc00-ffcc00-000000,Noto Sans,40,&H0000CCFF,&H0000CCFF,&H00000000,&H66000000,-1,0,0,0,100,100,0,0,1,0,0,7,0,0,0,1
+  Style: ffcc00-ffcc00-ffcc00,Noto Sans,40,&H0000CCFF,&H0000CCFF,&H0000CCFF,&H66000000,-1,0,0,0,100,100,0,0,1,0,0,7,0,0,0,1
+  Style: ffffff-22aa55-000000,Noto Sans,40,&H0055AA22,&H00FFFFFF,&H00000000,&H66000000,-1,0,0,0,100,100,0,0,1,0,0,7,0,0,0,1
+  Style: ffffff-ff3399-000000,Noto Sans,40,&H009933FF,&H00FFFFFF,&H00000000,&H66000000,-1,0,0,0,100,100,0,0,1,0,0,7,0,0,0,1
+  Style: ffffff-ffcc00-000000,Noto Sans,40,&H0000CCFF,&H00FFFFFF,&H00000000,&H66000000,-1,0,0,0,100,100,0,0,1,0,0,7,0,0,0,1
+  
+  [Events]
+  Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+  Dialogue: 0,0:00:00.00,0:00:06.00,ffffff-ffffff-000000,,0,0,0,,{\an7\pos(207.84,233.64)\fs77.76\bord6.22\shad3.11}Hänschen klein
+  Dialogue: 0,0:00:00.00,0:00:06.00,22aa55-22aa55-000000,,0,0,0,,{\an7\pos(433.34,326.95)\fs46.66\bord3.73\shad1.87}Anna
+  Dialogue: 0,0:00:00.00,0:00:06.00,ff3399-ff3399-000000,,0,0,0,,{\an7\pos(445.01,385.27)\fs46.66\bord3.73\shad1.87}Ben
+  Dialogue: 0,0:00:00.00,0:00:06.00,ffcc00-ffcc00-000000,,0,0,0,,{\an7\pos(421.68,443.59)\fs46.66\bord3.73\shad1.87}Beide
+  Dialogue: 0,0:00:06.00,0:00:08.40,ffcc00-ffcc00-ffcc00,,0,0,0,,{\an7\bord0\shad0\p1\1c&H0000CCFF\pos(207.84,390.59)\t(0,2400,\fscx1)}m 0 0 l 139.97 0 139.97 23.33 0 23.33
+  Dialogue: 0,0:00:06.00,0:00:11.20,ffffff-22aa55-000000,,0,0,0,,{\an7\pos(207.84,431.02)\fs77.76\bord6.22\shad3.11}{\k300}{\kf33}Häns{\kf33}chen {\k8}{\kf45}klein
+  Dialogue: 0,0:00:06.00,0:00:12.77,ffffff-ff3399-000000,,0,0,0,,{\an7\pos(266.16,535.22)\fs77.76\bord6.22\shad3.11}{\k487}{\kf38}ging {\k8}{\kf17}al{\kf35}lein
+  Dialogue: 0,0:00:11.20,0:00:14.10,ffffff-ffcc00-000000,,0,0,0,,{\an7\pos(246.72,431.02)\fs77.76\bord6.22\shad3.11}{\k133}{\kf24}in {\k8}{\kf31}die {\k8}{\kf27}wei{\kf18}te
+  Dialogue: 0,0:00:12.77,0:00:15.76,ffffff-ffcc00-000000,,0,0,0,,{\an7\pos(266.16,535.22)\fs77.76\bord6.22\shad3.11}{\k100}{\kf38}Welt {\k8}{\1c&H0055AA22\2c&H00FFFFFF\3c&H00000000\kf26}hin{\kf26}ein
+  Dialogue: 0,0:00:14.10,0:00:20.57,ffffff-22aa55-000000,,0,0,0,,{\an7\pos(227.28,431.02)\fs77.76\bord6.22\shad3.11}{\k133}{\kf45}Stock {\k8}{\kf31}und {\k8}{\1c&H009933FF\2c&H00FFFFFF\3c&H00000000\kf31}Hut
+  Dialogue: 0,0:00:15.76,0:00:20.57,ffffff-ff3399-000000,,0,0,0,,{\an7\pos(227.28,535.22)\fs77.76\bord6.22\shad3.11}{\k158}{\kf45}steht {\k8}{\kf31}ihm {\k8}{\kf31}gut
+  Dialogue: 0,0:00:20.57,0:00:45.00,ffffff-ffffff-000000,,0,0,0,,{\an7\pos(207.84,321.12)\fs77.76\bord6.22\shad3.11\fad(0,500)}Hänschen klein
+  
+  '''
+# ---
+# name: test_the_ass_file_of_a_folk_song_is_golden
+  '''
+  [Script Info]
+  ; Written by Vocatron
+  ScriptType: v4.00+
+  PlayResX: 960
+  PlayResY: 720
+  WrapStyle: 2
+  ScaledBorderAndShadow: yes
+  YCbCr Matrix: None
+  
+  [V4+ Styles]
+  Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+  Style: ffffff-ffffff-000000,Noto Sans,40,&H00FFFFFF,&H00FFFFFF,&H00000000,&H66000000,-1,0,0,0,100,100,0,0,1,0,0,7,0,0,0,1
+  Style: ffcc00-ffcc00-ffcc00,Noto Sans,40,&H0000CCFF,&H0000CCFF,&H0000CCFF,&H66000000,-1,0,0,0,100,100,0,0,1,0,0,7,0,0,0,1
+  Style: ffffff-3399ff-000000,Noto Sans,40,&H00FF9933,&H00FFFFFF,&H00000000,&H66000000,-1,0,0,0,100,100,0,0,1,0,0,7,0,0,0,1
+  
+  [Events]
+  Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+  Dialogue: 0,0:00:00.00,0:00:06.00,ffffff-ffffff-000000,,0,0,0,,{\an7\pos(130.08,287.1)\fs77.76\bord6.22\shad3.11}Alle meine Entchen
+  Dialogue: 0,0:00:00.00,0:00:06.00,ffffff-ffffff-000000,,0,0,0,,{\an7\pos(357.53,381.38)\fs54.43\bord4.36\shad2.18}Volkslied
+  Dialogue: 0,0:00:06.00,0:00:08.40,ffcc00-ffcc00-ffcc00,,0,0,0,,{\an7\bord0\shad0\p1\1c&H0000CCFF\pos(130.08,390.59)\t(0,2400,\fscx1)}m 0 0 l 139.97 0 139.97 23.33 0 23.33
+  Dialogue: 0,0:00:06.00,0:00:15.16,ffffff-3399ff-000000,,0,0,0,,{\an7\pos(130.08,431.02)\fs77.76\bord6.22\shad3.11}{\k300}{\kf19}Al{\kf19}le {\k8}{\kf27}mei{\kf18}ne {\k8}{\kf25}Ent{\kf34}chen
+  Dialogue: 0,0:00:06.26,0:00:15.16,ffffff-3399ff-000000,,0,0,0,,{\an7\pos(71.76,535.22)\fs77.76\bord6.22\shad3.11}{\k500}{\kf49}schwim{\kf24}men {\k8}{\kf31}auf {\k8}{\kf31}dem {\k8}{\kf31}See
+  Dialogue: 0,0:00:15.16,0:00:21.88,ffffff-3399ff-000000,,0,0,0,,{\an7\pos(71.76,431.02)\fs77.76\bord6.22\shad3.11}{\k408}{\kf49}schwim{\kf24}men {\k8}{\kf31}auf {\k8}{\kf31}dem {\k8}{\kf31}See
+  Dialogue: 0,0:00:16.24,0:00:18.64,ffcc00-ffcc00-ffcc00,,0,0,0,,{\an7\bord0\shad0\p1\1c&H0000CCFF\pos(71.76,390.59)\t(0,2400,\fscx1)}m 0 0 l 139.97 0 139.97 23.33 0 23.33
+  Dialogue: 0,0:00:16.82,0:00:25.79,ffffff-3399ff-000000,,0,0,0,,{\an7\pos(266.16,535.22)\fs77.76\bord6.22\shad3.11}{\k500}{\kf33}Köpf{\kf33}chen {\k8}{\kf24}in
+  Dialogue: 0,0:00:21.88,0:00:25.79,ffffff-3399ff-000000,,0,0,0,,{\an7\pos(285.6,431.02)\fs77.76\bord6.22\shad3.11}{\k100}{\kf31}das {\k8}{\kf26}Was{\kf26}ser
+  Dialogue: 0,0:00:25.79,0:00:40.87,ffffff-ffffff-000000,,0,0,0,,{\an7\pos(270.05,325.01)\fs69.98\bord5.6\shad2.8}Instrumental
+  Dialogue: 0,0:00:40.87,0:00:49.84,ffffff-3399ff-000000,,0,0,0,,{\an7\pos(266.16,431.02)\fs77.76\bord6.22\shad3.11}{\k500}{\kf55}Schwänz{\kf32}chen
+  Dialogue: 0,0:00:41.82,0:00:49.84,ffffff-3399ff-000000,,0,0,0,,{\an7\pos(285.6,535.22)\fs77.76\bord6.22\shad3.11}{\k500}{\kf24}in {\k8}{\kf31}die {\k8}{\kf31}Höh
+  Dialogue: 0,0:00:42.87,0:00:45.27,ffcc00-ffcc00-ffcc00,,0,0,0,,{\an7\bord0\shad0\p1\1c&H0000CCFF\pos(266.16,390.59)\t(0,2400,\fscx1)}m 0 0 l 139.97 0 139.97 23.33 0 23.33
+  Dialogue: 0,0:00:49.84,0:01:00.00,ffffff-ffffff-000000,,0,0,0,,{\an7\pos(130.08,287.1)\fs77.76\bord6.22\shad3.11\fad(0,500)}Alle meine Entchen
+  Dialogue: 0,0:00:49.84,0:01:00.00,ffffff-ffffff-000000,,0,0,0,,{\an7\pos(357.53,381.38)\fs54.43\bord4.36\shad2.18\fad(0,500)}Volkslied
+  
+  '''
+# ---

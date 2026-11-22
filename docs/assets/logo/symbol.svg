@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 310.08 300" role="img" aria-label="Vocatron">
+<defs><filter id="glow" x="-20%" y="-40%" width="140%" height="180%"><feGaussianBlur stdDeviation="9"/></filter><clipPath id="letters"><path d="M0,0 L58.24,0 L95.04,100.485 L131.84,0 L190.08,0 L127.599,170.61 L114.16,180 L75.92,180 L62.481,170.61 Z" clip-rule="evenodd"/></clipPath></defs>
+<g transform="translate(60,60)">
+<path d="M0,0 L58.24,0 L95.04,100.485 L131.84,0 L190.08,0 L127.599,170.61 L114.16,180 L75.92,180 L62.481,170.61 Z" fill="none" stroke="#5ff4ff" stroke-width="12" stroke-linejoin="round" filter="url(#glow)"/>
+<path d="M0,0 L58.24,0 L95.04,100.485 L131.84,0 L190.08,0 L127.599,170.61 L114.16,180 L75.92,180 L62.481,170.61 Z" fill="none" stroke="#5ff4ff" stroke-width="12" stroke-linejoin="round" opacity="0.55"/>
+<g clip-path="url(#letters)"><rect x="0" y="0" width="190.08" height="26.214" fill="#fff27a"/><rect x="0" y="25.714" width="190.08" height="26.215" fill="#ffc02e"/><rect x="0" y="51.429" width="190.08" height="26.214" fill="#ff8a1f"/><rect x="0" y="77.143" width="190.08" height="26.214" fill="#ff4b4b"/><rect x="0" y="102.857" width="190.08" height="26.214" fill="#f0288f"/><rect x="0" y="128.571" width="190.08" height="26.215" fill="#a22be2"/><rect x="0" y="154.286" width="190.08" height="26.214" fill="#4a25b8"/></g>
+<path d="M0,0 L58.24,0 L95.04,100.485 L131.84,0 L190.08,0 L127.599,170.61 L114.16,180 L75.92,180 L62.481,170.61 Z" fill="none" stroke="#d9feff" stroke-width="3.5" stroke-linejoin="round" fill-rule="evenodd"/>
+</g>
+</svg>

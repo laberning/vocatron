@@ -1,0 +1,173 @@
+{
+  "$defs": {
+    "Fingerprint": {
+      "additionalProperties": false,
+      "description": "What a stage file was made from.\n\nAttributes:\n    inputs: SHA-256 of the content of every input file, by input name.\n    settings: SHA-256 of the canonical JSON of the settings the stage declares.\n    stage_version: The version of the stage's own code.",
+      "properties": {
+        "inputs": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "title": "Inputs",
+          "type": "object"
+        },
+        "settings": {
+          "title": "Settings",
+          "type": "string"
+        },
+        "stage_version": {
+          "title": "Stage Version",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "inputs",
+        "settings",
+        "stage_version"
+      ],
+      "title": "Fingerprint",
+      "type": "object"
+    },
+    "StemGains": {
+      "additionalProperties": false,
+      "description": "The gain applied to each stem so that none clips (1.0 means untouched).\n\nAttributes:\n    lead: Gain of the lead vocals.\n    backing: Gain of the backing vocals.\n    instrumental: Gain of the instrumental.\n    karaoke: Gain of the karaoke mix, applied after mixing.",
+      "properties": {
+        "backing": {
+          "default": 1.0,
+          "title": "Backing",
+          "type": "number"
+        },
+        "instrumental": {
+          "default": 1.0,
+          "title": "Instrumental",
+          "type": "number"
+        },
+        "karaoke": {
+          "default": 1.0,
+          "title": "Karaoke",
+          "type": "number"
+        },
+        "lead": {
+          "default": 1.0,
+          "title": "Lead",
+          "type": "number"
+        }
+      },
+      "title": "StemGains",
+      "type": "object"
+    },
+    "UsedModel": {
+      "additionalProperties": false,
+      "description": "A model a stem was made with.\n\nAttributes:\n    name: The registry name.\n    revision: The pinned revision.",
+      "properties": {
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "revision": {
+          "title": "Revision",
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "revision"
+      ],
+      "title": "UsedModel",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "description": "``separation.json``: how the stems were made.\n\nAttributes:\n    keep_backing: Whether the karaoke mix keeps the backing vocals.\n    models: The models used, vocals first.\n    stems: The stem files relative to the work folder.\n    samples: The length of every stem in samples.\n    sample_rate: Their sample rate.\n    gains: The headroom gains applied.\n    device: The device used.\n    seconds: How long the separation took.\n    peak_vram_gib: The most GPU memory used, or ``None`` on the CPU.\n    warnings: What the fan should know, for example the fallback to the CPU.",
+  "properties": {
+    "device": {
+      "enum": [
+        "cuda",
+        "cpu"
+      ],
+      "title": "Device",
+      "type": "string"
+    },
+    "fingerprint": {
+      "$ref": "#/$defs/Fingerprint"
+    },
+    "gains": {
+      "$ref": "#/$defs/StemGains"
+    },
+    "keep_backing": {
+      "title": "Keep Backing",
+      "type": "boolean"
+    },
+    "models": {
+      "items": {
+        "$ref": "#/$defs/UsedModel"
+      },
+      "title": "Models",
+      "type": "array"
+    },
+    "peak_vram_gib": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Peak Vram Gib"
+    },
+    "reasons": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Reasons",
+      "type": "array"
+    },
+    "sample_rate": {
+      "title": "Sample Rate",
+      "type": "integer"
+    },
+    "samples": {
+      "title": "Samples",
+      "type": "integer"
+    },
+    "schema_version": {
+      "const": 1,
+      "default": 1,
+      "title": "Schema Version",
+      "type": "integer"
+    },
+    "seconds": {
+      "title": "Seconds",
+      "type": "number"
+    },
+    "stems": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Stems",
+      "type": "array"
+    },
+    "warnings": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Warnings",
+      "type": "array"
+    }
+  },
+  "required": [
+    "fingerprint",
+    "keep_backing",
+    "models",
+    "stems",
+    "samples",
+    "sample_rate",
+    "gains",
+    "device",
+    "seconds"
+  ],
+  "title": "SeparationFile",
+  "type": "object"
+}

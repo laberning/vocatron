@@ -1,0 +1,45 @@
+{
+  "additionalProperties": false,
+  "description": "``progress.json`` in the work folder of the song being made, for ``vocatron status``.\n\nIt exists while the song is made and is removed when the song is done; one that is old\nbelongs to a run that died.\n\nAttributes:\n    schema_version: Version of this file's schema.\n    stage: The stage that is running.\n    fraction: How far that stage is (0 to 1).\n    left: The seconds the song still needs, or ``None`` when not known.\n    updated: When the file was written (ISO 8601, from the injected clock).",
+  "properties": {
+    "fraction": {
+      "maximum": 1,
+      "minimum": 0,
+      "title": "Fraction",
+      "type": "number"
+    },
+    "left": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Left"
+    },
+    "schema_version": {
+      "const": 1,
+      "default": 1,
+      "title": "Schema Version",
+      "type": "integer"
+    },
+    "stage": {
+      "title": "Stage",
+      "type": "string"
+    },
+    "updated": {
+      "title": "Updated",
+      "type": "string"
+    }
+  },
+  "required": [
+    "stage",
+    "fraction",
+    "updated"
+  ],
+  "title": "ProgressFile",
+  "type": "object"
+}

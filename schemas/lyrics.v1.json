@@ -1,0 +1,281 @@
+{
+  "$defs": {
+    "Fingerprint": {
+      "additionalProperties": false,
+      "description": "What a stage file was made from.\n\nAttributes:\n    inputs: SHA-256 of the content of every input file, by input name.\n    settings: SHA-256 of the canonical JSON of the settings the stage declares.\n    stage_version: The version of the stage's own code.",
+      "properties": {
+        "inputs": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "title": "Inputs",
+          "type": "object"
+        },
+        "settings": {
+          "title": "Settings",
+          "type": "string"
+        },
+        "stage_version": {
+          "title": "Stage Version",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "inputs",
+        "settings",
+        "stage_version"
+      ],
+      "title": "Fingerprint",
+      "type": "object"
+    },
+    "LyricLine": {
+      "description": "One cleaned line of the lyrics, with its singers resolved.\n\nAttributes:\n    text: The words.\n    singers: Who sings it: ``1``, ``1,3`` or ``all``.\n    time: The line time in seconds from a synced ``.lrc``, a hint only.",
+      "properties": {
+        "singers": {
+          "title": "Singers",
+          "type": "string"
+        },
+        "text": {
+          "title": "Text",
+          "type": "string"
+        },
+        "time": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Time"
+        }
+      },
+      "required": [
+        "text",
+        "singers"
+      ],
+      "title": "LyricLine",
+      "type": "object"
+    },
+    "Removal": {
+      "description": "One piece of junk that was taken out.\n\nAttributes:\n    line: The row (from 1) of the line in the text it was read from.\n    kind: ``section`` (a heading), ``repeat`` (a repeat marker) or ``credit``.\n    text: The original text of the line.",
+      "properties": {
+        "kind": {
+          "enum": [
+            "section",
+            "repeat",
+            "credit"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "line": {
+          "title": "Line",
+          "type": "integer"
+        },
+        "text": {
+          "title": "Text",
+          "type": "string"
+        }
+      },
+      "required": [
+        "line",
+        "kind",
+        "text"
+      ],
+      "title": "Removal",
+      "type": "object"
+    },
+    "SingerInfo": {
+      "additionalProperties": false,
+      "description": "Name and colour of one singer; both are optional.\n\nAttributes:\n    name: The singer's name.\n    colour: The singer's colour as ``#rrggbb``.",
+      "properties": {
+        "colour": {
+          "anyOf": [
+            {
+              "pattern": "#[0-9a-fA-F]{6}",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Colour"
+        },
+        "name": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Name"
+        }
+      },
+      "title": "SingerInfo",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "description": "The lyrics with their status.\n\n``reasons`` (of the base class) are the reasons for review that still stand: empty when the\nlyrics are ``ok`` or approved. ``findings`` are what the checks found whether or not the lyrics\nwere approved.\n\nAttributes:\n    source: ``sidecar`` (a file of the fan) or ``lookup`` (found online and written by\n        Vocatron).\n    sidecar: File name of the lyrics file next to the audio.\n    sidecar_hash: SHA-256 of that file when the stage ran.\n    written_hash: SHA-256 of the file as Vocatron wrote it; ``None`` for a fan's file. A file\n        that differs from it was edited, which counts as approval.\n    original: The text before cleaning.\n    lines: The cleaned lines.\n    singers: Names and colours by singer number.\n    duet: The song is flagged as a duet.\n    language: ISO 639-1 code of the detected language.\n    match: For a lookup, how well the record matches artist and title.\n    lrc_fits: Whether a synced ``.lrc`` fits the recording; ``None`` without one.\n    versions_considered: For a lookup, how many records were compared.\n    versions_agreeing: For a lookup, how many agree with the chosen one.\n    removed: What cleaning removed.\n    findings: The reasons found by the checks.\n    approved: A fan approved the lyrics (by editing the file or with ``lyrics approve``).\n    status: ``ok`` or ``review``; ``missing`` fails the stage instead.",
+  "properties": {
+    "approved": {
+      "title": "Approved",
+      "type": "boolean"
+    },
+    "duet": {
+      "title": "Duet",
+      "type": "boolean"
+    },
+    "findings": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Findings",
+      "type": "array"
+    },
+    "fingerprint": {
+      "$ref": "#/$defs/Fingerprint"
+    },
+    "language": {
+      "title": "Language",
+      "type": "string"
+    },
+    "lines": {
+      "items": {
+        "$ref": "#/$defs/LyricLine"
+      },
+      "title": "Lines",
+      "type": "array"
+    },
+    "lrc_fits": {
+      "anyOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Lrc Fits"
+    },
+    "match": {
+      "anyOf": [
+        {
+          "enum": [
+            "exact",
+            "close",
+            "none"
+          ],
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Match"
+    },
+    "original": {
+      "title": "Original",
+      "type": "string"
+    },
+    "reasons": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Reasons",
+      "type": "array"
+    },
+    "removed": {
+      "items": {
+        "$ref": "#/$defs/Removal"
+      },
+      "title": "Removed",
+      "type": "array"
+    },
+    "schema_version": {
+      "const": 1,
+      "default": 1,
+      "title": "Schema Version",
+      "type": "integer"
+    },
+    "sidecar": {
+      "title": "Sidecar",
+      "type": "string"
+    },
+    "sidecar_hash": {
+      "title": "Sidecar Hash",
+      "type": "string"
+    },
+    "singers": {
+      "additionalProperties": {
+        "$ref": "#/$defs/SingerInfo"
+      },
+      "title": "Singers",
+      "type": "object"
+    },
+    "source": {
+      "enum": [
+        "sidecar",
+        "lookup"
+      ],
+      "title": "Source",
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "ok",
+        "review"
+      ],
+      "title": "Status",
+      "type": "string"
+    },
+    "versions_agreeing": {
+      "default": 0,
+      "title": "Versions Agreeing",
+      "type": "integer"
+    },
+    "versions_considered": {
+      "default": 0,
+      "title": "Versions Considered",
+      "type": "integer"
+    },
+    "written_hash": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Written Hash"
+    }
+  },
+  "required": [
+    "fingerprint",
+    "source",
+    "sidecar",
+    "sidecar_hash",
+    "original",
+    "lines",
+    "singers",
+    "duet",
+    "language",
+    "removed",
+    "findings",
+    "approved",
+    "status"
+  ],
+  "title": "LyricsFile",
+  "type": "object"
+}

@@ -1,0 +1,19 @@
+# serializer version: 1
+# name: test_the_canonical_form_is_golden
+  '''
+  {1} Hänschen klein
+  {2} ging allein
+  
+  {all} in die weite {1,2} Welt hinein
+  
+  '''
+# ---
+# name: test_the_canonical_form_is_golden.1
+  '''
+  [ti: Hänschen klein]
+  [singer1: Anna, #e0b000]
+  [00:01.20] {1} Stock und {2} Hut
+  [00:03.00] steht ihm gut
+  
+  '''
+# ---

@@ -1,0 +1,140 @@
+{
+  "$defs": {
+    "ErrorInfo": {
+      "additionalProperties": false,
+      "description": "The error that failed a song.\n\nAttributes:\n    stage: The stage that failed.\n    kind: A short stable code, or the exception class of an unexpected error.\n    message: What went wrong.",
+      "properties": {
+        "kind": {
+          "title": "Kind",
+          "type": "string"
+        },
+        "message": {
+          "title": "Message",
+          "type": "string"
+        },
+        "stage": {
+          "title": "Stage",
+          "type": "string"
+        }
+      },
+      "required": [
+        "stage",
+        "kind",
+        "message"
+      ],
+      "title": "ErrorInfo",
+      "type": "object"
+    },
+    "StageOutcome": {
+      "additionalProperties": false,
+      "description": "What happened to one stage of one song.\n\nAttributes:\n    stage: Name of the stage.\n    action: ``ran``, ``skipped`` (output was current), ``failed``, ``outdated`` (its output\n        no longer matches its inputs after a partial run) or ``interrupted`` (an earlier run\n        died while it was running).\n    reasons: The stage's review reasons.",
+      "properties": {
+        "action": {
+          "enum": [
+            "ran",
+            "skipped",
+            "failed",
+            "outdated",
+            "interrupted"
+          ],
+          "title": "Action",
+          "type": "string"
+        },
+        "reasons": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Reasons",
+          "type": "array"
+        },
+        "stage": {
+          "title": "Stage",
+          "type": "string"
+        }
+      },
+      "required": [
+        "stage",
+        "action"
+      ],
+      "title": "StageOutcome",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "description": "The ``status.json`` of one song.\n\nAttributes:\n    schema_version: Version of this file's schema.\n    name: The safe name of the song (track and work folder).\n    source: File name of the audio file.\n    state: ``running``, ``ok``, ``review`` or ``failed``.\n    current: The stage about to run or running while the state is ``running``.\n    reasons: Why the song needs review, each prefixed with its stage.\n    error: The error when the state is ``failed``.\n    stages: What happened to each stage so far, in order.\n    updated: When the file was written (ISO 8601, from the injected clock).",
+  "properties": {
+    "current": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Current"
+    },
+    "error": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/ErrorInfo"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "name": {
+      "title": "Name",
+      "type": "string"
+    },
+    "reasons": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Reasons",
+      "type": "array"
+    },
+    "schema_version": {
+      "const": 2,
+      "default": 2,
+      "title": "Schema Version",
+      "type": "integer"
+    },
+    "source": {
+      "title": "Source",
+      "type": "string"
+    },
+    "stages": {
+      "items": {
+        "$ref": "#/$defs/StageOutcome"
+      },
+      "title": "Stages",
+      "type": "array"
+    },
+    "state": {
+      "enum": [
+        "running",
+        "ok",
+        "review",
+        "failed"
+      ],
+      "title": "State",
+      "type": "string"
+    },
+    "updated": {
+      "title": "Updated",
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "source",
+    "state",
+    "updated"
+  ],
+  "title": "SongStatus",
+  "type": "object"
+}

@@ -1,0 +1,3575 @@
+{
+ "schema_version": 1,
+ "title": "My Favorite Regret",
+ "artist": "Josh Woodward",
+ "duration": 267.2326530612245,
+ "language": "en",
+ "bpm": 43.32,
+ "singers": {
+  "1": {
+   "name": "Josh",
+   "colour": null
+  },
+  "2": {
+   "name": "Katie",
+   "colour": null
+  }
+ },
+ "lines": [
+  {
+   "text": "The day that we met",
+   "singers": "1",
+   "turns": [],
+   "time": null
+  },
+  {
+   "text": "I'll never forget",
+   "singers": "1",
+   "turns": [],
+   "time": null
+  },
+  {
+   "text": "I knew from the moment she spoke",
+   "singers": "1",
+   "turns": [],
+   "time": null
+  },
+  {
+   "text": "But she, was destined to be",
+   "singers": "1",
+   "turns": [],
+   "time": null
+  },
+  {
+   "text": "My favorite regret",
+   "singers": "1",
+   "turns": [],
+   "time": null
+  },
+  {
+   "text": "And all through the years",
+   "singers": "1",
+   "turns": [],
+   "time": null
+  },
+  {
+   "text": "The joy and the tears",
+   "singers": "1",
+   "turns": [],
+   "time": null
+  },
+  {
+   "text": "We shared like as greatest of friends",
+   "singers": "1",
+   "turns": [],
+   "time": null
+  },
+  {
+   "text": "But she, was destined to be",
+   "singers": "1",
+   "turns": [],
+   "time": null
+  },
+  {
+   "text": "My favorite regret",
+   "singers": "1",
+   "turns": [],
+   "time": null
+  },
+  {
+   "text": "Well, each moment we've spent",
+   "singers": "1",
+   "turns": [],
+   "time": null
+  },
+  {
+   "text": "I've been almost content",
+   "singers": "1",
+   "turns": [],
+   "time": null
+  },
+  {
+   "text": "Just to talk to her all through the night",
+   "singers": "1",
+   "turns": [],
+   "time": null
+  },
+  {
+   "text": "But a part of me mourns",
+   "singers": "1",
+   "turns": [],
+   "time": null
+  },
+  {
+   "text": "What will never be born",
+   "singers": "1",
+   "turns": [],
+   "time": null
+  },
+  {
+   "text": "She's forever my favorite regret",
+   "singers": "1",
+   "turns": [],
+   "time": null
+  },
+  {
+   "text": "He's gentle and kind",
+   "singers": "2",
+   "turns": [],
+   "time": null
+  },
+  {
+   "text": "And totally blind",
+   "singers": "2",
+   "turns": [],
+   "time": null
+  },
+  {
+   "text": "To not see the life we could lead",
+   "singers": "2",
+   "turns": [],
+   "time": null
+  },
+  {
+   "text": "And he, is destined to be",
+   "singers": "2",
+   "turns": [],
+   "time": null
+  },
+  {
+   "text": "My favorite regret",
+   "singers": "2",
+   "turns": [],
+   "time": null
+  },
+  {
+   "text": "In bad times and good",
+   "singers": "2",
+   "turns": [],
+   "time": null
+  },
+  {
+   "text": "I've steadfastly stood",
+   "singers": "2",
+   "turns": [],
+   "time": null
+  },
+  {
+   "text": "My passion just waits to be freed",
+   "singers": "2",
+   "turns": [],
+   "time": null
+  },
+  {
+   "text": "But he, is destined to be",
+   "singers": "2",
+   "turns": [],
+   "time": null
+  },
+  {
+   "text": "My favorite regret",
+   "singers": "2",
+   "turns": [],
+   "time": null
+  },
+  {
+   "text": "Well, I've got more to give",
+   "singers": "all",
+   "turns": [],
+   "time": null
+  },
+  {
+   "text": "But I'm happy to live",
+   "singers": "all",
+   "turns": [],
+   "time": null
+  },
+  {
+   "text": "In the shadow, of what could’ve been",
+   "singers": "all",
+   "turns": [],
+   "time": null
+  },
+  {
+   "text": "But a part of me yearns",
+   "singers": "all",
+   "turns": [],
+   "time": null
+  },
+  {
+   "text": "Like an ember, it burns",
+   "singers": "all",
+   "turns": [],
+   "time": null
+  },
+  {
+   "text": "Forever, my favorite regret",
+   "singers": "all",
+   "turns": [],
+   "time": null
+  },
+  {
+   "text": "One day, when the stars fade",
+   "singers": "all",
+   "turns": [],
+   "time": null
+  },
+  {
+   "text": "Will the echoes of my love",
+   "singers": "all",
+   "turns": [],
+   "time": null
+  },
+  {
+   "text": "Arrive to you above",
+   "singers": "all",
+   "turns": [],
+   "time": null
+  },
+  {
+   "text": "And wake you up at last",
+   "singers": "all",
+   "turns": [],
+   "time": null
+  },
+  {
+   "text": "I'll take what I've got",
+   "singers": "all",
+   "turns": [],
+   "time": null
+  },
+  {
+   "text": "Put the rest in a box",
+   "singers": "all",
+   "turns": [],
+   "time": null
+  },
+  {
+   "text": "Addressed to the stars in the sky",
+   "singers": "all",
+   "turns": [],
+   "time": null
+  },
+  {
+   "text": "And soon, up there with the moon",
+   "singers": "all",
+   "turns": [],
+   "time": null
+  },
+  {
+   "text": "My favorite regret",
+   "singers": "all",
+   "turns": [],
+   "time": null
+  },
+  {
+   "text": "Forever my favorite regret",
+   "singers": "all",
+   "turns": [],
+   "time": null
+  }
+ ],
+ "words": [
+  {
+   "line": 0,
+   "text": "The",
+   "start": 26.34,
+   "end": 26.42,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "The",
+     "start": 26.34,
+     "end": 26.42
+    }
+   ]
+  },
+  {
+   "line": 0,
+   "text": "day",
+   "start": 26.560000000000002,
+   "end": 27.04,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "day",
+     "start": 26.560000000000002,
+     "end": 27.04
+    }
+   ]
+  },
+  {
+   "line": 0,
+   "text": "that",
+   "start": 27.04,
+   "end": 27.3,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "that",
+     "start": 27.04,
+     "end": 27.3
+    }
+   ]
+  },
+  {
+   "line": 0,
+   "text": "we",
+   "start": 27.3,
+   "end": 27.8,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "we",
+     "start": 27.3,
+     "end": 27.8
+    }
+   ]
+  },
+  {
+   "line": 0,
+   "text": "met",
+   "start": 27.96,
+   "end": 28.22,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "met",
+     "start": 27.96,
+     "end": 28.22
+    }
+   ]
+  },
+  {
+   "line": 1,
+   "text": "I'll",
+   "start": 29.04,
+   "end": 29.34,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "I'll",
+     "start": 29.04,
+     "end": 29.34
+    }
+   ]
+  },
+  {
+   "line": 1,
+   "text": "never",
+   "start": 29.34,
+   "end": 29.900000000000002,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "nev",
+     "start": 29.34,
+     "end": 29.82
+    },
+    {
+     "text": "er",
+     "start": 29.82,
+     "end": 29.900000000000002
+    }
+   ]
+  },
+  {
+   "line": 1,
+   "text": "forget",
+   "start": 30.060000000000002,
+   "end": 30.96,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "for",
+     "start": 30.060000000000002,
+     "end": 30.72
+    },
+    {
+     "text": "get",
+     "start": 30.72,
+     "end": 30.96
+    }
+   ]
+  },
+  {
+   "line": 2,
+   "text": "I",
+   "start": 31.8,
+   "end": 31.82,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "I",
+     "start": 31.8,
+     "end": 31.82
+    }
+   ]
+  },
+  {
+   "line": 2,
+   "text": "knew",
+   "start": 31.98,
+   "end": 32.52,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "knew",
+     "start": 31.98,
+     "end": 32.52
+    }
+   ]
+  },
+  {
+   "line": 2,
+   "text": "from",
+   "start": 32.52,
+   "end": 33.0,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "from",
+     "start": 32.52,
+     "end": 33.0
+    }
+   ]
+  },
+  {
+   "line": 2,
+   "text": "the",
+   "start": 33.0,
+   "end": 33.32,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "the",
+     "start": 33.0,
+     "end": 33.32
+    }
+   ]
+  },
+  {
+   "line": 2,
+   "text": "moment",
+   "start": 33.32,
+   "end": 34.2,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "mo",
+     "start": 33.32,
+     "end": 33.7
+    },
+    {
+     "text": "ment",
+     "start": 33.7,
+     "end": 34.2
+    }
+   ]
+  },
+  {
+   "line": 2,
+   "text": "she",
+   "start": 34.2,
+   "end": 35.18,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "she",
+     "start": 34.2,
+     "end": 35.18
+    }
+   ]
+  },
+  {
+   "line": 2,
+   "text": "spoke",
+   "start": 35.300000000000004,
+   "end": 35.7,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "spoke",
+     "start": 35.300000000000004,
+     "end": 35.7
+    }
+   ]
+  },
+  {
+   "line": 3,
+   "text": "But",
+   "start": 37.4,
+   "end": 37.64,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "But",
+     "start": 37.4,
+     "end": 37.64
+    }
+   ]
+  },
+  {
+   "line": 3,
+   "text": "she,",
+   "start": 37.64,
+   "end": 38.24,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "she,",
+     "start": 37.64,
+     "end": 38.24
+    }
+   ]
+  },
+  {
+   "line": 3,
+   "text": "was",
+   "start": 38.800000000000004,
+   "end": 39.04,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "was",
+     "start": 38.800000000000004,
+     "end": 39.04
+    }
+   ]
+  },
+  {
+   "line": 3,
+   "text": "destined",
+   "start": 39.04,
+   "end": 39.96,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "des",
+     "start": 39.04,
+     "end": 39.44
+    },
+    {
+     "text": "tined",
+     "start": 39.44,
+     "end": 39.96
+    }
+   ]
+  },
+  {
+   "line": 3,
+   "text": "to",
+   "start": 39.96,
+   "end": 40.2,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "to",
+     "start": 39.96,
+     "end": 40.2
+    }
+   ]
+  },
+  {
+   "line": 3,
+   "text": "be",
+   "start": 40.2,
+   "end": 40.82,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "be",
+     "start": 40.2,
+     "end": 40.82
+    }
+   ]
+  },
+  {
+   "line": 4,
+   "text": "My",
+   "start": 41.52,
+   "end": 41.82,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "My",
+     "start": 41.52,
+     "end": 41.82
+    }
+   ]
+  },
+  {
+   "line": 4,
+   "text": "favorite",
+   "start": 41.82,
+   "end": 42.68,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "fa",
+     "start": 41.82,
+     "end": 42.4
+    },
+    {
+     "text": "vorite",
+     "start": 42.4,
+     "end": 42.68
+    }
+   ]
+  },
+  {
+   "line": 4,
+   "text": "regret",
+   "start": 42.78,
+   "end": 43.300000000000004,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "re",
+     "start": 42.78,
+     "end": 42.980000000000004
+    },
+    {
+     "text": "gret",
+     "start": 42.980000000000004,
+     "end": 43.300000000000004
+    }
+   ]
+  },
+  {
+   "line": 5,
+   "text": "And",
+   "start": 48.52,
+   "end": 48.800000000000004,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "And",
+     "start": 48.52,
+     "end": 48.800000000000004
+    }
+   ]
+  },
+  {
+   "line": 5,
+   "text": "all",
+   "start": 48.800000000000004,
+   "end": 49.120000000000005,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "all",
+     "start": 48.800000000000004,
+     "end": 49.120000000000005
+    }
+   ]
+  },
+  {
+   "line": 5,
+   "text": "through",
+   "start": 49.120000000000005,
+   "end": 49.46,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "through",
+     "start": 49.120000000000005,
+     "end": 49.46
+    }
+   ]
+  },
+  {
+   "line": 5,
+   "text": "the",
+   "start": 49.46,
+   "end": 50.06,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "the",
+     "start": 49.46,
+     "end": 50.06
+    }
+   ]
+  },
+  {
+   "line": 5,
+   "text": "years",
+   "start": 50.06,
+   "end": 50.76,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "years",
+     "start": 50.06,
+     "end": 50.76
+    }
+   ]
+  },
+  {
+   "line": 6,
+   "text": "The",
+   "start": 51.26,
+   "end": 51.34,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "The",
+     "start": 51.26,
+     "end": 51.34
+    }
+   ]
+  },
+  {
+   "line": 6,
+   "text": "joy",
+   "start": 51.5,
+   "end": 52.34,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "joy",
+     "start": 51.5,
+     "end": 52.34
+    }
+   ]
+  },
+  {
+   "line": 6,
+   "text": "and",
+   "start": 52.34,
+   "end": 52.480000000000004,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "and",
+     "start": 52.34,
+     "end": 52.480000000000004
+    }
+   ]
+  },
+  {
+   "line": 6,
+   "text": "the",
+   "start": 52.480000000000004,
+   "end": 52.7,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "the",
+     "start": 52.480000000000004,
+     "end": 52.7
+    }
+   ]
+  },
+  {
+   "line": 6,
+   "text": "tears",
+   "start": 52.7,
+   "end": 53.480000000000004,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "tears",
+     "start": 52.7,
+     "end": 53.480000000000004
+    }
+   ]
+  },
+  {
+   "line": 7,
+   "text": "We",
+   "start": 54.02,
+   "end": 54.26,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "We",
+     "start": 54.02,
+     "end": 54.26
+    }
+   ]
+  },
+  {
+   "line": 7,
+   "text": "shared",
+   "start": 54.26,
+   "end": 54.74,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "shared",
+     "start": 54.26,
+     "end": 54.74
+    }
+   ]
+  },
+  {
+   "line": 7,
+   "text": "like",
+   "start": 54.74,
+   "end": 55.08,
+   "estimated": true,
+   "syllables": [
+    {
+     "text": "like",
+     "start": 54.74,
+     "end": 55.08
+    }
+   ]
+  },
+  {
+   "line": 7,
+   "text": "as",
+   "start": 55.160000000000004,
+   "end": 55.31666666666667,
+   "estimated": true,
+   "syllables": [
+    {
+     "text": "as",
+     "start": 55.160000000000004,
+     "end": 55.31666666666667
+    }
+   ]
+  },
+  {
+   "line": 7,
+   "text": "greatest",
+   "start": 55.42,
+   "end": 56.06,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "great",
+     "start": 55.42,
+     "end": 55.88
+    },
+    {
+     "text": "est",
+     "start": 55.88,
+     "end": 56.06
+    }
+   ]
+  },
+  {
+   "line": 7,
+   "text": "of",
+   "start": 56.42,
+   "end": 56.86,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "of",
+     "start": 56.42,
+     "end": 56.86
+    }
+   ]
+  },
+  {
+   "line": 7,
+   "text": "friends",
+   "start": 57.0,
+   "end": 57.9,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "friends",
+     "start": 57.0,
+     "end": 57.9
+    }
+   ]
+  },
+  {
+   "line": 8,
+   "text": "But",
+   "start": 59.5,
+   "end": 59.76,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "But",
+     "start": 59.5,
+     "end": 59.76
+    }
+   ]
+  },
+  {
+   "line": 8,
+   "text": "she,",
+   "start": 59.76,
+   "end": 60.28,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "she,",
+     "start": 59.76,
+     "end": 60.28
+    }
+   ]
+  },
+  {
+   "line": 8,
+   "text": "was",
+   "start": 60.96,
+   "end": 61.18,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "was",
+     "start": 60.96,
+     "end": 61.18
+    }
+   ]
+  },
+  {
+   "line": 8,
+   "text": "destined",
+   "start": 61.18,
+   "end": 62.120000000000005,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "des",
+     "start": 61.18,
+     "end": 61.6
+    },
+    {
+     "text": "tined",
+     "start": 61.6,
+     "end": 62.120000000000005
+    }
+   ]
+  },
+  {
+   "line": 8,
+   "text": "to",
+   "start": 62.120000000000005,
+   "end": 62.18,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "to",
+     "start": 62.120000000000005,
+     "end": 62.18
+    }
+   ]
+  },
+  {
+   "line": 8,
+   "text": "be",
+   "start": 62.38,
+   "end": 62.88,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "be",
+     "start": 62.38,
+     "end": 62.88
+    }
+   ]
+  },
+  {
+   "line": 9,
+   "text": "My",
+   "start": 63.620000000000005,
+   "end": 63.9,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "My",
+     "start": 63.620000000000005,
+     "end": 63.9
+    }
+   ]
+  },
+  {
+   "line": 9,
+   "text": "favorite",
+   "start": 63.9,
+   "end": 64.86,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "fa",
+     "start": 63.9,
+     "end": 64.52
+    },
+    {
+     "text": "vorite",
+     "start": 64.52,
+     "end": 64.86
+    }
+   ]
+  },
+  {
+   "line": 9,
+   "text": "regret",
+   "start": 64.86,
+   "end": 65.42,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "re",
+     "start": 64.86,
+     "end": 65.08
+    },
+    {
+     "text": "gret",
+     "start": 65.08,
+     "end": 65.42
+    }
+   ]
+  },
+  {
+   "line": 10,
+   "text": "Well,",
+   "start": 69.92,
+   "end": 70.52,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "Well,",
+     "start": 69.92,
+     "end": 70.52
+    }
+   ]
+  },
+  {
+   "line": 10,
+   "text": "each",
+   "start": 70.52,
+   "end": 70.88,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "each",
+     "start": 70.52,
+     "end": 70.88
+    }
+   ]
+  },
+  {
+   "line": 10,
+   "text": "moment",
+   "start": 70.88,
+   "end": 71.78,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "mo",
+     "start": 70.88,
+     "end": 71.32000000000001
+    },
+    {
+     "text": "ment",
+     "start": 71.32000000000001,
+     "end": 71.78
+    }
+   ]
+  },
+  {
+   "line": 10,
+   "text": "we've",
+   "start": 71.78,
+   "end": 72.2,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "we've",
+     "start": 71.78,
+     "end": 72.2
+    }
+   ]
+  },
+  {
+   "line": 10,
+   "text": "spent",
+   "start": 72.2,
+   "end": 72.94,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "spent",
+     "start": 72.2,
+     "end": 72.94
+    }
+   ]
+  },
+  {
+   "line": 11,
+   "text": "I've",
+   "start": 72.94,
+   "end": 73.175,
+   "estimated": true,
+   "syllables": [
+    {
+     "text": "I've",
+     "start": 72.94,
+     "end": 73.175
+    }
+   ]
+  },
+  {
+   "line": 11,
+   "text": "been",
+   "start": 73.24,
+   "end": 73.72,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "been",
+     "start": 73.24,
+     "end": 73.72
+    }
+   ]
+  },
+  {
+   "line": 11,
+   "text": "almost",
+   "start": 73.72,
+   "end": 74.54,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "al",
+     "start": 73.72,
+     "end": 74.08
+    },
+    {
+     "text": "most",
+     "start": 74.08,
+     "end": 74.54
+    }
+   ]
+  },
+  {
+   "line": 11,
+   "text": "content",
+   "start": 74.54,
+   "end": 75.46000000000001,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "con",
+     "start": 74.54,
+     "end": 74.82000000000001
+    },
+    {
+     "text": "tent",
+     "start": 74.82000000000001,
+     "end": 75.46000000000001
+    }
+   ]
+  },
+  {
+   "line": 12,
+   "text": "Just",
+   "start": 75.46000000000001,
+   "end": 75.92,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "Just",
+     "start": 75.46000000000001,
+     "end": 75.92
+    }
+   ]
+  },
+  {
+   "line": 12,
+   "text": "to",
+   "start": 75.92,
+   "end": 76.34,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "to",
+     "start": 75.92,
+     "end": 76.34
+    }
+   ]
+  },
+  {
+   "line": 12,
+   "text": "talk",
+   "start": 76.34,
+   "end": 76.64,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "talk",
+     "start": 76.34,
+     "end": 76.64
+    }
+   ]
+  },
+  {
+   "line": 12,
+   "text": "to",
+   "start": 76.82000000000001,
+   "end": 77.3,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "to",
+     "start": 76.82000000000001,
+     "end": 77.3
+    }
+   ]
+  },
+  {
+   "line": 12,
+   "text": "her",
+   "start": 77.3,
+   "end": 77.66,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "her",
+     "start": 77.3,
+     "end": 77.66
+    }
+   ]
+  },
+  {
+   "line": 12,
+   "text": "all",
+   "start": 77.66,
+   "end": 78.14,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "all",
+     "start": 77.66,
+     "end": 78.14
+    }
+   ]
+  },
+  {
+   "line": 12,
+   "text": "through",
+   "start": 78.14,
+   "end": 78.7,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "through",
+     "start": 78.14,
+     "end": 78.7
+    }
+   ]
+  },
+  {
+   "line": 12,
+   "text": "the",
+   "start": 78.7,
+   "end": 78.96000000000001,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "the",
+     "start": 78.7,
+     "end": 78.96000000000001
+    }
+   ]
+  },
+  {
+   "line": 12,
+   "text": "night",
+   "start": 78.96000000000001,
+   "end": 79.7,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "night",
+     "start": 78.96000000000001,
+     "end": 79.7
+    }
+   ]
+  },
+  {
+   "line": 13,
+   "text": "But",
+   "start": 81.04,
+   "end": 81.66,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "But",
+     "start": 81.04,
+     "end": 81.66
+    }
+   ]
+  },
+  {
+   "line": 13,
+   "text": "a",
+   "start": 81.66,
+   "end": 81.96000000000001,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "a",
+     "start": 81.66,
+     "end": 81.96000000000001
+    }
+   ]
+  },
+  {
+   "line": 13,
+   "text": "part",
+   "start": 81.96000000000001,
+   "end": 82.52,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "part",
+     "start": 81.96000000000001,
+     "end": 82.52
+    }
+   ]
+  },
+  {
+   "line": 13,
+   "text": "of",
+   "start": 82.52,
+   "end": 82.72,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "of",
+     "start": 82.52,
+     "end": 82.72
+    }
+   ]
+  },
+  {
+   "line": 13,
+   "text": "me",
+   "start": 82.72,
+   "end": 83.14,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "me",
+     "start": 82.72,
+     "end": 83.14
+    }
+   ]
+  },
+  {
+   "line": 13,
+   "text": "mourns",
+   "start": 83.14,
+   "end": 83.82000000000001,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "mourns",
+     "start": 83.14,
+     "end": 83.82000000000001
+    }
+   ]
+  },
+  {
+   "line": 14,
+   "text": "What",
+   "start": 83.82000000000001,
+   "end": 84.24,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "What",
+     "start": 83.82000000000001,
+     "end": 84.24
+    }
+   ]
+  },
+  {
+   "line": 14,
+   "text": "will",
+   "start": 84.24,
+   "end": 84.60000000000001,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "will",
+     "start": 84.24,
+     "end": 84.60000000000001
+    }
+   ]
+  },
+  {
+   "line": 14,
+   "text": "never",
+   "start": 84.60000000000001,
+   "end": 85.28,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "nev",
+     "start": 84.60000000000001,
+     "end": 85.18
+    },
+    {
+     "text": "er",
+     "start": 85.18,
+     "end": 85.28
+    }
+   ]
+  },
+  {
+   "line": 14,
+   "text": "be",
+   "start": 85.46000000000001,
+   "end": 85.82000000000001,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "be",
+     "start": 85.46000000000001,
+     "end": 85.82000000000001
+    }
+   ]
+  },
+  {
+   "line": 14,
+   "text": "born",
+   "start": 86.10000000000001,
+   "end": 87.46000000000001,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "born",
+     "start": 86.10000000000001,
+     "end": 87.46000000000001
+    }
+   ]
+  },
+  {
+   "line": 15,
+   "text": "She's",
+   "start": 89.72000000000001,
+   "end": 90.04,
+   "estimated": true,
+   "syllables": [
+    {
+     "text": "She's",
+     "start": 89.72000000000001,
+     "end": 90.04
+    }
+   ]
+  },
+  {
+   "line": 15,
+   "text": "forever",
+   "start": 90.04,
+   "end": 90.82000000000001,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "for",
+     "start": 90.04,
+     "end": 90.38
+    },
+    {
+     "text": "ev",
+     "start": 90.38,
+     "end": 90.60000000000001
+    },
+    {
+     "text": "er",
+     "start": 90.60000000000001,
+     "end": 90.82000000000001
+    }
+   ]
+  },
+  {
+   "line": 15,
+   "text": "my",
+   "start": 91.16,
+   "end": 91.4,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "my",
+     "start": 91.16,
+     "end": 91.4
+    }
+   ]
+  },
+  {
+   "line": 15,
+   "text": "favorite",
+   "start": 91.58,
+   "end": 92.36,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "fa",
+     "start": 91.58,
+     "end": 92.02
+    },
+    {
+     "text": "vorite",
+     "start": 92.02,
+     "end": 92.36
+    }
+   ]
+  },
+  {
+   "line": 15,
+   "text": "regret",
+   "start": 92.60000000000001,
+   "end": 93.28,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "re",
+     "start": 92.60000000000001,
+     "end": 92.98
+    },
+    {
+     "text": "gret",
+     "start": 92.98,
+     "end": 93.28
+    }
+   ]
+  },
+  {
+   "line": 16,
+   "text": "He's",
+   "start": 98.28,
+   "end": 98.58,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "He's",
+     "start": 98.28,
+     "end": 98.58
+    }
+   ]
+  },
+  {
+   "line": 16,
+   "text": "gentle",
+   "start": 98.58,
+   "end": 99.34,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "gen",
+     "start": 98.58,
+     "end": 98.96000000000001
+    },
+    {
+     "text": "tle",
+     "start": 98.96000000000001,
+     "end": 99.34
+    }
+   ]
+  },
+  {
+   "line": 16,
+   "text": "and",
+   "start": 99.34,
+   "end": 99.9,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "and",
+     "start": 99.34,
+     "end": 99.9
+    }
+   ]
+  },
+  {
+   "line": 16,
+   "text": "kind",
+   "start": 99.9,
+   "end": 100.32000000000001,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "kind",
+     "start": 99.9,
+     "end": 100.32000000000001
+    }
+   ]
+  },
+  {
+   "line": 17,
+   "text": "And",
+   "start": 101.10000000000001,
+   "end": 101.32000000000001,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "And",
+     "start": 101.10000000000001,
+     "end": 101.32000000000001
+    }
+   ]
+  },
+  {
+   "line": 17,
+   "text": "totally",
+   "start": 101.32000000000001,
+   "end": 102.64,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "to",
+     "start": 101.32000000000001,
+     "end": 101.76
+    },
+    {
+     "text": "tal",
+     "start": 101.76,
+     "end": 102.0
+    },
+    {
+     "text": "ly",
+     "start": 102.0,
+     "end": 102.64
+    }
+   ]
+  },
+  {
+   "line": 17,
+   "text": "blind",
+   "start": 102.64,
+   "end": 103.06,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "blind",
+     "start": 102.64,
+     "end": 103.06
+    }
+   ]
+  },
+  {
+   "line": 18,
+   "text": "To",
+   "start": 103.84,
+   "end": 104.08,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "To",
+     "start": 103.84,
+     "end": 104.08
+    }
+   ]
+  },
+  {
+   "line": 18,
+   "text": "not",
+   "start": 104.08,
+   "end": 104.54,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "not",
+     "start": 104.08,
+     "end": 104.54
+    }
+   ]
+  },
+  {
+   "line": 18,
+   "text": "see",
+   "start": 104.54,
+   "end": 105.0,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "see",
+     "start": 104.54,
+     "end": 105.0
+    }
+   ]
+  },
+  {
+   "line": 18,
+   "text": "the",
+   "start": 105.0,
+   "end": 105.26,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "the",
+     "start": 105.0,
+     "end": 105.26
+    }
+   ]
+  },
+  {
+   "line": 18,
+   "text": "life",
+   "start": 105.26,
+   "end": 105.92,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "life",
+     "start": 105.26,
+     "end": 105.92
+    }
+   ]
+  },
+  {
+   "line": 18,
+   "text": "we",
+   "start": 105.92,
+   "end": 106.12,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "we",
+     "start": 105.92,
+     "end": 106.12
+    }
+   ]
+  },
+  {
+   "line": 18,
+   "text": "could",
+   "start": 106.12,
+   "end": 106.82000000000001,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "could",
+     "start": 106.12,
+     "end": 106.82000000000001
+    }
+   ]
+  },
+  {
+   "line": 18,
+   "text": "lead",
+   "start": 106.82000000000001,
+   "end": 107.52,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "lead",
+     "start": 106.82000000000001,
+     "end": 107.52
+    }
+   ]
+  },
+  {
+   "line": 19,
+   "text": "And",
+   "start": 109.16,
+   "end": 109.66,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "And",
+     "start": 109.16,
+     "end": 109.66
+    }
+   ]
+  },
+  {
+   "line": 19,
+   "text": "he,",
+   "start": 109.66,
+   "end": 110.48,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "he,",
+     "start": 109.66,
+     "end": 110.48
+    }
+   ]
+  },
+  {
+   "line": 19,
+   "text": "is",
+   "start": 110.82000000000001,
+   "end": 111.04,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "is",
+     "start": 110.82000000000001,
+     "end": 111.04
+    }
+   ]
+  },
+  {
+   "line": 19,
+   "text": "destined",
+   "start": 111.04,
+   "end": 111.98,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "des",
+     "start": 111.04,
+     "end": 111.46000000000001
+    },
+    {
+     "text": "tined",
+     "start": 111.46000000000001,
+     "end": 111.98
+    }
+   ]
+  },
+  {
+   "line": 19,
+   "text": "to",
+   "start": 111.98,
+   "end": 112.18,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "to",
+     "start": 111.98,
+     "end": 112.18
+    }
+   ]
+  },
+  {
+   "line": 19,
+   "text": "be",
+   "start": 112.18,
+   "end": 112.74000000000001,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "be",
+     "start": 112.18,
+     "end": 112.74000000000001
+    }
+   ]
+  },
+  {
+   "line": 20,
+   "text": "My",
+   "start": 113.5,
+   "end": 113.78,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "My",
+     "start": 113.5,
+     "end": 113.78
+    }
+   ]
+  },
+  {
+   "line": 20,
+   "text": "favorite",
+   "start": 113.78,
+   "end": 114.72,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "fa",
+     "start": 113.78,
+     "end": 114.18
+    },
+    {
+     "text": "vorite",
+     "start": 114.18,
+     "end": 114.72
+    }
+   ]
+  },
+  {
+   "line": 20,
+   "text": "regret",
+   "start": 114.72,
+   "end": 115.26,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "re",
+     "start": 114.72,
+     "end": 114.94
+    },
+    {
+     "text": "gret",
+     "start": 114.94,
+     "end": 115.26
+    }
+   ]
+  },
+  {
+   "line": 21,
+   "text": "In",
+   "start": 120.46000000000001,
+   "end": 120.68,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "In",
+     "start": 120.46000000000001,
+     "end": 120.68
+    }
+   ]
+  },
+  {
+   "line": 21,
+   "text": "bad",
+   "start": 120.68,
+   "end": 121.12,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "bad",
+     "start": 120.68,
+     "end": 121.12
+    }
+   ]
+  },
+  {
+   "line": 21,
+   "text": "times",
+   "start": 121.12,
+   "end": 121.68,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "times",
+     "start": 121.12,
+     "end": 121.68
+    }
+   ]
+  },
+  {
+   "line": 21,
+   "text": "and",
+   "start": 121.68,
+   "end": 122.04,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "and",
+     "start": 121.68,
+     "end": 122.04
+    }
+   ]
+  },
+  {
+   "line": 21,
+   "text": "good",
+   "start": 122.04,
+   "end": 122.42,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "good",
+     "start": 122.04,
+     "end": 122.42
+    }
+   ]
+  },
+  {
+   "line": 22,
+   "text": "I've",
+   "start": 123.18,
+   "end": 123.4,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "I've",
+     "start": 123.18,
+     "end": 123.4
+    }
+   ]
+  },
+  {
+   "line": 22,
+   "text": "steadfastly",
+   "start": 123.4,
+   "end": 124.74000000000001,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "stead",
+     "start": 123.4,
+     "end": 123.86
+    },
+    {
+     "text": "fast",
+     "start": 123.86,
+     "end": 124.36
+    },
+    {
+     "text": "ly",
+     "start": 124.36,
+     "end": 124.74000000000001
+    }
+   ]
+  },
+  {
+   "line": 22,
+   "text": "stood",
+   "start": 124.74000000000001,
+   "end": 125.12,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "stood",
+     "start": 124.74000000000001,
+     "end": 125.12
+    }
+   ]
+  },
+  {
+   "line": 23,
+   "text": "My",
+   "start": 125.96000000000001,
+   "end": 126.18,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "My",
+     "start": 125.96000000000001,
+     "end": 126.18
+    }
+   ]
+  },
+  {
+   "line": 23,
+   "text": "passion",
+   "start": 126.18,
+   "end": 127.14,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "pas",
+     "start": 126.18,
+     "end": 126.64
+    },
+    {
+     "text": "sion",
+     "start": 126.64,
+     "end": 127.14
+    }
+   ]
+  },
+  {
+   "line": 23,
+   "text": "just",
+   "start": 127.14,
+   "end": 127.60000000000001,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "just",
+     "start": 127.14,
+     "end": 127.60000000000001
+    }
+   ]
+  },
+  {
+   "line": 23,
+   "text": "waits",
+   "start": 127.60000000000001,
+   "end": 128.06,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "waits",
+     "start": 127.60000000000001,
+     "end": 128.06
+    }
+   ]
+  },
+  {
+   "line": 23,
+   "text": "to",
+   "start": 128.06,
+   "end": 128.3,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "to",
+     "start": 128.06,
+     "end": 128.3
+    }
+   ]
+  },
+  {
+   "line": 23,
+   "text": "be",
+   "start": 128.3,
+   "end": 128.7,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "be",
+     "start": 128.3,
+     "end": 128.7
+    }
+   ]
+  },
+  {
+   "line": 23,
+   "text": "freed",
+   "start": 128.7,
+   "end": 130.4,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "freed",
+     "start": 128.7,
+     "end": 130.4
+    }
+   ]
+  },
+  {
+   "line": 24,
+   "text": "But",
+   "start": 131.2,
+   "end": 131.8,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "But",
+     "start": 131.2,
+     "end": 131.8
+    }
+   ]
+  },
+  {
+   "line": 24,
+   "text": "he,",
+   "start": 131.8,
+   "end": 132.62,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "he,",
+     "start": 131.8,
+     "end": 132.62
+    }
+   ]
+  },
+  {
+   "line": 24,
+   "text": "is",
+   "start": 132.96,
+   "end": 133.16,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "is",
+     "start": 132.96,
+     "end": 133.16
+    }
+   ]
+  },
+  {
+   "line": 24,
+   "text": "destined",
+   "start": 133.16,
+   "end": 134.12,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "des",
+     "start": 133.16,
+     "end": 133.6
+    },
+    {
+     "text": "tined",
+     "start": 133.6,
+     "end": 134.12
+    }
+   ]
+  },
+  {
+   "line": 24,
+   "text": "to",
+   "start": 134.12,
+   "end": 134.34,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "to",
+     "start": 134.12,
+     "end": 134.34
+    }
+   ]
+  },
+  {
+   "line": 24,
+   "text": "be",
+   "start": 134.34,
+   "end": 134.82,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "be",
+     "start": 134.34,
+     "end": 134.82
+    }
+   ]
+  },
+  {
+   "line": 25,
+   "text": "My",
+   "start": 135.66,
+   "end": 135.9,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "My",
+     "start": 135.66,
+     "end": 135.9
+    }
+   ]
+  },
+  {
+   "line": 25,
+   "text": "favorite",
+   "start": 135.9,
+   "end": 136.86,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "fa",
+     "start": 135.9,
+     "end": 136.3
+    },
+    {
+     "text": "vorite",
+     "start": 136.3,
+     "end": 136.86
+    }
+   ]
+  },
+  {
+   "line": 25,
+   "text": "regret",
+   "start": 136.86,
+   "end": 137.4,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "re",
+     "start": 136.86,
+     "end": 137.1
+    },
+    {
+     "text": "gret",
+     "start": 137.1,
+     "end": 137.4
+    }
+   ]
+  },
+  {
+   "line": 26,
+   "text": "Well,",
+   "start": 141.92000000000002,
+   "end": 142.52,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "Well,",
+     "start": 141.92000000000002,
+     "end": 142.52
+    }
+   ]
+  },
+  {
+   "line": 26,
+   "text": "I've",
+   "start": 142.52,
+   "end": 142.86,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "I've",
+     "start": 142.52,
+     "end": 142.86
+    }
+   ]
+  },
+  {
+   "line": 26,
+   "text": "got",
+   "start": 142.86,
+   "end": 143.32,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "got",
+     "start": 142.86,
+     "end": 143.32
+    }
+   ]
+  },
+  {
+   "line": 26,
+   "text": "more",
+   "start": 143.32,
+   "end": 143.82,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "more",
+     "start": 143.32,
+     "end": 143.82
+    }
+   ]
+  },
+  {
+   "line": 26,
+   "text": "to",
+   "start": 143.82,
+   "end": 144.08,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "to",
+     "start": 143.82,
+     "end": 144.08
+    }
+   ]
+  },
+  {
+   "line": 26,
+   "text": "give",
+   "start": 144.08,
+   "end": 144.72,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "give",
+     "start": 144.08,
+     "end": 144.72
+    }
+   ]
+  },
+  {
+   "line": 27,
+   "text": "But",
+   "start": 144.72,
+   "end": 145.14000000000001,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "But",
+     "start": 144.72,
+     "end": 145.14000000000001
+    }
+   ]
+  },
+  {
+   "line": 27,
+   "text": "I'm",
+   "start": 145.14000000000001,
+   "end": 145.58,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "I'm",
+     "start": 145.14000000000001,
+     "end": 145.58
+    }
+   ]
+  },
+  {
+   "line": 27,
+   "text": "happy",
+   "start": 145.58,
+   "end": 146.56,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "hap",
+     "start": 145.58,
+     "end": 146.06
+    },
+    {
+     "text": "py",
+     "start": 146.06,
+     "end": 146.56
+    }
+   ]
+  },
+  {
+   "line": 27,
+   "text": "to",
+   "start": 146.56,
+   "end": 146.84,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "to",
+     "start": 146.56,
+     "end": 146.84
+    }
+   ]
+  },
+  {
+   "line": 27,
+   "text": "live",
+   "start": 146.84,
+   "end": 147.56,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "live",
+     "start": 146.84,
+     "end": 147.56
+    }
+   ]
+  },
+  {
+   "line": 28,
+   "text": "In",
+   "start": 147.56,
+   "end": 147.94,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "In",
+     "start": 147.56,
+     "end": 147.94
+    }
+   ]
+  },
+  {
+   "line": 28,
+   "text": "the",
+   "start": 147.94,
+   "end": 148.32,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "the",
+     "start": 147.94,
+     "end": 148.32
+    }
+   ]
+  },
+  {
+   "line": 28,
+   "text": "shadow,",
+   "start": 148.32,
+   "end": 148.9,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "shad",
+     "start": 148.32,
+     "end": 148.70000000000002
+    },
+    {
+     "text": "ow,",
+     "start": 148.70000000000002,
+     "end": 148.9
+    }
+   ]
+  },
+  {
+   "line": 28,
+   "text": "of",
+   "start": 149.64000000000001,
+   "end": 149.82,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "of",
+     "start": 149.64000000000001,
+     "end": 149.82
+    }
+   ]
+  },
+  {
+   "line": 28,
+   "text": "what",
+   "start": 149.82,
+   "end": 150.20000000000002,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "what",
+     "start": 149.82,
+     "end": 150.20000000000002
+    }
+   ]
+  },
+  {
+   "line": 28,
+   "text": "could’ve",
+   "start": 150.20000000000002,
+   "end": 151.14000000000001,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "could’ve",
+     "start": 150.20000000000002,
+     "end": 151.14000000000001
+    }
+   ]
+  },
+  {
+   "line": 28,
+   "text": "been",
+   "start": 151.14000000000001,
+   "end": 151.9,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "been",
+     "start": 151.14000000000001,
+     "end": 151.9
+    }
+   ]
+  },
+  {
+   "line": 29,
+   "text": "But",
+   "start": 152.96,
+   "end": 153.58,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "But",
+     "start": 152.96,
+     "end": 153.58
+    }
+   ]
+  },
+  {
+   "line": 29,
+   "text": "a",
+   "start": 153.58,
+   "end": 153.88,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "a",
+     "start": 153.58,
+     "end": 153.88
+    }
+   ]
+  },
+  {
+   "line": 29,
+   "text": "part",
+   "start": 153.88,
+   "end": 154.52,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "part",
+     "start": 153.88,
+     "end": 154.52
+    }
+   ]
+  },
+  {
+   "line": 29,
+   "text": "of",
+   "start": 154.52,
+   "end": 154.74,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "of",
+     "start": 154.52,
+     "end": 154.74
+    }
+   ]
+  },
+  {
+   "line": 29,
+   "text": "me",
+   "start": 154.74,
+   "end": 155.14000000000001,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "me",
+     "start": 154.74,
+     "end": 155.14000000000001
+    }
+   ]
+  },
+  {
+   "line": 29,
+   "text": "yearns",
+   "start": 155.14000000000001,
+   "end": 155.82,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "yearns",
+     "start": 155.14000000000001,
+     "end": 155.82
+    }
+   ]
+  },
+  {
+   "line": 30,
+   "text": "Like",
+   "start": 155.82,
+   "end": 156.3,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "Like",
+     "start": 155.82,
+     "end": 156.3
+    }
+   ]
+  },
+  {
+   "line": 30,
+   "text": "an",
+   "start": 156.3,
+   "end": 156.76,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "an",
+     "start": 156.3,
+     "end": 156.76
+    }
+   ]
+  },
+  {
+   "line": 30,
+   "text": "ember,",
+   "start": 156.76,
+   "end": 157.54,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "em",
+     "start": 156.76,
+     "end": 157.16
+    },
+    {
+     "text": "ber,",
+     "start": 157.16,
+     "end": 157.54
+    }
+   ]
+  },
+  {
+   "line": 30,
+   "text": "it",
+   "start": 157.54,
+   "end": 157.76,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "it",
+     "start": 157.54,
+     "end": 157.76
+    }
+   ]
+  },
+  {
+   "line": 30,
+   "text": "burns",
+   "start": 158.02,
+   "end": 159.36,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "burns",
+     "start": 158.02,
+     "end": 159.36
+    }
+   ]
+  },
+  {
+   "line": 31,
+   "text": "Forever,",
+   "start": 162.02,
+   "end": 162.8,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "For",
+     "start": 162.02,
+     "end": 162.36
+    },
+    {
+     "text": "ev",
+     "start": 162.36,
+     "end": 162.58
+    },
+    {
+     "text": "er,",
+     "start": 162.58,
+     "end": 162.8
+    }
+   ]
+  },
+  {
+   "line": 31,
+   "text": "my",
+   "start": 163.14000000000001,
+   "end": 163.38,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "my",
+     "start": 163.14000000000001,
+     "end": 163.38
+    }
+   ]
+  },
+  {
+   "line": 31,
+   "text": "favorite",
+   "start": 163.54,
+   "end": 164.3,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "fa",
+     "start": 163.54,
+     "end": 163.94
+    },
+    {
+     "text": "vorite",
+     "start": 163.94,
+     "end": 164.3
+    }
+   ]
+  },
+  {
+   "line": 31,
+   "text": "regret",
+   "start": 164.54,
+   "end": 165.28,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "re",
+     "start": 164.54,
+     "end": 164.96
+    },
+    {
+     "text": "gret",
+     "start": 164.96,
+     "end": 165.28
+    }
+   ]
+  },
+  {
+   "line": 32,
+   "text": "One",
+   "start": 170.68,
+   "end": 173.32,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "One",
+     "start": 170.68,
+     "end": 173.32
+    }
+   ]
+  },
+  {
+   "line": 32,
+   "text": "day,",
+   "start": 173.32,
+   "end": 174.08,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "day,",
+     "start": 173.32,
+     "end": 174.08
+    }
+   ]
+  },
+  {
+   "line": 32,
+   "text": "when",
+   "start": 175.08,
+   "end": 175.56,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "when",
+     "start": 175.08,
+     "end": 175.56
+    }
+   ]
+  },
+  {
+   "line": 32,
+   "text": "the",
+   "start": 175.56,
+   "end": 175.84,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "the",
+     "start": 175.56,
+     "end": 175.84
+    }
+   ]
+  },
+  {
+   "line": 32,
+   "text": "stars",
+   "start": 175.84,
+   "end": 178.76,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "stars",
+     "start": 175.84,
+     "end": 178.76
+    }
+   ]
+  },
+  {
+   "line": 32,
+   "text": "fade",
+   "start": 178.76,
+   "end": 179.38,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "fade",
+     "start": 178.76,
+     "end": 179.38
+    }
+   ]
+  },
+  {
+   "line": 33,
+   "text": "Will",
+   "start": 181.12,
+   "end": 181.4,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "Will",
+     "start": 181.12,
+     "end": 181.4
+    }
+   ]
+  },
+  {
+   "line": 33,
+   "text": "the",
+   "start": 181.4,
+   "end": 181.68,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "the",
+     "start": 181.4,
+     "end": 181.68
+    }
+   ]
+  },
+  {
+   "line": 33,
+   "text": "echoes",
+   "start": 181.68,
+   "end": 183.1,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "e",
+     "start": 181.68,
+     "end": 181.84
+    },
+    {
+     "text": "choes",
+     "start": 181.84,
+     "end": 183.1
+    }
+   ]
+  },
+  {
+   "line": 33,
+   "text": "of",
+   "start": 183.1,
+   "end": 183.72,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "of",
+     "start": 183.1,
+     "end": 183.72
+    }
+   ]
+  },
+  {
+   "line": 33,
+   "text": "my",
+   "start": 183.72,
+   "end": 184.32,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "my",
+     "start": 183.72,
+     "end": 184.32
+    }
+   ]
+  },
+  {
+   "line": 33,
+   "text": "love",
+   "start": 184.32,
+   "end": 184.94,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "love",
+     "start": 184.32,
+     "end": 184.94
+    }
+   ]
+  },
+  {
+   "line": 34,
+   "text": "Arrive",
+   "start": 187.02,
+   "end": 188.16,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "Ar",
+     "start": 187.02,
+     "end": 187.18
+    },
+    {
+     "text": "rive",
+     "start": 187.18,
+     "end": 188.16
+    }
+   ]
+  },
+  {
+   "line": 34,
+   "text": "to",
+   "start": 188.16,
+   "end": 188.6,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "to",
+     "start": 188.16,
+     "end": 188.6
+    }
+   ]
+  },
+  {
+   "line": 34,
+   "text": "you",
+   "start": 188.6,
+   "end": 189.58,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "you",
+     "start": 188.6,
+     "end": 189.58
+    }
+   ]
+  },
+  {
+   "line": 34,
+   "text": "above",
+   "start": 189.58,
+   "end": 190.26,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "a",
+     "start": 189.58,
+     "end": 189.76
+    },
+    {
+     "text": "bove",
+     "start": 189.76,
+     "end": 190.26
+    }
+   ]
+  },
+  {
+   "line": 35,
+   "text": "And",
+   "start": 192.52,
+   "end": 192.70000000000002,
+   "estimated": true,
+   "syllables": [
+    {
+     "text": "And",
+     "start": 192.52,
+     "end": 192.70000000000002
+    }
+   ]
+  },
+  {
+   "line": 35,
+   "text": "wake",
+   "start": 192.70000000000002,
+   "end": 195.02,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "wake",
+     "start": 192.70000000000002,
+     "end": 195.02
+    }
+   ]
+  },
+  {
+   "line": 35,
+   "text": "you",
+   "start": 195.02,
+   "end": 195.56,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "you",
+     "start": 195.02,
+     "end": 195.56
+    }
+   ]
+  },
+  {
+   "line": 35,
+   "text": "up",
+   "start": 195.56,
+   "end": 195.92000000000002,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "up",
+     "start": 195.56,
+     "end": 195.92000000000002
+    }
+   ]
+  },
+  {
+   "line": 35,
+   "text": "at",
+   "start": 200.6,
+   "end": 200.86,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "at",
+     "start": 200.6,
+     "end": 200.86
+    }
+   ]
+  },
+  {
+   "line": 35,
+   "text": "last",
+   "start": 200.86,
+   "end": 201.68,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "last",
+     "start": 200.86,
+     "end": 201.68
+    }
+   ]
+  },
+  {
+   "line": 36,
+   "text": "I'll",
+   "start": 228.46,
+   "end": 228.64000000000001,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "I'll",
+     "start": 228.46,
+     "end": 228.64000000000001
+    }
+   ]
+  },
+  {
+   "line": 36,
+   "text": "take",
+   "start": 228.72,
+   "end": 229.16,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "take",
+     "start": 228.72,
+     "end": 229.16
+    }
+   ]
+  },
+  {
+   "line": 36,
+   "text": "what",
+   "start": 229.16,
+   "end": 229.5,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "what",
+     "start": 229.16,
+     "end": 229.5
+    }
+   ]
+  },
+  {
+   "line": 36,
+   "text": "I've",
+   "start": 229.5,
+   "end": 229.86,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "I've",
+     "start": 229.5,
+     "end": 229.86
+    }
+   ]
+  },
+  {
+   "line": 36,
+   "text": "got",
+   "start": 230.06,
+   "end": 230.34,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "got",
+     "start": 230.06,
+     "end": 230.34
+    }
+   ]
+  },
+  {
+   "line": 37,
+   "text": "Put",
+   "start": 231.0,
+   "end": 231.24,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "Put",
+     "start": 231.0,
+     "end": 231.24
+    }
+   ]
+  },
+  {
+   "line": 37,
+   "text": "the",
+   "start": 231.24,
+   "end": 231.48000000000002,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "the",
+     "start": 231.24,
+     "end": 231.48000000000002
+    }
+   ]
+  },
+  {
+   "line": 37,
+   "text": "rest",
+   "start": 231.48000000000002,
+   "end": 232.0,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "rest",
+     "start": 231.48000000000002,
+     "end": 232.0
+    }
+   ]
+  },
+  {
+   "line": 37,
+   "text": "in",
+   "start": 232.0,
+   "end": 232.28,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "in",
+     "start": 232.0,
+     "end": 232.28
+    }
+   ]
+  },
+  {
+   "line": 37,
+   "text": "a",
+   "start": 232.28,
+   "end": 232.58,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "a",
+     "start": 232.28,
+     "end": 232.58
+    }
+   ]
+  },
+  {
+   "line": 37,
+   "text": "box",
+   "start": 232.82,
+   "end": 233.1,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "box",
+     "start": 232.82,
+     "end": 233.1
+    }
+   ]
+  },
+  {
+   "line": 38,
+   "text": "Addressed",
+   "start": 234.06,
+   "end": 234.70000000000002,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "Ad",
+     "start": 234.06,
+     "end": 234.22
+    },
+    {
+     "text": "dressed",
+     "start": 234.22,
+     "end": 234.70000000000002
+    }
+   ]
+  },
+  {
+   "line": 38,
+   "text": "to",
+   "start": 234.70000000000002,
+   "end": 235.14000000000001,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "to",
+     "start": 234.70000000000002,
+     "end": 235.14000000000001
+    }
+   ]
+  },
+  {
+   "line": 38,
+   "text": "the",
+   "start": 235.14000000000001,
+   "end": 235.36,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "the",
+     "start": 235.14000000000001,
+     "end": 235.36
+    }
+   ]
+  },
+  {
+   "line": 38,
+   "text": "stars",
+   "start": 235.36,
+   "end": 236.1,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "stars",
+     "start": 235.36,
+     "end": 236.1
+    }
+   ]
+  },
+  {
+   "line": 38,
+   "text": "in",
+   "start": 236.1,
+   "end": 236.34,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "in",
+     "start": 236.1,
+     "end": 236.34
+    }
+   ]
+  },
+  {
+   "line": 38,
+   "text": "the",
+   "start": 236.34,
+   "end": 236.92000000000002,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "the",
+     "start": 236.34,
+     "end": 236.92000000000002
+    }
+   ]
+  },
+  {
+   "line": 38,
+   "text": "sky",
+   "start": 236.92000000000002,
+   "end": 237.58,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "sky",
+     "start": 236.92000000000002,
+     "end": 237.58
+    }
+   ]
+  },
+  {
+   "line": 39,
+   "text": "And",
+   "start": 239.36,
+   "end": 239.8,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "And",
+     "start": 239.36,
+     "end": 239.8
+    }
+   ]
+  },
+  {
+   "line": 39,
+   "text": "soon,",
+   "start": 239.8,
+   "end": 240.62,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "soon,",
+     "start": 239.8,
+     "end": 240.62
+    }
+   ]
+  },
+  {
+   "line": 39,
+   "text": "up",
+   "start": 240.98000000000002,
+   "end": 241.06,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "up",
+     "start": 240.98000000000002,
+     "end": 241.06
+    }
+   ]
+  },
+  {
+   "line": 39,
+   "text": "there",
+   "start": 241.14000000000001,
+   "end": 241.6,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "there",
+     "start": 241.14000000000001,
+     "end": 241.6
+    }
+   ]
+  },
+  {
+   "line": 39,
+   "text": "with",
+   "start": 241.6,
+   "end": 242.04,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "with",
+     "start": 241.6,
+     "end": 242.04
+    }
+   ]
+  },
+  {
+   "line": 39,
+   "text": "the",
+   "start": 242.04,
+   "end": 242.32,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "the",
+     "start": 242.04,
+     "end": 242.32
+    }
+   ]
+  },
+  {
+   "line": 39,
+   "text": "moon",
+   "start": 242.32,
+   "end": 242.78,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "moon",
+     "start": 242.32,
+     "end": 242.78
+    }
+   ]
+  },
+  {
+   "line": 40,
+   "text": "My",
+   "start": 243.58,
+   "end": 243.66,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "My",
+     "start": 243.58,
+     "end": 243.66
+    }
+   ]
+  },
+  {
+   "line": 40,
+   "text": "favorite",
+   "start": 243.86,
+   "end": 244.66,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "fa",
+     "start": 243.86,
+     "end": 244.32
+    },
+    {
+     "text": "vorite",
+     "start": 244.32,
+     "end": 244.66
+    }
+   ]
+  },
+  {
+   "line": 40,
+   "text": "regret",
+   "start": 244.82,
+   "end": 245.36,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "re",
+     "start": 244.82,
+     "end": 245.04
+    },
+    {
+     "text": "gret",
+     "start": 245.04,
+     "end": 245.36
+    }
+   ]
+  },
+  {
+   "line": 41,
+   "text": "Forever",
+   "start": 250.66,
+   "end": 251.86,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "For",
+     "start": 250.66,
+     "end": 251.02
+    },
+    {
+     "text": "ev",
+     "start": 251.02,
+     "end": 251.4
+    },
+    {
+     "text": "er",
+     "start": 251.4,
+     "end": 251.86
+    }
+   ]
+  },
+  {
+   "line": 41,
+   "text": "my",
+   "start": 251.86,
+   "end": 252.16,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "my",
+     "start": 251.86,
+     "end": 252.16
+    }
+   ]
+  },
+  {
+   "line": 41,
+   "text": "favorite",
+   "start": 252.34,
+   "end": 253.46,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "fa",
+     "start": 252.34,
+     "end": 252.84
+    },
+    {
+     "text": "vorite",
+     "start": 252.84,
+     "end": 253.46
+    }
+   ]
+  },
+  {
+   "line": 41,
+   "text": "regret",
+   "start": 253.62,
+   "end": 254.78,
+   "estimated": false,
+   "syllables": [
+    {
+     "text": "re",
+     "start": 253.62,
+     "end": 254.24
+    },
+    {
+     "text": "gret",
+     "start": 254.24,
+     "end": 254.78
+    }
+   ]
+  }
+ ]
+}

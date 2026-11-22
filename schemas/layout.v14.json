@@ -1,0 +1,1135 @@
+{
+  "$defs": {
+    "BackgroundMotion": {
+      "additionalProperties": false,
+      "description": "A colour gradient that moves slowly, drawn instead of the plain background.\n\nAttributes:\n    colours: Two to four colours as ``#rrggbb``.\n    speed: How fast the gradient turns (ffmpeg's ``gradients`` speed).",
+      "properties": {
+        "colours": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Colours",
+          "type": "array"
+        },
+        "speed": {
+          "title": "Speed",
+          "type": "number"
+        }
+      },
+      "required": [
+        "colours",
+        "speed"
+      ],
+      "title": "BackgroundMotion",
+      "type": "object"
+    },
+    "BuildUp": {
+      "additionalProperties": false,
+      "description": "How the start screen with the wordmark builds up (ADR-0055).\n\nAttributes:\n    edge: When the glowing edge of the letters fades in.\n    fills: The steps in which the bands fill the letters, in order.\n    wipe: When the frame and the texts wipe in from the left.",
+      "properties": {
+        "edge": {
+          "$ref": "#/$defs/TimeRange"
+        },
+        "fills": {
+          "items": {
+            "$ref": "#/$defs/MarkFill"
+          },
+          "title": "Fills",
+          "type": "array"
+        },
+        "wipe": {
+          "$ref": "#/$defs/TimeRange"
+        }
+      },
+      "required": [
+        "edge",
+        "fills",
+        "wipe"
+      ],
+      "title": "BuildUp",
+      "type": "object"
+    },
+    "CardElement": {
+      "additionalProperties": false,
+      "description": "A screen of centred text: the title, a break screen or the end screen.\n\nIn scroll mode the break screen is the notice in the column and has a path (``Moving``,\nADR-0040); the others stand still.\n\nAttributes:\n    kind: ``title``, ``break`` or ``end``.\n    lines: The lines, from the top.\n    fade_out: Seconds the card fades out at its end.\n    mark: The wordmark, frame and field of a start screen with the wordmark; ``None`` for a\n        plain card (ADR-0055). Then ``box`` also holds the wordmark and the frame.",
+      "properties": {
+        "box": {
+          "$ref": "#/$defs/Rect"
+        },
+        "end": {
+          "title": "End",
+          "type": "number"
+        },
+        "fade_out": {
+          "default": 0.0,
+          "title": "Fade Out",
+          "type": "number"
+        },
+        "kind": {
+          "enum": [
+            "title",
+            "break",
+            "end"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "lines": {
+          "items": {
+            "$ref": "#/$defs/CardLine"
+          },
+          "title": "Lines",
+          "type": "array"
+        },
+        "mark": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/TitleMark"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "path": {
+          "items": {
+            "$ref": "#/$defs/Keyframe"
+          },
+          "title": "Path",
+          "type": "array"
+        },
+        "start": {
+          "title": "Start",
+          "type": "number"
+        }
+      },
+      "required": [
+        "start",
+        "end",
+        "box",
+        "kind",
+        "lines"
+      ],
+      "title": "CardElement",
+      "type": "object"
+    },
+    "CardLine": {
+      "additionalProperties": false,
+      "description": "One line of text on a card.\n\nAttributes:\n    text: The text.\n    size: Font size.\n    edge: Outline width in pixels.\n    shadow: Shadow offset in pixels.\n    colour: Text colour.\n    edge_colour: Outline colour.\n    box: Where it is drawn.\n    text_x: Where the text starts.\n    text_y: The top of the line cell.",
+      "properties": {
+        "box": {
+          "$ref": "#/$defs/Rect"
+        },
+        "colour": {
+          "title": "Colour",
+          "type": "string"
+        },
+        "edge": {
+          "title": "Edge",
+          "type": "number"
+        },
+        "edge_colour": {
+          "title": "Edge Colour",
+          "type": "string"
+        },
+        "shadow": {
+          "title": "Shadow",
+          "type": "number"
+        },
+        "size": {
+          "title": "Size",
+          "type": "number"
+        },
+        "text": {
+          "title": "Text",
+          "type": "string"
+        },
+        "text_x": {
+          "title": "Text X",
+          "type": "number"
+        },
+        "text_y": {
+          "title": "Text Y",
+          "type": "number"
+        }
+      },
+      "required": [
+        "text",
+        "size",
+        "edge",
+        "shadow",
+        "colour",
+        "edge_colour",
+        "box",
+        "text_x",
+        "text_y"
+      ],
+      "title": "CardLine",
+      "type": "object"
+    },
+    "Colours": {
+      "additionalProperties": false,
+      "description": "The three colours of a text: before the wipe, after it, and the outline.",
+      "properties": {
+        "edge": {
+          "title": "Edge",
+          "type": "string"
+        },
+        "sung": {
+          "title": "Sung",
+          "type": "string"
+        },
+        "unsung": {
+          "title": "Unsung",
+          "type": "string"
+        }
+      },
+      "required": [
+        "unsung",
+        "sung",
+        "edge"
+      ],
+      "title": "Colours",
+      "type": "object"
+    },
+    "CountdownElement": {
+      "additionalProperties": false,
+      "description": "The countdown before a line, ending at ``tempo.countdown_end``.\n\nA countdown in beats ends one beat before the line starts, one in seconds when it starts\n(ADR-0028).\n\nAttributes:\n    form: ``shrinking-bar``, ``dots`` or ``blocks``.\n    count: The number of dots or blocks. In a countdown in beats it is the number of beats it\n        lasts.\n    colour: Its colour.\n    beat: The length of one beat in seconds when the countdown counts beats of the song's\n        tempo (it then lasts ``count`` beats); ``None`` when it runs over a fixed number of\n        seconds (ADR-0022).",
+      "properties": {
+        "beat": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Beat"
+        },
+        "box": {
+          "$ref": "#/$defs/Rect"
+        },
+        "colour": {
+          "title": "Colour",
+          "type": "string"
+        },
+        "count": {
+          "title": "Count",
+          "type": "integer"
+        },
+        "end": {
+          "title": "End",
+          "type": "number"
+        },
+        "form": {
+          "enum": [
+            "shrinking-bar",
+            "dots",
+            "blocks"
+          ],
+          "title": "Form",
+          "type": "string"
+        },
+        "kind": {
+          "const": "countdown",
+          "default": "countdown",
+          "title": "Kind",
+          "type": "string"
+        },
+        "start": {
+          "title": "Start",
+          "type": "number"
+        }
+      },
+      "required": [
+        "start",
+        "end",
+        "box",
+        "form",
+        "count",
+        "colour"
+      ],
+      "title": "CountdownElement",
+      "type": "object"
+    },
+    "Fingerprint": {
+      "additionalProperties": false,
+      "description": "What a stage file was made from.\n\nAttributes:\n    inputs: SHA-256 of the content of every input file, by input name.\n    settings: SHA-256 of the canonical JSON of the settings the stage declares.\n    stage_version: The version of the stage's own code.",
+      "properties": {
+        "inputs": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "title": "Inputs",
+          "type": "object"
+        },
+        "settings": {
+          "title": "Settings",
+          "type": "string"
+        },
+        "stage_version": {
+          "title": "Stage Version",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "inputs",
+        "settings",
+        "stage_version"
+      ],
+      "title": "Fingerprint",
+      "type": "object"
+    },
+    "Keyframe": {
+      "additionalProperties": false,
+      "description": "A point of the path of an element in scroll mode: at ``time`` it is at height ``y``.\n\nBetween two keyframes the element moves in a straight line; two keyframes with the same ``y``\nare a stretch where it stands still, two with the same ``time`` a jump (ADR-0033).\n\nAttributes:\n    time: Seconds on the song timeline.\n    y: The anchor of the element (``Moving.anchor``) at that time, in pixels: the top of the\n        line cell of a line and a timer, the top of the box of a break card and a bar.",
+      "properties": {
+        "time": {
+          "title": "Time",
+          "type": "number"
+        },
+        "y": {
+          "title": "Y",
+          "type": "number"
+        }
+      },
+      "required": [
+        "time",
+        "y"
+      ],
+      "title": "Keyframe",
+      "type": "object"
+    },
+    "LineElement": {
+      "additionalProperties": false,
+      "description": "A lyric line in a slot.\n\nAttributes:\n    text: The line as drawn.\n    singers: Who sings its first syllable: ``1``, ``1,3`` or ``all``.\n    voice: ``2`` for a line sung by the second voice at the same time as the first (ADR-0052),\n        ``1`` otherwise. Two lines of different voices may be on screen and sung at once. A\n        second-voice line without a singer mark of its own is drawn in the colours of singer\n        2, whoever ``singers`` names (ADR-0054).\n    slot: The slot it is in, counted from the top; 0 in scroll mode, which has no slots.\n    page: The index of the page it belongs to in page mode, ``None`` in line mode.\n    row: Which row of its lyric line this is: 0 for the first (or only) row, 1 for the\n        second row of a line wrapped onto two rows. The rows share their times and either\n        one slot or, with ``page.slot_per_row``, neighbouring slots.\n    part: Which of the lines a lyric line too wide for its rows was split into this is: 0\n        for the first (or a line that was not split), 1 for the next, and so on. In line mode\n        the parts of a line take neighbouring slots, top to bottom, where the slots allow.\n    enter: Seconds from ``start`` that the line takes to come in (``Look.transition``); it\n        ends before the first syllable. 0 for none. The rows of one line share it.\n    exit: Seconds before ``end`` that the line starts to go; it starts after the last\n        syllable. 0 for none.\n    size: Font size (ASS ``Fontsize``).\n    edge: Outline width in pixels.\n    shadow: Shadow offset in pixels.\n    colours: Its colours (those of the singers of its first syllable, or of singer 2 for a\n        second-voice line without a singer mark of its own).\n    turns: Where the singers change inside the line, by rising ``span``; empty for a line\n        sung by one voice or group.\n    text_x: Where the text starts (the left of the first letter).\n    text_y: The top of the line cell. In scroll mode it is where the line stands while it is\n        sung, and ``box`` is the box there.\n    spans: The syllables in the order they are sung.",
+      "properties": {
+        "box": {
+          "$ref": "#/$defs/Rect"
+        },
+        "colours": {
+          "$ref": "#/$defs/Colours"
+        },
+        "edge": {
+          "title": "Edge",
+          "type": "number"
+        },
+        "end": {
+          "title": "End",
+          "type": "number"
+        },
+        "enter": {
+          "default": 0.0,
+          "title": "Enter",
+          "type": "number"
+        },
+        "exit": {
+          "default": 0.0,
+          "title": "Exit",
+          "type": "number"
+        },
+        "kind": {
+          "const": "line",
+          "default": "line",
+          "title": "Kind",
+          "type": "string"
+        },
+        "page": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Page"
+        },
+        "part": {
+          "default": 0,
+          "title": "Part",
+          "type": "integer"
+        },
+        "path": {
+          "items": {
+            "$ref": "#/$defs/Keyframe"
+          },
+          "title": "Path",
+          "type": "array"
+        },
+        "row": {
+          "default": 0,
+          "title": "Row",
+          "type": "integer"
+        },
+        "shadow": {
+          "title": "Shadow",
+          "type": "number"
+        },
+        "singers": {
+          "title": "Singers",
+          "type": "string"
+        },
+        "size": {
+          "title": "Size",
+          "type": "number"
+        },
+        "slot": {
+          "title": "Slot",
+          "type": "integer"
+        },
+        "spans": {
+          "items": {
+            "$ref": "#/$defs/Span"
+          },
+          "title": "Spans",
+          "type": "array"
+        },
+        "start": {
+          "title": "Start",
+          "type": "number"
+        },
+        "text": {
+          "title": "Text",
+          "type": "string"
+        },
+        "text_x": {
+          "title": "Text X",
+          "type": "number"
+        },
+        "text_y": {
+          "title": "Text Y",
+          "type": "number"
+        },
+        "turns": {
+          "items": {
+            "$ref": "#/$defs/LineTurn"
+          },
+          "title": "Turns",
+          "type": "array"
+        },
+        "voice": {
+          "default": 1,
+          "enum": [
+            1,
+            2
+          ],
+          "title": "Voice",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "start",
+        "end",
+        "box",
+        "text",
+        "singers",
+        "slot",
+        "size",
+        "edge",
+        "shadow",
+        "colours",
+        "text_x",
+        "text_y",
+        "spans"
+      ],
+      "title": "LineElement",
+      "type": "object"
+    },
+    "LineTurn": {
+      "additionalProperties": false,
+      "description": "A change of singers inside a line: from one syllable on, other colours.\n\nAttributes:\n    span: The index of the first syllable (in ``LineElement.spans``) the new singers sing.\n    singers: Who sings from there on: ``1``, ``1,3`` or ``all``.\n    colours: Their colours (those of the lyrics file where it names one).",
+      "properties": {
+        "colours": {
+          "$ref": "#/$defs/Colours"
+        },
+        "singers": {
+          "title": "Singers",
+          "type": "string"
+        },
+        "span": {
+          "title": "Span",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "span",
+        "singers",
+        "colours"
+      ],
+      "title": "LineTurn",
+      "type": "object"
+    },
+    "Look": {
+      "additionalProperties": false,
+      "description": "What every renderer needs besides the elements.\n\nAttributes:\n    font: The font family name (the bundled font).\n    wipe: ``smooth`` or ``syllable``.\n    wipe_offset: Seconds the wipes are shifted.\n    shadow_colour: Shadow colour as ``#rrggbb``.\n    shadow_alpha: Shadow opacity.\n    glow: Strength (0 to 1) of the glow of the sung text, 0 for none (ADR-0032).\n    glow_colour: The colour of the glow, ``None`` for the sung colour of the line.\n    pop_scale: How much larger the word being sung gets, 1 for no pop.\n    pop_time: Seconds from the start of a word until it is back to its size.\n    upcoming_dim: How much a line is dimmed before its first syllable, 0 for not at all.\n    transition: ``none``, ``fade`` or ``slide``: how the lines come and go (``enter`` and\n        ``exit`` of a line say how long).\n    sung_dim: How much a line is dimmed once it has been sung, 0 for not at all; only in\n        scroll mode, where sung lines stay in the column (ADR-0033).",
+      "properties": {
+        "font": {
+          "title": "Font",
+          "type": "string"
+        },
+        "glow": {
+          "default": 0.0,
+          "title": "Glow",
+          "type": "number"
+        },
+        "glow_colour": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Glow Colour"
+        },
+        "pop_scale": {
+          "default": 1.0,
+          "title": "Pop Scale",
+          "type": "number"
+        },
+        "pop_time": {
+          "default": 0.25,
+          "title": "Pop Time",
+          "type": "number"
+        },
+        "shadow_alpha": {
+          "title": "Shadow Alpha",
+          "type": "number"
+        },
+        "shadow_colour": {
+          "title": "Shadow Colour",
+          "type": "string"
+        },
+        "sung_dim": {
+          "default": 0.0,
+          "title": "Sung Dim",
+          "type": "number"
+        },
+        "transition": {
+          "default": "none",
+          "enum": [
+            "none",
+            "fade",
+            "slide"
+          ],
+          "title": "Transition",
+          "type": "string"
+        },
+        "upcoming_dim": {
+          "default": 0.0,
+          "title": "Upcoming Dim",
+          "type": "number"
+        },
+        "wipe": {
+          "enum": [
+            "smooth",
+            "syllable"
+          ],
+          "title": "Wipe",
+          "type": "string"
+        },
+        "wipe_offset": {
+          "title": "Wipe Offset",
+          "type": "number"
+        }
+      },
+      "required": [
+        "font",
+        "wipe",
+        "wipe_offset",
+        "shadow_colour",
+        "shadow_alpha"
+      ],
+      "title": "Look",
+      "type": "object"
+    },
+    "MarkFill": {
+      "additionalProperties": false,
+      "description": "One step of the build-up of the wordmark: letters that fill with their colour bands.\n\nAttributes:\n    first: The index of the first letter of the step in the word.\n    last: The index of the last letter of the step.\n    when: When the bands sweep into those letters, from left to right.",
+      "properties": {
+        "first": {
+          "title": "First",
+          "type": "integer"
+        },
+        "last": {
+          "title": "Last",
+          "type": "integer"
+        },
+        "when": {
+          "$ref": "#/$defs/TimeRange"
+        }
+      },
+      "required": [
+        "first",
+        "last",
+        "when"
+      ],
+      "title": "MarkFill",
+      "type": "object"
+    },
+    "PreviewElement": {
+      "additionalProperties": false,
+      "description": "The next line, smaller and in its unsung colour, below the line being sung.\n\nIt is on screen from the moment it is first shown until the line takes the main place.\n\nAttributes:\n    of_line: The index in ``Scene.lines()`` of the line it previews.\n    line: What it draws.",
+      "properties": {
+        "box": {
+          "$ref": "#/$defs/Rect"
+        },
+        "end": {
+          "title": "End",
+          "type": "number"
+        },
+        "kind": {
+          "const": "preview",
+          "default": "preview",
+          "title": "Kind",
+          "type": "string"
+        },
+        "line": {
+          "$ref": "#/$defs/CardLine"
+        },
+        "of_line": {
+          "title": "Of Line",
+          "type": "integer"
+        },
+        "start": {
+          "title": "Start",
+          "type": "number"
+        }
+      },
+      "required": [
+        "start",
+        "end",
+        "box",
+        "of_line",
+        "line"
+      ],
+      "title": "PreviewElement",
+      "type": "object"
+    },
+    "ProgressElement": {
+      "additionalProperties": false,
+      "description": "The progress bar of a break screen: it fills from the start to the end of the screen.\n\nIn scroll mode it moves with the notice (ADR-0040).\n\nAttributes:\n    fill: The colour of the growing fill.\n    frame: The colour of the frame around it.",
+      "properties": {
+        "box": {
+          "$ref": "#/$defs/Rect"
+        },
+        "end": {
+          "title": "End",
+          "type": "number"
+        },
+        "fill": {
+          "title": "Fill",
+          "type": "string"
+        },
+        "frame": {
+          "title": "Frame",
+          "type": "string"
+        },
+        "kind": {
+          "const": "progress",
+          "default": "progress",
+          "title": "Kind",
+          "type": "string"
+        },
+        "path": {
+          "items": {
+            "$ref": "#/$defs/Keyframe"
+          },
+          "title": "Path",
+          "type": "array"
+        },
+        "start": {
+          "title": "Start",
+          "type": "number"
+        }
+      },
+      "required": [
+        "start",
+        "end",
+        "box",
+        "fill",
+        "frame"
+      ],
+      "title": "ProgressElement",
+      "type": "object"
+    },
+    "Rect": {
+      "additionalProperties": false,
+      "description": "A rectangle: left, top, width, height.",
+      "properties": {
+        "h": {
+          "title": "H",
+          "type": "number"
+        },
+        "w": {
+          "title": "W",
+          "type": "number"
+        },
+        "x": {
+          "title": "X",
+          "type": "number"
+        },
+        "y": {
+          "title": "Y",
+          "type": "number"
+        }
+      },
+      "required": [
+        "x",
+        "y",
+        "w",
+        "h"
+      ],
+      "title": "Rect",
+      "type": "object"
+    },
+    "Scene": {
+      "additionalProperties": false,
+      "description": "Everything on screen for a song.\n\nAttributes:\n    width: Frame width in pixels.\n    height: Frame height in pixels.\n    safe: The safe area: all text lies inside.\n    background: The plain background colour.\n    background_motion: A moving gradient drawn instead of it, ``None`` for the plain colour\n        (ADR-0032).\n    duration: The length of the video in seconds: the song and the silent intro.\n    lead: The silence added before the song in seconds (0 for none, ADR-0020). Every time\n        in the scene already includes it; the renderers shift the audio by it.\n    bpm: The tempo whose beats the countdowns count (ADR-0022), ``None`` when the tempo is\n        unclear and they run over a number of seconds.\n    slots: The slot rectangles, from the top; none in scroll mode.\n    scroll: The measures of the column in scroll mode, ``None`` in line and page mode.\n    preview_row: The fixed row of the preview below the slots, ``None`` without a preview.\n    look: Wipe, shadow and font.\n    elements: Every element, ordered by start.\n    shortfalls: What the layout could not do as the profile asks.",
+      "properties": {
+        "background": {
+          "title": "Background",
+          "type": "string"
+        },
+        "background_motion": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/BackgroundMotion"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "bpm": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Bpm"
+        },
+        "duration": {
+          "title": "Duration",
+          "type": "number"
+        },
+        "elements": {
+          "items": {
+            "$ref": "#/$defs/SceneElement"
+          },
+          "title": "Elements",
+          "type": "array"
+        },
+        "height": {
+          "title": "Height",
+          "type": "integer"
+        },
+        "lead": {
+          "default": 0.0,
+          "title": "Lead",
+          "type": "number"
+        },
+        "look": {
+          "$ref": "#/$defs/Look"
+        },
+        "preview_row": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Rect"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "safe": {
+          "$ref": "#/$defs/Rect"
+        },
+        "scroll": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ScrollView"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "shortfalls": {
+          "items": {
+            "$ref": "#/$defs/Shortfall"
+          },
+          "title": "Shortfalls",
+          "type": "array"
+        },
+        "slots": {
+          "items": {
+            "$ref": "#/$defs/Rect"
+          },
+          "title": "Slots",
+          "type": "array"
+        },
+        "width": {
+          "title": "Width",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "width",
+        "height",
+        "safe",
+        "background",
+        "duration",
+        "slots",
+        "look",
+        "elements"
+      ],
+      "title": "Scene",
+      "type": "object"
+    },
+    "SceneElement": {
+      "discriminator": {
+        "mapping": {
+          "break": "#/$defs/CardElement",
+          "countdown": "#/$defs/CountdownElement",
+          "end": "#/$defs/CardElement",
+          "line": "#/$defs/LineElement",
+          "preview": "#/$defs/PreviewElement",
+          "progress": "#/$defs/ProgressElement",
+          "timer": "#/$defs/TimerElement",
+          "title": "#/$defs/CardElement"
+        },
+        "propertyName": "kind"
+      },
+      "oneOf": [
+        {
+          "$ref": "#/$defs/LineElement"
+        },
+        {
+          "$ref": "#/$defs/PreviewElement"
+        },
+        {
+          "$ref": "#/$defs/ProgressElement"
+        },
+        {
+          "$ref": "#/$defs/TimerElement"
+        },
+        {
+          "$ref": "#/$defs/CountdownElement"
+        },
+        {
+          "$ref": "#/$defs/CardElement"
+        }
+      ]
+    },
+    "ScrollView": {
+      "additionalProperties": false,
+      "description": "What the column of lyrics in scroll mode is measured from (ADR-0033).\n\nAttributes:\n    current: The height of the middle of the line being sung, pixels from the top of the\n        frame. A line wrapped onto two rows is centred on it.\n    before: How many sung lines are kept above it at most.\n    after: How many upcoming lines are shown below it at most.\n    glide: The longest the column takes to move up to the next line, in seconds.\n    min_glide: The shortest a glide between two lines takes, unless the column only came to\n        rest shortly before (ADR-0036).",
+      "properties": {
+        "after": {
+          "title": "After",
+          "type": "integer"
+        },
+        "before": {
+          "title": "Before",
+          "type": "integer"
+        },
+        "current": {
+          "title": "Current",
+          "type": "number"
+        },
+        "glide": {
+          "title": "Glide",
+          "type": "number"
+        },
+        "min_glide": {
+          "title": "Min Glide",
+          "type": "number"
+        }
+      },
+      "required": [
+        "current",
+        "before",
+        "after",
+        "glide",
+        "min_glide"
+      ],
+      "title": "ScrollView",
+      "type": "object"
+    },
+    "Shortfall": {
+      "additionalProperties": false,
+      "description": "Something the layout could not do as the profile asks.\n\nAttributes:\n    kind: ``lead-in`` (a line is on screen for less than the minimum lead-in), ``title`` (the\n        title screen is shorter than asked), ``too-wide`` (text wider than the safe area\n        even at the smallest size), ``block`` (the slots, or in scroll mode the line being\n        sung with its countdown, do not fit the safe area) or ``overlap`` (lines sung at once\n        by two voices are shown one after the other in this look, ADR-0054).\n    line: The index of the line in ``Scene.lines()``, or ``None``.\n    message: A readable description.",
+      "properties": {
+        "kind": {
+          "enum": [
+            "lead-in",
+            "title",
+            "too-wide",
+            "block",
+            "overlap"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "line": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Line"
+        },
+        "message": {
+          "title": "Message",
+          "type": "string"
+        }
+      },
+      "required": [
+        "kind",
+        "message"
+      ],
+      "title": "Shortfall",
+      "type": "object"
+    },
+    "Span": {
+      "additionalProperties": false,
+      "description": "One sung syllable on a line.\n\nAttributes:\n    text: The syllable (with the space after a word, if it ends one).\n    start: When it starts to be sung.\n    end: When it ends.\n    x0: Where its text starts, pixels from the left of the line's text.\n    x1: Where its text ends.",
+      "properties": {
+        "end": {
+          "title": "End",
+          "type": "number"
+        },
+        "start": {
+          "title": "Start",
+          "type": "number"
+        },
+        "text": {
+          "title": "Text",
+          "type": "string"
+        },
+        "x0": {
+          "title": "X0",
+          "type": "number"
+        },
+        "x1": {
+          "title": "X1",
+          "type": "number"
+        }
+      },
+      "required": [
+        "text",
+        "start",
+        "end",
+        "x0",
+        "x1"
+      ],
+      "title": "Span",
+      "type": "object"
+    },
+    "TimeRange": {
+      "additionalProperties": false,
+      "description": "A stretch of time: from ``start`` to ``end``, seconds on the song timeline.",
+      "properties": {
+        "end": {
+          "title": "End",
+          "type": "number"
+        },
+        "start": {
+          "title": "Start",
+          "type": "number"
+        }
+      },
+      "required": [
+        "start",
+        "end"
+      ],
+      "title": "TimeRange",
+      "type": "object"
+    },
+    "TimerElement": {
+      "additionalProperties": false,
+      "description": "The timer of a break screen: the whole seconds until the next lines appear.\n\nIt is on screen as long as the break screen and shows ``ceil(end - t)`` at the time ``t``,\ncentred in ``box``, which is as wide as the widest number it shows.\n\nAttributes:\n    colour: The text colour.\n    edge_colour: The outline colour.\n    size: Font size.\n    edge: Outline width in pixels.\n    shadow: Shadow offset in pixels.\n    text_y: The top of the line cell.",
+      "properties": {
+        "box": {
+          "$ref": "#/$defs/Rect"
+        },
+        "colour": {
+          "title": "Colour",
+          "type": "string"
+        },
+        "edge": {
+          "title": "Edge",
+          "type": "number"
+        },
+        "edge_colour": {
+          "title": "Edge Colour",
+          "type": "string"
+        },
+        "end": {
+          "title": "End",
+          "type": "number"
+        },
+        "kind": {
+          "const": "timer",
+          "default": "timer",
+          "title": "Kind",
+          "type": "string"
+        },
+        "path": {
+          "items": {
+            "$ref": "#/$defs/Keyframe"
+          },
+          "title": "Path",
+          "type": "array"
+        },
+        "shadow": {
+          "title": "Shadow",
+          "type": "number"
+        },
+        "size": {
+          "title": "Size",
+          "type": "number"
+        },
+        "start": {
+          "title": "Start",
+          "type": "number"
+        },
+        "text_y": {
+          "title": "Text Y",
+          "type": "number"
+        }
+      },
+      "required": [
+        "start",
+        "end",
+        "box",
+        "colour",
+        "edge_colour",
+        "size",
+        "edge",
+        "shadow",
+        "text_y"
+      ],
+      "title": "TimerElement",
+      "type": "object"
+    },
+    "TitleMark": {
+      "additionalProperties": false,
+      "description": "The wordmark, the frame and the field of a start screen (ADR-0055).\n\nAttributes:\n    field: The colour of the field that covers the whole picture while the screen stands.\n    word: The box of the wordmark.\n    scale: Pixels per unit of the letter shapes (``vocatron.core.wordmark``).\n    frame: The box of the rounded frame around the texts.\n    radius: The radius of its corners in pixels.\n    rule: The short rule between title and artist, ``None`` when there is none.\n    build: The build-up, ``None`` for a screen that is finished from its first frame.\n    pixel: The wordmark is made of pixel letters for the CD+G screen (ADR-0056): ``scale`` is\n        then the pixels along a cell's side, and there is no build-up.",
+      "properties": {
+        "build": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/BuildUp"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "field": {
+          "title": "Field",
+          "type": "string"
+        },
+        "frame": {
+          "$ref": "#/$defs/Rect"
+        },
+        "pixel": {
+          "default": false,
+          "title": "Pixel",
+          "type": "boolean"
+        },
+        "radius": {
+          "title": "Radius",
+          "type": "number"
+        },
+        "rule": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Rect"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "scale": {
+          "title": "Scale",
+          "type": "number"
+        },
+        "word": {
+          "$ref": "#/$defs/Rect"
+        }
+      },
+      "required": [
+        "field",
+        "word",
+        "scale",
+        "frame",
+        "radius"
+      ],
+      "title": "TitleMark",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "description": "``layout.json``: what is on screen when, the scene of the song.\n\nEvery renderer draws this; the ASS file of the video (``lyrics.ass``) is made from it.\n\nAttributes:\n    profile: The name of the style profile that was used.\n    scene: The scene.",
+  "properties": {
+    "fingerprint": {
+      "$ref": "#/$defs/Fingerprint"
+    },
+    "profile": {
+      "title": "Profile",
+      "type": "string"
+    },
+    "reasons": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Reasons",
+      "type": "array"
+    },
+    "scene": {
+      "$ref": "#/$defs/Scene"
+    },
+    "schema_version": {
+      "default": 14,
+      "enum": [
+        11,
+        12,
+        13,
+        14
+      ],
+      "title": "Schema Version",
+      "type": "integer"
+    }
+  },
+  "required": [
+    "fingerprint",
+    "profile",
+    "scene"
+  ],
+  "title": "LayoutFile",
+  "type": "object"
+}

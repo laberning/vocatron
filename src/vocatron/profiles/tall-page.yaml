@@ -1,0 +1,37 @@
+# Six rows on near-black, a page cleared as a whole; a line too wide for one row is wrapped onto two
+# rows that take two neighbouring slots. Cyan sweeps to a bright colour per singer, dots count down
+# (the Sound Choice discs of classic karaoke, ADR-0009).
+name: tall-page
+description: Pages of six rows on near-black, long lines wrapped onto two rows, cyan sweeping to a bright colour, dots counting down.
+mode: page
+slots: 6
+line_rows: 2
+page: {min_lines: 3, slot_per_row: true}
+align: center
+position: middle
+safe_area: 0.9
+font:
+  family: bundled-sans-bold
+  size: 0.10
+  min_size: 0.075
+  case: as-written
+background: "#111111"
+colours:
+  singer1: {unsung: "#00ffff", sung: "#ff00ff", edge: "#000000"}
+  singer2: {unsung: "#00ffff", sung: "#ff9900", edge: "#000000"}
+  singer3: {unsung: "#00ffff", sung: "#00cc00", edge: "#000000"}
+  singer4: {unsung: "#00ffff", sung: "#aa66ff", edge: "#000000"}
+  singer5: {unsung: "#00ffff", sung: "#ff66cc", edge: "#000000"}
+  group: {unsung: "#00ffff", sung: "#3399ff", edge: "#000000"}
+edge: {width: 0.06}
+shadow: {offset: 0.0, colour: "#000000", alpha: 0.6}
+wipe: {granularity: smooth, offset: 0.0}
+lead_in: {min: 1.0, target: 4.0, max: 7.0}
+clear: {hold: 4.0, replace_after: 0.33}
+breaks: {clear_after: 5.0, notice_after: 15.0, notice: Instrumental, show_title: false, form: notice}
+countdown: {min_gap: 8.0, duration: 3.0, form: dots, count: 5}
+title: {min: 6.0, min_short: 4.0, fields: [title, artist, singers]}
+intro: {solo: 8.0, group: 9.0}
+ending: {end_screen: true, start_after: 4.0, fade: 0.5}
+# On CD+G (ADR-0029): sizes in pixels on the 192 px safe area; six rows of 23 px (24 px is too slow for a dense song) with a 1 px edge.
+cdg: {made_for_cdg: true, slots: 6, font_px: 23, min_font_px: 18, edge_px: 1, wipe_columns: 3}

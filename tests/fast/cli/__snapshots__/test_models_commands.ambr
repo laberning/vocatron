@@ -1,0 +1,64 @@
+# serializer version: 1
+# name: test_doctor_prints_what_to_fix_and_exits_with_one
+  '''
+  ✓ ffmpeg        version 8.0.1-3ubuntu2
+  ✗ libass        not built in                                                                        
+                  fix: This ffmpeg was built without libass, which is needed to render subtitles.     
+                  Install a build with libass (most distribution packages have it).                   
+  ✗ encoders      incomplete                                                               
+                  fix: ffmpeg has no libx264 encoder. Install an ffmpeg build with libx264.
+  ✗ fdkaac        not found                                                                           
+                  fix: Install fdkaac (for example 'sudo apt install fdkaac' or 'brew install         
+                  fdk-aac'), or set audio.encoder to ffmpeg-aac to use ffmpeg's own AAC encoder.      
+  ✓ PyTorch       2.14.1+cpu, CUDA none
+  ! GPU           none found                                                                          
+                  note: PyTorch finds no CUDA GPU (this is a CPU build of PyTorch). On a machine with 
+                  an NVIDIA GPU and its driver, run 'make env TORCH_EXTRA=cuda'. Otherwise the        
+                  separation runs on the CPU, about 20 times slower.                                  
+  ✗ models        0 of 3 present; bs-roformer-leap (missing), bs-roformer-karaoke (missing),          
+                  wav2vec2-en (missing)                                                               
+                  fix: Run 'vocatron models download bs-roformer-leap bs-roformer-karaoke             
+                  wav2vec2-en'.                                                                       
+  ✗ output folder /work/karaoke cannot be written                                                   
+                  fix: Choose another folder with --output or output.folder, or fix its permissions.
+  5 of 8 checks need attention
+  
+  '''
+# ---
+# name: test_download_fetches_the_default_set_and_prints_the_licence
+  '''
+  acme/bs-roformer-ep317: licence GPL-3.0 (nowhere, r1)
+    bs-roformer-ep317/a.bin (1.9 MB)
+      0%
+      100%
+    a.bin verified
+    bs-roformer-ep317/b.json (2 B)
+    b.json verified
+  
+  '''
+# ---
+# name: test_models_table_is_golden_when_nothing_is_downloaded
+  '''
+  Name                        Purpose                             State    Size      Licence          
+  bs-roformer-ep317           vocals / instrumental separation    missing  609.7 MB  no licence stated
+  bs-roformer-leap            vocals / instrumental separation    missing  227.2 MB  no licence stated
+  bs-roformer-karaoke         lead / backing vocals separation    missing  195.0 MB  GPL-3.0          
+  bs-roformer-leap-inst       vocals / instrumental (candidate,   missing  255.4 MB  no licence stated
+                              instrumental output)                                                    
+  mel-band-deux               vocals / instrumental (candidate,   missing  414.9 MB  CC BY-NC 4.0     
+                              Mel-Band Roformer)                                                      
+  mel-band-flowersv10         vocals / instrumental (candidate,   missing  466.9 MB  no licence stated
+                              Mel-Band Roformer, instrumental                                         
+                              output)                                                                 
+  bs-roformer-karaoke-frazer  lead / backing vocals separation    missing  195.0 MB  no licence stated
+                              (candidate)                                                             
+  wav2vec2-de                 alignment, German                   missing  1.2 GB    Apache-2.0       
+  wav2vec2-en                 alignment, English                  missing  1.2 GB    Apache-2.0       
+  whisper-turbo               transcription (fallback)            missing  1.5 GB    MIT              
+  
+  Model folder: /clone/.cache/models
+  Model weights are data that Vocatron downloads and loads; they are not part of Vocatron and keep 
+  their own licences.
+  
+  '''
+# ---

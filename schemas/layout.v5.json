@@ -1,0 +1,720 @@
+{
+  "$defs": {
+    "CardElement": {
+      "additionalProperties": false,
+      "description": "A screen of centred text: the title, a break screen or the end screen.\n\nAttributes:\n    kind: ``title``, ``break`` or ``end``.\n    lines: The lines, from the top.\n    fade_out: Seconds the card fades out at its end.",
+      "properties": {
+        "box": {
+          "$ref": "#/$defs/Rect"
+        },
+        "end": {
+          "title": "End",
+          "type": "number"
+        },
+        "fade_out": {
+          "default": 0.0,
+          "title": "Fade Out",
+          "type": "number"
+        },
+        "kind": {
+          "enum": [
+            "title",
+            "break",
+            "end"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "lines": {
+          "items": {
+            "$ref": "#/$defs/CardLine"
+          },
+          "title": "Lines",
+          "type": "array"
+        },
+        "start": {
+          "title": "Start",
+          "type": "number"
+        }
+      },
+      "required": [
+        "start",
+        "end",
+        "box",
+        "kind",
+        "lines"
+      ],
+      "title": "CardElement",
+      "type": "object"
+    },
+    "CardLine": {
+      "additionalProperties": false,
+      "description": "One line of text on a card.\n\nAttributes:\n    text: The text.\n    size: Font size.\n    edge: Outline width in pixels.\n    shadow: Shadow offset in pixels.\n    colour: Text colour.\n    edge_colour: Outline colour.\n    box: Where it is drawn.\n    text_x: Where the text starts.\n    text_y: The top of the line cell.",
+      "properties": {
+        "box": {
+          "$ref": "#/$defs/Rect"
+        },
+        "colour": {
+          "title": "Colour",
+          "type": "string"
+        },
+        "edge": {
+          "title": "Edge",
+          "type": "number"
+        },
+        "edge_colour": {
+          "title": "Edge Colour",
+          "type": "string"
+        },
+        "shadow": {
+          "title": "Shadow",
+          "type": "number"
+        },
+        "size": {
+          "title": "Size",
+          "type": "number"
+        },
+        "text": {
+          "title": "Text",
+          "type": "string"
+        },
+        "text_x": {
+          "title": "Text X",
+          "type": "number"
+        },
+        "text_y": {
+          "title": "Text Y",
+          "type": "number"
+        }
+      },
+      "required": [
+        "text",
+        "size",
+        "edge",
+        "shadow",
+        "colour",
+        "edge_colour",
+        "box",
+        "text_x",
+        "text_y"
+      ],
+      "title": "CardLine",
+      "type": "object"
+    },
+    "Colours": {
+      "additionalProperties": false,
+      "description": "The three colours of a text: before the wipe, after it, and the outline.",
+      "properties": {
+        "edge": {
+          "title": "Edge",
+          "type": "string"
+        },
+        "sung": {
+          "title": "Sung",
+          "type": "string"
+        },
+        "unsung": {
+          "title": "Unsung",
+          "type": "string"
+        }
+      },
+      "required": [
+        "unsung",
+        "sung",
+        "edge"
+      ],
+      "title": "Colours",
+      "type": "object"
+    },
+    "CountdownElement": {
+      "additionalProperties": false,
+      "description": "The countdown before a line: it ends when the line starts.\n\nAttributes:\n    form: ``shrinking-bar``, ``dots`` or ``blocks``.\n    count: The number of dots or blocks. In a countdown in beats it is the number of beats it\n        lasts.\n    colour: Its colour.\n    beat: The length of one beat in seconds when the countdown counts beats of the song's\n        tempo (it then lasts ``count`` beats); ``None`` when it runs over a fixed number of\n        seconds (ADR-0022).",
+      "properties": {
+        "beat": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Beat"
+        },
+        "box": {
+          "$ref": "#/$defs/Rect"
+        },
+        "colour": {
+          "title": "Colour",
+          "type": "string"
+        },
+        "count": {
+          "title": "Count",
+          "type": "integer"
+        },
+        "end": {
+          "title": "End",
+          "type": "number"
+        },
+        "form": {
+          "enum": [
+            "shrinking-bar",
+            "dots",
+            "blocks"
+          ],
+          "title": "Form",
+          "type": "string"
+        },
+        "kind": {
+          "const": "countdown",
+          "default": "countdown",
+          "title": "Kind",
+          "type": "string"
+        },
+        "start": {
+          "title": "Start",
+          "type": "number"
+        }
+      },
+      "required": [
+        "start",
+        "end",
+        "box",
+        "form",
+        "count",
+        "colour"
+      ],
+      "title": "CountdownElement",
+      "type": "object"
+    },
+    "Fingerprint": {
+      "additionalProperties": false,
+      "description": "What a stage file was made from.\n\nAttributes:\n    inputs: SHA-256 of the content of every input file, by input name.\n    settings: SHA-256 of the canonical JSON of the settings the stage declares.\n    stage_version: The version of the stage's own code.",
+      "properties": {
+        "inputs": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "title": "Inputs",
+          "type": "object"
+        },
+        "settings": {
+          "title": "Settings",
+          "type": "string"
+        },
+        "stage_version": {
+          "title": "Stage Version",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "inputs",
+        "settings",
+        "stage_version"
+      ],
+      "title": "Fingerprint",
+      "type": "object"
+    },
+    "LineElement": {
+      "additionalProperties": false,
+      "description": "A lyric line in a slot.\n\nAttributes:\n    text: The line as drawn.\n    singers: Who sings its first syllable: ``1``, ``1,3`` or ``all``.\n    slot: The slot it is in, counted from the top.\n    page: The index of the page it belongs to in page mode, ``None`` in line mode.\n    size: Font size (ASS ``Fontsize``).\n    edge: Outline width in pixels.\n    shadow: Shadow offset in pixels.\n    colours: Its colours (those of the singers of its first syllable).\n    turns: Where the singers change inside the line, by rising ``span``; empty for a line\n        sung by one voice or group.\n    text_x: Where the text starts (the left of the first letter).\n    text_y: The top of the line cell.\n    spans: The syllables in the order they are sung.",
+      "properties": {
+        "box": {
+          "$ref": "#/$defs/Rect"
+        },
+        "colours": {
+          "$ref": "#/$defs/Colours"
+        },
+        "edge": {
+          "title": "Edge",
+          "type": "number"
+        },
+        "end": {
+          "title": "End",
+          "type": "number"
+        },
+        "kind": {
+          "const": "line",
+          "default": "line",
+          "title": "Kind",
+          "type": "string"
+        },
+        "page": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Page"
+        },
+        "shadow": {
+          "title": "Shadow",
+          "type": "number"
+        },
+        "singers": {
+          "title": "Singers",
+          "type": "string"
+        },
+        "size": {
+          "title": "Size",
+          "type": "number"
+        },
+        "slot": {
+          "title": "Slot",
+          "type": "integer"
+        },
+        "spans": {
+          "items": {
+            "$ref": "#/$defs/Span"
+          },
+          "title": "Spans",
+          "type": "array"
+        },
+        "start": {
+          "title": "Start",
+          "type": "number"
+        },
+        "text": {
+          "title": "Text",
+          "type": "string"
+        },
+        "text_x": {
+          "title": "Text X",
+          "type": "number"
+        },
+        "text_y": {
+          "title": "Text Y",
+          "type": "number"
+        },
+        "turns": {
+          "items": {
+            "$ref": "#/$defs/LineTurn"
+          },
+          "title": "Turns",
+          "type": "array"
+        }
+      },
+      "required": [
+        "start",
+        "end",
+        "box",
+        "text",
+        "singers",
+        "slot",
+        "size",
+        "edge",
+        "shadow",
+        "colours",
+        "text_x",
+        "text_y",
+        "spans"
+      ],
+      "title": "LineElement",
+      "type": "object"
+    },
+    "LineTurn": {
+      "additionalProperties": false,
+      "description": "A change of singers inside a line: from one syllable on, other colours.\n\nAttributes:\n    span: The index of the first syllable (in ``LineElement.spans``) the new singers sing.\n    singers: Who sings from there on: ``1``, ``1,3`` or ``all``.\n    colours: Their colours (those of the lyrics file where it names one).",
+      "properties": {
+        "colours": {
+          "$ref": "#/$defs/Colours"
+        },
+        "singers": {
+          "title": "Singers",
+          "type": "string"
+        },
+        "span": {
+          "title": "Span",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "span",
+        "singers",
+        "colours"
+      ],
+      "title": "LineTurn",
+      "type": "object"
+    },
+    "Look": {
+      "additionalProperties": false,
+      "description": "What every renderer needs besides the elements.\n\nAttributes:\n    font: The font family name (the bundled font).\n    wipe: ``smooth`` or ``syllable``.\n    wipe_offset: Seconds the wipes are shifted.\n    shadow_colour: Shadow colour as ``#rrggbb``.\n    shadow_alpha: Shadow opacity.",
+      "properties": {
+        "font": {
+          "title": "Font",
+          "type": "string"
+        },
+        "shadow_alpha": {
+          "title": "Shadow Alpha",
+          "type": "number"
+        },
+        "shadow_colour": {
+          "title": "Shadow Colour",
+          "type": "string"
+        },
+        "wipe": {
+          "enum": [
+            "smooth",
+            "syllable"
+          ],
+          "title": "Wipe",
+          "type": "string"
+        },
+        "wipe_offset": {
+          "title": "Wipe Offset",
+          "type": "number"
+        }
+      },
+      "required": [
+        "font",
+        "wipe",
+        "wipe_offset",
+        "shadow_colour",
+        "shadow_alpha"
+      ],
+      "title": "Look",
+      "type": "object"
+    },
+    "PreviewElement": {
+      "additionalProperties": false,
+      "description": "The next line, smaller and in its unsung colour, below the line being sung.\n\nIt is on screen from the moment it is first shown until the line takes the main place.\n\nAttributes:\n    of_line: The index in ``Scene.lines()`` of the line it previews.\n    line: What it draws.",
+      "properties": {
+        "box": {
+          "$ref": "#/$defs/Rect"
+        },
+        "end": {
+          "title": "End",
+          "type": "number"
+        },
+        "kind": {
+          "const": "preview",
+          "default": "preview",
+          "title": "Kind",
+          "type": "string"
+        },
+        "line": {
+          "$ref": "#/$defs/CardLine"
+        },
+        "of_line": {
+          "title": "Of Line",
+          "type": "integer"
+        },
+        "start": {
+          "title": "Start",
+          "type": "number"
+        }
+      },
+      "required": [
+        "start",
+        "end",
+        "box",
+        "of_line",
+        "line"
+      ],
+      "title": "PreviewElement",
+      "type": "object"
+    },
+    "ProgressElement": {
+      "additionalProperties": false,
+      "description": "The progress bar of a break screen: it fills from the start to the end of the screen.\n\nAttributes:\n    fill: The colour of the growing fill.\n    frame: The colour of the frame around it.",
+      "properties": {
+        "box": {
+          "$ref": "#/$defs/Rect"
+        },
+        "end": {
+          "title": "End",
+          "type": "number"
+        },
+        "fill": {
+          "title": "Fill",
+          "type": "string"
+        },
+        "frame": {
+          "title": "Frame",
+          "type": "string"
+        },
+        "kind": {
+          "const": "progress",
+          "default": "progress",
+          "title": "Kind",
+          "type": "string"
+        },
+        "start": {
+          "title": "Start",
+          "type": "number"
+        }
+      },
+      "required": [
+        "start",
+        "end",
+        "box",
+        "fill",
+        "frame"
+      ],
+      "title": "ProgressElement",
+      "type": "object"
+    },
+    "Rect": {
+      "additionalProperties": false,
+      "description": "A rectangle: left, top, width, height.",
+      "properties": {
+        "h": {
+          "title": "H",
+          "type": "number"
+        },
+        "w": {
+          "title": "W",
+          "type": "number"
+        },
+        "x": {
+          "title": "X",
+          "type": "number"
+        },
+        "y": {
+          "title": "Y",
+          "type": "number"
+        }
+      },
+      "required": [
+        "x",
+        "y",
+        "w",
+        "h"
+      ],
+      "title": "Rect",
+      "type": "object"
+    },
+    "Scene": {
+      "additionalProperties": false,
+      "description": "Everything on screen for a song.\n\nAttributes:\n    width: Frame width in pixels.\n    height: Frame height in pixels.\n    safe: The safe area: all text lies inside.\n    background: The plain background colour.\n    duration: The length of the video in seconds: the song and the silent intro.\n    lead: The silence added before the song in seconds (0 for none, ADR-0020). Every time\n        in the scene already includes it; the renderers shift the audio by it.\n    bpm: The tempo whose beats the countdowns count (ADR-0022), ``None`` when the tempo is\n        unclear and they run over a number of seconds.\n    slots: The slot rectangles, from the top.\n    preview_row: The fixed row of the preview below the slots, ``None`` without a preview.\n    look: Wipe, shadow and font.\n    elements: Every element, ordered by start.\n    shortfalls: What the layout could not do as the profile asks.",
+      "properties": {
+        "background": {
+          "title": "Background",
+          "type": "string"
+        },
+        "bpm": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Bpm"
+        },
+        "duration": {
+          "title": "Duration",
+          "type": "number"
+        },
+        "elements": {
+          "items": {
+            "$ref": "#/$defs/SceneElement"
+          },
+          "title": "Elements",
+          "type": "array"
+        },
+        "height": {
+          "title": "Height",
+          "type": "integer"
+        },
+        "lead": {
+          "default": 0.0,
+          "title": "Lead",
+          "type": "number"
+        },
+        "look": {
+          "$ref": "#/$defs/Look"
+        },
+        "preview_row": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Rect"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "safe": {
+          "$ref": "#/$defs/Rect"
+        },
+        "shortfalls": {
+          "items": {
+            "$ref": "#/$defs/Shortfall"
+          },
+          "title": "Shortfalls",
+          "type": "array"
+        },
+        "slots": {
+          "items": {
+            "$ref": "#/$defs/Rect"
+          },
+          "title": "Slots",
+          "type": "array"
+        },
+        "width": {
+          "title": "Width",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "width",
+        "height",
+        "safe",
+        "background",
+        "duration",
+        "slots",
+        "look",
+        "elements"
+      ],
+      "title": "Scene",
+      "type": "object"
+    },
+    "SceneElement": {
+      "discriminator": {
+        "mapping": {
+          "break": "#/$defs/CardElement",
+          "countdown": "#/$defs/CountdownElement",
+          "end": "#/$defs/CardElement",
+          "line": "#/$defs/LineElement",
+          "preview": "#/$defs/PreviewElement",
+          "progress": "#/$defs/ProgressElement",
+          "title": "#/$defs/CardElement"
+        },
+        "propertyName": "kind"
+      },
+      "oneOf": [
+        {
+          "$ref": "#/$defs/LineElement"
+        },
+        {
+          "$ref": "#/$defs/PreviewElement"
+        },
+        {
+          "$ref": "#/$defs/ProgressElement"
+        },
+        {
+          "$ref": "#/$defs/CountdownElement"
+        },
+        {
+          "$ref": "#/$defs/CardElement"
+        }
+      ]
+    },
+    "Shortfall": {
+      "additionalProperties": false,
+      "description": "Something the layout could not do as the profile asks.\n\nAttributes:\n    kind: ``lead-in`` (a line is on screen for less than the minimum lead-in), ``title`` (the\n        title screen is shorter than asked), ``too-wide`` (text wider than the safe area\n        even at the smallest size) or ``block`` (the slots do not fit the safe area).\n    line: The index of the line in ``Scene.lines()``, or ``None``.\n    message: A readable description.",
+      "properties": {
+        "kind": {
+          "enum": [
+            "lead-in",
+            "title",
+            "too-wide",
+            "block"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "line": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Line"
+        },
+        "message": {
+          "title": "Message",
+          "type": "string"
+        }
+      },
+      "required": [
+        "kind",
+        "message"
+      ],
+      "title": "Shortfall",
+      "type": "object"
+    },
+    "Span": {
+      "additionalProperties": false,
+      "description": "One sung syllable on a line.\n\nAttributes:\n    text: The syllable (with the space after a word, if it ends one).\n    start: When it starts to be sung.\n    end: When it ends.\n    x0: Where its text starts, pixels from the left of the line's text.\n    x1: Where its text ends.",
+      "properties": {
+        "end": {
+          "title": "End",
+          "type": "number"
+        },
+        "start": {
+          "title": "Start",
+          "type": "number"
+        },
+        "text": {
+          "title": "Text",
+          "type": "string"
+        },
+        "x0": {
+          "title": "X0",
+          "type": "number"
+        },
+        "x1": {
+          "title": "X1",
+          "type": "number"
+        }
+      },
+      "required": [
+        "text",
+        "start",
+        "end",
+        "x0",
+        "x1"
+      ],
+      "title": "Span",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "description": "``layout.json``: what is on screen when, the scene of the song.\n\nEvery renderer draws this; the ASS file of the video (``lyrics.ass``) is made from it.\n\nAttributes:\n    profile: The name of the style profile that was used.\n    scene: The scene.",
+  "properties": {
+    "fingerprint": {
+      "$ref": "#/$defs/Fingerprint"
+    },
+    "profile": {
+      "title": "Profile",
+      "type": "string"
+    },
+    "reasons": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Reasons",
+      "type": "array"
+    },
+    "scene": {
+      "$ref": "#/$defs/Scene"
+    },
+    "schema_version": {
+      "const": 5,
+      "default": 5,
+      "title": "Schema Version",
+      "type": "integer"
+    }
+  },
+  "required": [
+    "fingerprint",
+    "profile",
+    "scene"
+  ],
+  "title": "LayoutFile",
+  "type": "object"
+}

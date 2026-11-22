@@ -1,0 +1,231 @@
+# serializer version: 1
+# name: test_the_cleaned_messy_songs_are_golden[entchen]
+  dict({
+    'lines': tuple(
+      dict({
+        'blank_before': False,
+        'marks': tuple(
+        ),
+        'text': 'Alle meine Entchen',
+        'time': None,
+      }),
+      dict({
+        'blank_before': False,
+        'marks': tuple(
+        ),
+        'text': 'schwimmen auf dem See',
+        'time': None,
+      }),
+      dict({
+        'blank_before': True,
+        'marks': tuple(
+        ),
+        'text': 'Köpfchen in das Wasser',
+        'time': None,
+      }),
+      dict({
+        'blank_before': False,
+        'marks': tuple(
+        ),
+        'text': 'Schwänzchen in die Höh',
+        'time': None,
+      }),
+    ),
+    'removals': tuple(
+      dict({
+        'character': None,
+        'kind': 'section',
+        'line': 1,
+        'text': '[Strophe 1]',
+      }),
+      dict({
+        'character': None,
+        'kind': 'repeat',
+        'line': 3,
+        'text': 'schwimmen auf dem See (2x)',
+      }),
+      dict({
+        'character': None,
+        'kind': 'section',
+        'line': 5,
+        'text': 'Refrain:',
+      }),
+      dict({
+        'character': None,
+        'kind': 'repeat',
+        'line': 7,
+        'text': 'Schwänzchen in die Höh x2',
+      }),
+      dict({
+        'character': None,
+        'kind': 'credit',
+        'line': 9,
+        'text': 'Text: Volksgut',
+      }),
+    ),
+  })
+# ---
+# name: test_the_cleaned_messy_songs_are_golden[haenschen]
+  dict({
+    'lines': tuple(
+      dict({
+        'blank_before': False,
+        'marks': tuple(
+        ),
+        'text': 'Hänschen klein',
+        'time': None,
+      }),
+      dict({
+        'blank_before': False,
+        'marks': tuple(
+        ),
+        'text': 'ging allein',
+        'time': None,
+      }),
+      dict({
+        'blank_before': False,
+        'marks': tuple(
+        ),
+        'text': 'in die weite Welt hinein',
+        'time': None,
+      }),
+      dict({
+        'blank_before': False,
+        'marks': tuple(
+        ),
+        'text': 'Stock und Hut',
+        'time': None,
+      }),
+      dict({
+        'blank_before': False,
+        'marks': tuple(
+        ),
+        'text': 'steht ihm gut',
+        'time': None,
+      }),
+      dict({
+        'blank_before': False,
+        'marks': tuple(
+        ),
+        'text': 'ist gar wohlgemut',
+        'time': None,
+      }),
+    ),
+    'removals': tuple(
+      dict({
+        'character': None,
+        'kind': 'section',
+        'line': 1,
+        'text': '[Intro]',
+      }),
+      dict({
+        'character': None,
+        'kind': 'section',
+        'line': 3,
+        'text': '[Strophe 1]',
+      }),
+      dict({
+        'character': None,
+        'kind': 'repeat',
+        'line': 6,
+        'text': 'in die weite Welt hinein (x2)',
+      }),
+      dict({
+        'character': None,
+        'kind': 'section',
+        'line': 7,
+        'text': '[Refrain]',
+      }),
+      dict({
+        'character': None,
+        'kind': 'section',
+        'line': 11,
+        'text': '(Refrain 2x)',
+      }),
+      dict({
+        'character': None,
+        'kind': 'credit',
+        'line': 13,
+        'text': 'Songwriter: Volksgut',
+      }),
+      dict({
+        'character': None,
+        'kind': 'credit',
+        'line': 14,
+        'text': 'Lyrics powered by Nobody',
+      }),
+      dict({
+        'character': None,
+        'kind': 'credit',
+        'line': 15,
+        'text': '3 Embed',
+      }),
+    ),
+  })
+# ---
+# name: test_the_cleaned_messy_songs_are_golden[vogel]
+  dict({
+    'lines': tuple(
+      dict({
+        'blank_before': False,
+        'marks': tuple(
+        ),
+        'text': 'Kommt ein Vogel geflogen,',
+        'time': None,
+      }),
+      dict({
+        'blank_before': False,
+        'marks': tuple(
+        ),
+        'text': 'setzt sich nieder auf mein Fuß,',
+        'time': None,
+      }),
+      dict({
+        'blank_before': False,
+        'marks': tuple(
+        ),
+        'text': 'hat ein Zettel im Schnabel',
+        'time': None,
+      }),
+      dict({
+        'blank_before': False,
+        'marks': tuple(
+        ),
+        'text': 'von der Mutter einen Gruß.',
+        'time': None,
+      }),
+    ),
+    'removals': tuple(
+      dict({
+        'character': None,
+        'kind': 'section',
+        'line': 3,
+        'text': '[Chorus: Anna]',
+      }),
+      dict({
+        'character': None,
+        'kind': 'repeat',
+        'line': 5,
+        'text': 'von der Mutter einen Gruß. 2x',
+      }),
+      dict({
+        'character': None,
+        'kind': 'credit',
+        'line': 6,
+        'text': 'Text & Musik: Volksweise',
+      }),
+      dict({
+        'character': None,
+        'kind': 'credit',
+        'line': 7,
+        'text': '© Niemand',
+      }),
+      dict({
+        'character': None,
+        'kind': 'credit',
+        'line': 8,
+        'text': 'You might also like',
+      }),
+    ),
+  })
+# ---

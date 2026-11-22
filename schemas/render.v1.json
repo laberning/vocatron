@@ -1,0 +1,88 @@
+{
+  "$defs": {
+    "Fingerprint": {
+      "additionalProperties": false,
+      "description": "What a stage file was made from.\n\nAttributes:\n    inputs: SHA-256 of the content of every input file, by input name.\n    settings: SHA-256 of the canonical JSON of the settings the stage declares.\n    stage_version: The version of the stage's own code.",
+      "properties": {
+        "inputs": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "title": "Inputs",
+          "type": "object"
+        },
+        "settings": {
+          "title": "Settings",
+          "type": "string"
+        },
+        "stage_version": {
+          "title": "Stage Version",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "inputs",
+        "settings",
+        "stage_version"
+      ],
+      "title": "Fingerprint",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "description": "``render.json``: what the render stage made.\n\nAttributes:\n    preset: The output preset that was used.\n    audio_encoder: ``fdkaac`` or ``ffmpeg-aac``.\n    files: The names of the files in the output folder: the MP4, the audio export if any, and\n        the enhanced LRC.\n    fonts: The faces libass drew with; all of them the bundled font.\n    seconds: How long the renderer took.",
+  "properties": {
+    "audio_encoder": {
+      "title": "Audio Encoder",
+      "type": "string"
+    },
+    "files": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Files",
+      "type": "array"
+    },
+    "fingerprint": {
+      "$ref": "#/$defs/Fingerprint"
+    },
+    "fonts": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Fonts",
+      "type": "array"
+    },
+    "preset": {
+      "title": "Preset",
+      "type": "string"
+    },
+    "reasons": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Reasons",
+      "type": "array"
+    },
+    "schema_version": {
+      "const": 1,
+      "default": 1,
+      "title": "Schema Version",
+      "type": "integer"
+    },
+    "seconds": {
+      "title": "Seconds",
+      "type": "number"
+    }
+  },
+  "required": [
+    "fingerprint",
+    "preset",
+    "audio_encoder",
+    "files",
+    "fonts",
+    "seconds"
+  ],
+  "title": "RenderFile",
+  "type": "object"
+}

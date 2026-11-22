@@ -1,0 +1,175 @@
+# serializer version: 1
+# name: test_the_texts_of_the_checks_are_golden[cpu build]
+  list([
+    tuple(
+      'PyTorch',
+      '2.14.1+cpu, CUDA none',
+      None,
+      None,
+    ),
+    tuple(
+      'GPU',
+      'none found',
+      None,
+      "PyTorch finds no CUDA GPU (this is a CPU build of PyTorch). On a machine with an NVIDIA GPU and its driver, run 'make env TORCH_EXTRA=cuda'. Otherwise the separation runs on the CPU, about 20 times slower.",
+    ),
+  ])
+# ---
+# name: test_the_texts_of_the_checks_are_golden[cuda without device]
+  list([
+    tuple(
+      'PyTorch',
+      '2.14.1, CUDA 13.0',
+      None,
+      None,
+    ),
+    tuple(
+      'GPU',
+      'none found',
+      None,
+      'PyTorch finds no CUDA GPU. Install the NVIDIA driver, or run on a machine with an NVIDIA GPU. Otherwise the separation runs on the CPU, about 20 times slower.',
+    ),
+  ])
+# ---
+# name: test_the_texts_of_the_checks_are_golden[everything wrong]
+  list([
+    tuple(
+      'ffmpeg',
+      'version 6.1.1-3ubuntu2',
+      'ffmpeg 6 is too old; version 8 or newer is required.',
+      None,
+    ),
+    tuple(
+      'libass',
+      'not built in',
+      'This ffmpeg was built without libass, which is needed to render subtitles. Install a build with libass (most distribution packages have it).',
+      None,
+    ),
+    tuple(
+      'encoders',
+      'incomplete',
+      'ffmpeg has no libx264 encoder. Install an ffmpeg build with libx264.',
+      None,
+    ),
+    tuple(
+      'PyTorch',
+      '2.14.1, CUDA 13.0',
+      None,
+      None,
+    ),
+    tuple(
+      'GPU',
+      'Tiny, 4.0 GiB',
+      None,
+      'The GPU has 4.0 GiB of memory; at least 6 GiB are needed. Otherwise the separation runs on the CPU, about 20 times slower.',
+    ),
+    tuple(
+      'models',
+      '1 of 3 present; b (partial), c (mismatch)',
+      "Run 'vocatron models download b c'.",
+      None,
+    ),
+    tuple(
+      'output folder',
+      '/out cannot be written',
+      'Choose another folder with --output or output.folder, or fix its permissions.',
+      None,
+    ),
+  ])
+# ---
+# name: test_the_texts_of_the_checks_are_golden[healthy]
+  list([
+    tuple(
+      'ffmpeg',
+      'version 8.0.1-3ubuntu2',
+      None,
+      None,
+    ),
+    tuple(
+      'libass',
+      'built in',
+      None,
+      None,
+    ),
+    tuple(
+      'encoders',
+      'libx264',
+      None,
+      None,
+    ),
+    tuple(
+      'PyTorch',
+      '2.14.1+cu130, CUDA 13.0',
+      None,
+      None,
+    ),
+    tuple(
+      'GPU',
+      'Fake GPU 8000, 8.0 GiB',
+      None,
+      None,
+    ),
+    tuple(
+      'models',
+      '2 of 2 present',
+      None,
+      None,
+    ),
+    tuple(
+      'output folder',
+      '/out',
+      None,
+      None,
+    ),
+  ])
+# ---
+# name: test_the_texts_of_the_checks_are_golden[nothing installed]
+  list([
+    tuple(
+      'ffmpeg',
+      'not found',
+      "ffmpeg 8 or newer with libass is not installed (or not on PATH). Install it with your package manager, for example 'sudo apt install ffmpeg' or 'brew install ffmpeg'.",
+      None,
+    ),
+    tuple(
+      'libass',
+      'unknown without ffmpeg',
+      "ffmpeg 8 or newer with libass is not installed (or not on PATH). Install it with your package manager, for example 'sudo apt install ffmpeg' or 'brew install ffmpeg'.",
+      None,
+    ),
+    tuple(
+      'encoders',
+      'unknown without ffmpeg',
+      "ffmpeg 8 or newer with libass is not installed (or not on PATH). Install it with your package manager, for example 'sudo apt install ffmpeg' or 'brew install ffmpeg'.",
+      None,
+    ),
+    tuple(
+      'PyTorch',
+      'not installed',
+      "PyTorch is not installed. Run 'make setup' (or 'make env').",
+      None,
+    ),
+  ])
+# ---
+# name: test_the_texts_of_the_checks_are_golden[unreadable]
+  list([
+    tuple(
+      'ffmpeg',
+      'version unknown',
+      "Could not read the ffmpeg version from 'ffmpeg -version'; version 8 or newer is required.",
+      None,
+    ),
+    tuple(
+      'libass',
+      'not built in',
+      'This ffmpeg was built without libass, which is needed to render subtitles. Install a build with libass (most distribution packages have it).',
+      None,
+    ),
+    tuple(
+      'encoders',
+      'incomplete',
+      'Could not list the ffmpeg encoders.',
+      None,
+    ),
+  ])
+# ---
