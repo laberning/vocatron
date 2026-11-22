@@ -26,6 +26,13 @@ MEASURER = PillowMeasurer(RESOURCES.font_file())
 RASTERISER = PillowRasteriser(RESOURCES.font_file())
 FOLDER = profile_pictures.PICTURE_DIR
 CDG_INPUTS = profile_pictures.cdg_inputs
+
+# Several tests here write a look's CD+G picture song, through ``written_once`` or directly, and
+# which of them comes first in a worker is up to xdist; that test pays the write: about 3.5 s for
+# the slowest look on an idle machine, over the 10 s default on a busy CI runner. A fixture would
+# not help (the timeout counts fixture setup too), so the whole module gets more time.
+pytestmark = pytest.mark.timeout(30)
+
 _WRITTEN: dict[tuple[str, str, str, str], tuple[CdgPicture, str]] = {}
 """The picture song written in each look and the digest of its inputs, per test process."""
 

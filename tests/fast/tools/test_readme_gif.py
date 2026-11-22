@@ -148,7 +148,7 @@ def test_the_front_pages_open_with_the_pitch_the_description_and_the_smaller_gif
     page: str, src: str
 ) -> None:
     text = (readme_gif.ASSETS.parent.parent / page).read_text(encoding="utf-8")
-    skipped = ("#", "[![", '<img src="docs/assets/logo/')  # headings, badges, the wordmark
+    skipped = ("---", "#", "[![")  # front matter, headings (the wordmark is one), badges
     paragraphs = [p for p in text.split("\n\n") if p.strip() and not p.startswith(skipped)]
     pitch, description, image = paragraphs[:3]
     assert pitch.startswith("**Turn your CD collection") and pitch.endswith("collection.**")

@@ -1,4 +1,8 @@
-# Vocatron
+---
+title: Vocatron
+---
+
+# <img src="assets/logo/wordmark.svg" width="420" alt="Vocatron">
 
 **Turn your CD collection, your digitized vinyl or your band's own recordings into your private karaoke collection.**
 
