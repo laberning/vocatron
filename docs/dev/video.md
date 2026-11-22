@@ -179,7 +179,11 @@ fades in with `\fad`. The renderer cannot trace an outline stroke by stroke or f
 gradient, so there is no tracing and no reflection, and no scanlines over the letters. The
 logo files `docs/assets/logo/wordmark.svg` and `symbol.svg` are the SVG text of the same polygons
 (`vocatron.core.logo`) on a transparent background, without the field, so they read on light and
-dark pages; `make logo` writes them and a fast test fails when they are stale.
+dark pages; `make logo` writes them and a fast test fails when they are stale. The social
+preview of the repository, `.github/social-preview.png` (1280×640), is the same polygons drawn
+with Pillow on the dark field, since a transparent picture would be shown on any colour;
+`make social-preview` draws it, a fast test fails when it is stale, and it is uploaded by hand in
+the repository settings.
 
 ## The legend of the title screen
 

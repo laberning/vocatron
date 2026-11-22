@@ -25,6 +25,8 @@ PAD = 60.0
 """The room around the letters, in grid units; it holds the glow."""
 BLUR = 9.0
 """The blur of the glow, in grid units."""
+EDGE_OPACITY = 0.55
+"""The opacity of the sharp cyan edge over its glow."""
 FILE_NAMES = {"wordmark": "wordmark.svg", "symbol": "symbol.svg"}
 """The files ``make logo`` writes, by what they show."""
 
@@ -63,7 +65,7 @@ def _svg(shapes: tuple[Letter, ...], width: float) -> str:
         f'<path d="{path}" fill="none" stroke="{EDGE_COLOUR}" stroke-width="{_number(EDGE_WIDTH)}" '
         f'stroke-linejoin="round" filter="url(#glow)"/>\n'
         f'<path d="{path}" fill="none" stroke="{EDGE_COLOUR}" stroke-width="{_number(EDGE_WIDTH)}" '
-        f'stroke-linejoin="round" opacity="0.55"/>\n'
+        f'stroke-linejoin="round" opacity="{_number(EDGE_OPACITY)}"/>\n'
         f'<g clip-path="url(#letters)">{rows}</g>\n'
         f'<path d="{path}" fill="none" stroke="{EDGE_LIGHT}" stroke-width="{_number(LIGHT_WIDTH)}" '
         f'stroke-linejoin="round" fill-rule="evenodd"/>\n'

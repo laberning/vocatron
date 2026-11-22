@@ -44,7 +44,7 @@ CDGRAPHICS_VERSION := 7.0.0
 # The registry's integrity value of the tarball (sha512, base64); the download is checked against it.
 CDGRAPHICS_INTEGRITY := sha512-bjEV5gX496slsgr8a4O3mhxpDOklgzyhharAA5dV6Adw8obkkA0Xg+MofCE55I4AUIbo0ndNMUVTdRikA3vcpA==
 
-.PHONY: help setup install uninstall env check check-all static fast slow slow-cpu bench bench-accept demo-songs demo-accept summary format dup mutation docs schemas profile-pictures picture-song readme-gif logo word-voice \
+.PHONY: help setup install uninstall env check check-all static fast slow slow-cpu bench bench-accept demo-songs demo-accept summary format dup mutation docs schemas profile-pictures picture-song readme-gif logo social-preview word-voice \
         ty ci-targets diff-cover licenses history-scan tag-check cdg-js clean
 
 help: ## List the targets
@@ -195,6 +195,9 @@ readme-gif: ## Draw the animation of the default look for the README and the sta
 
 logo: ## Write the wordmark and the V symbol as SVG files into docs/assets/logo/ (no GPU, no network)
 	$(RUN) python tools/logo_files.py
+
+social-preview: ## Draw the social preview picture of the repository into .github/ (Pillow, no GPU)
+	$(RUN) python tools/social_preview.py
 
 schemas: ## Export the JSON schemas of the stage files to schemas/ (after a schema_version bump)
 	$(RUN) python tools/export_schemas.py
